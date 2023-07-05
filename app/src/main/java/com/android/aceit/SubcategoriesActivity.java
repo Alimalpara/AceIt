@@ -33,6 +33,7 @@ public class SubcategoriesActivity extends AppCompatActivity {
     ArrayList<Subject> subjects;
     ArrayList<String> subKeys;
     String mainCategory, categoryKey;
+    String test;
 
     private DatabaseReference databaseReference;
     String sharedMainCategoryKey,sharedSubMainCategoryKey,sharedSubSubMainCategoryKey;
