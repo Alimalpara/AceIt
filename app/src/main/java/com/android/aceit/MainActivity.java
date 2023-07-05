@@ -50,11 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
         rv = findViewById(R.id.rvmain);
 
+        getJSon();
 
 
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("subjects");
+
+
         subjects = new ArrayList<>();
 
         //sharedprefernce to pass keys
@@ -65,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void getJSon(){
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("subjects");
         // Read the data from the database
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -72,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 // Data retrieved successfully
                 // Clear the existing subjects list
                 //subjects file daat
-               /* String jsonData = dataSnapshot.getValue().toString();
+                String jsonData = dataSnapshot.getValue().toString();
                 try {
                     // Choose a suitable file name and location
                     String fileName = "data.json";
@@ -87,26 +94,13 @@ public class MainActivity extends AppCompatActivity {
                     // File saved successfully
                 } catch (IOException e) {
                     // Handle the exception
-                }*/
+                }
 
                 subjects.clear();
 
-                // Iterate through the data snapshot to get all the data
-                for (DataSnapshot subjectSnapshot : dataSnapshot.getChildren()) {
-                    String subjectKey = subjectSnapshot.getKey();
-                    String subjectName = subjectSnapshot.child("name").getValue(String.class);
-                    boolean hasSubcategories = hasSubcategoriesRecursive(subjectSnapshot);
-                    Subject subject = new Subject( subjectName,subjectKey, hasSubcategories);
 
 
 
-                    subjects.add(subject);
-                }
-
-                // Update the RecyclerView with the new data
-                rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                mainviewAdapter = new MainviewAdapter(getApplicationContext(), subjects);
-                rv.setAdapter(mainviewAdapter);
             }
 
             @Override
@@ -116,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Failed to fetch data from database", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void rvMethod(){
+        // Update the RecyclerView with the new data
+        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        mainviewAdapter = new MainviewAdapter(getApplicationContext(), subjects);
+        rv.setAdapter(mainviewAdapter);
     }
 
     // Recursive method to check for subcategories
