@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090075861354",
+    "project_id": "aceit-c0fb9",
+    "storage_bucket": "aceit-c0fb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090075861354:android:a08c412f96ea3d1a4f8513",
+        "android_client_info": {
+          "package_name": "com.android.aceit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090075861354-eqsmahl3vauujdfnem6r2k987lvjn1df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA65wymJZ3-szN86G9AUXrZVdyMp-J9Xbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090075861354-eqsmahl3vauujdfnem6r2k987lvjn1df.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
