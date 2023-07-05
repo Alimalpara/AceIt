@@ -34,6 +34,7 @@ public class SubcategoriesActivity extends AppCompatActivity {
     ArrayList<String> subKeys;
     String mainCategory, categoryKey;
     String test;
+    String branch2;
 
     private DatabaseReference databaseReference;
     String sharedMainCategoryKey,sharedSubMainCategoryKey,sharedSubSubMainCategoryKey;
