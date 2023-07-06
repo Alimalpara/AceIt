@@ -1,34 +1,24 @@
 package com.android.aceit;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
     private Context context;
-    private ArrayList<Subject> subjects;
+    private ArrayList<ChildData> childDataArrayList;
 
 
 
-    public MainviewAdapter(Context context, ArrayList<Subject> subjects) {
+    public MainviewAdapter(Context context, ArrayList<ChildData> childDataArrayList) {
         this.context = context;
-        this.subjects = subjects;
+        this.childDataArrayList = childDataArrayList;
     }
 
     @NonNull
@@ -40,9 +30,12 @@ public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Subject subject = subjects.get(position);
-        holder.maintv.setText(subject.getName());
+        ChildData childData = new ChildData();
 
+       // final Subject subject = subjects.get(position);
+       // holder.maintv.setText(subjects.get(position));
+
+/*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,10 +70,11 @@ public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
                 }
             }
         });
+*/
     }
 
     @Override
     public int getItemCount() {
-        return subjects.size();
+        return childDataArrayList.size();
     }
 }

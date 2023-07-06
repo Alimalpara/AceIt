@@ -36,14 +36,13 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
-    TextView tv;
+
     RecyclerView rv;
-    ArrayList<Subject> subjects;
+
     MainviewAdapter mainviewAdapter;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    ArrayList<String> keys ;
-    private boolean isSaveCompleted = false;
+
+    ArrayList<ChildData> childDataArrayList;
+
 
 
     @Override
@@ -52,16 +51,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rv = findViewById(R.id.rvmain);
+        childDataArrayList = new ArrayList<>();
 
-       /* //saveJSontoDevice();
-        if(saveJSontoDevice()){
-            getJSonFromDevice();
-        }else {
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-        }*/
-
-        // Call saveJSontoDevice() to fetch data from Firebase and save it to a local file
-        //saveJSontoDevice();
 
         savetoRV(getJSonFromDevice());
        // saveJSontoDevice();
@@ -72,14 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        subjects = new ArrayList<>();
-
-        //sharedprefernce to pass keys
-         keys = new ArrayList<>();
-        // Get the SharedPreferences instance
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
 
 
 
@@ -161,12 +144,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void rvMethod(){
-        // Update the RecyclerView with the new data
-        rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        mainviewAdapter = new MainviewAdapter(getApplicationContext(), subjects);
-        rv.setAdapter(mainviewAdapter);
-    }
 
 
     //new method
@@ -179,11 +156,25 @@ public class MainActivity extends AppCompatActivity {
                 String childKey = keys.next();
                 JSONObject childObject = jsonObject.getJSONObject(childKey);
                 String childName = childObject.getString("name");
+                Boolean subcatergory = hasSubcategoriesRecursive(childObject);
+                ChildData childData = new ChildData(childName,subcatergory,childObject);
+                childDataArrayList.add(childData);
+
+
+
+              //  Toast.makeText(this, "CHild bame" + childName + "has sub "+ subcatergory, Toast.LENGTH_SHORT).show();
+
+
+
+
                 
-                Toast.makeText(this, "Child Node: " + childKey + ", Name: " + childName, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Child Node: " + childKey + ", Name: " + childName, Toast.LENGTH_SHORT).show();
 
                 // Perform any desired operations with the child node
             }
+            rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+            mainviewAdapter = new MainviewAdapter(getApplicationContext(), childDataArrayList);
+            rv.setAdapter(mainviewAdapter);
         } catch (JSONException e) {
             Log.e("MyApp", "JSONException occurred", e);
             Toast.makeText(this, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -191,17 +182,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Recursive method to check for subcategories
-    private boolean hasSubcategoriesRecursive(DataSnapshot subjectSnapshot) {
-        if (subjectSnapshot.hasChild("subcategories")) {
+    private boolean hasSubcategoriesRecursive(JSONObject subjectObject) {
+        if (subjectObject.has("subcategories")) {
             return true;
-        } else {
-            for (DataSnapshot childSnapshot : subjectSnapshot.getChildren()) {
-                boolean hasSubcategories = hasSubcategoriesRecursive(childSnapshot);
-                if (hasSubcategories) {
-                    return true;
-                }
-            }
         }
         return false;
     }
+
 }
