@@ -47,30 +47,7 @@ public class SubcategoriesActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvSubcategories);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         subjects = new ArrayList<>();
-       /* try {
-            File file = new File(getApplicationContext().getFilesDir(), "data.json");
-            FileInputStream fis = new FileInputStream(file);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
 
-            StringBuilder jsonData = new StringBuilder();
-            String line;
-            while ((line = br.readLine()) != null) {
-                jsonData.append(line);
-            }
-
-            // Now you have the JSON data as a string
-            String jsonString = jsonData.toString();
-
-            // Perform operations on the JSON data as needed
-
-            // Close the input streams
-            br.close();
-            isr.close();
-            fis.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
 
 
         //to get sharedPreference for mainCategoryKey

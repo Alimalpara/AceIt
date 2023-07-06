@@ -6,22 +6,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.aceit.MainviewAdapter;
-import com.android.aceit.R;
-import com.android.aceit.Subject;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,7 +28,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Map;
+
+import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     ArrayList<String> keys ;
+    private boolean isSaveCompleted = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,20 @@ public class MainActivity extends AppCompatActivity {
 
         rv = findViewById(R.id.rvmain);
 
-        getJSon();
+       /* //saveJSontoDevice();
+        if(saveJSontoDevice()){
+            getJSonFromDevice();
+        }else {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }*/
+
+        // Call saveJSontoDevice() to fetch data from Firebase and save it to a local file
+        //saveJSontoDevice();
+
+        savetoRV(getJSonFromDevice());
+       // saveJSontoDevice();
+
+
 
 
 
@@ -69,47 +85,80 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getJSon(){
 
+
+    public void saveJSontoDevice() {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("subjects");
-        // Read the data from the database
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Data retrieved successfully
-                // Clear the existing subjects list
-                //subjects file daat
-                String jsonData = dataSnapshot.getValue().toString();
-                try {
-                    // Choose a suitable file name and location
-                    String fileName = "data.json";
-                    File file = new File(getApplicationContext().getFilesDir(), fileName);
+                Map<String, Object> dataMap = (Map<String, Object>) dataSnapshot.getValue();
+                if (dataMap != null) {
+                    Gson gson = new Gson();
+                    String jsonData = gson.toJson(dataMap);
 
-                    // Write the JSON data to the file
-                    FileWriter fileWriter = new FileWriter(file);
-                    fileWriter.write(jsonData);
-                    fileWriter.flush();
-                    fileWriter.close();
+                    try {
+                        String fileName = "data.json";
+                        File file = new File(getApplicationContext().getFilesDir(), fileName);
 
-                    // File saved successfully
-                } catch (IOException e) {
-                    // Handle the exception
+                        FileWriter fileWriter = new FileWriter(file);
+                        fileWriter.write(jsonData);
+                        fileWriter.flush();
+                        fileWriter.close();
+
+                        // File saved successfully
+                        Toast.makeText(MainActivity.this, "Data is saved successfully.", Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        // Handle the exception
+                        Toast.makeText(MainActivity.this, "Failed to save data.", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "No data available.", Toast.LENGTH_SHORT).show();
                 }
-
-                subjects.clear();
-
-
-
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Error occurred while fetching data
                 Log.e("FirebaseDatabase", "Failed to read value.", databaseError.toException());
-                Toast.makeText(MainActivity.this, "Failed to fetch data from database", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Failed to fetch data from database.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    public String getJSonFromDevice(){
+        Toast.makeText(this, "Inside getjson ", Toast.LENGTH_SHORT).show();
+
+        String jsonString ;
+          try {
+            File file = new File(getApplicationContext().getFilesDir(), "data.json");
+            FileInputStream fis = new FileInputStream(file);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+
+            StringBuilder jsonData = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                jsonData.append(line);
+            }
+
+            // Now you have the JSON data as a string
+            jsonString = jsonData.toString();
+
+            // Perform operations on the JSON data as needed
+
+            // Close the input streams
+            br.close();
+            isr.close();
+            fis.close();
+
+              return jsonString;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
     public void rvMethod(){
@@ -117,6 +166,28 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         mainviewAdapter = new MainviewAdapter(getApplicationContext(), subjects);
         rv.setAdapter(mainviewAdapter);
+    }
+
+
+    //new method
+    public void savetoRV(String jsonData) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonData);
+            Iterator<String> keys = jsonObject.keys();
+            while (keys.hasNext()) {
+
+                String childKey = keys.next();
+                JSONObject childObject = jsonObject.getJSONObject(childKey);
+                String childName = childObject.getString("name");
+                
+                Toast.makeText(this, "Child Node: " + childKey + ", Name: " + childName, Toast.LENGTH_SHORT).show();
+
+                // Perform any desired operations with the child node
+            }
+        } catch (JSONException e) {
+            Log.e("MyApp", "JSONException occurred", e);
+            Toast.makeText(this, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     // Recursive method to check for subcategories
