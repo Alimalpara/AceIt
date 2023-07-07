@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,8 +30,9 @@ public class QuestionsAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final QuestionModel questionModel = questionModels.get(position);
-        holder.maintv.setText(questionModel.getQuestion());
+      QuestionModel questionModel = questionModels.get(position);
+      holder.maintv.setText(questionModel.getQuestion());
+        Toast.makeText(context, "Quest "+questionModel.getQuestion(), Toast.LENGTH_SHORT).show();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
-    private ArrayList<Subject> subjects;
+    private ArrayList<ChildData> childDataArrayList;
     public Context context;
     String mainkey;
     ArrayList<String> subKeys;
     int count;
 
-    public SubcategoryAdapter(ArrayList<Subject> subjects, Context context, String mainkey, ArrayList<String> subKeys) {
-        this.subjects = subjects;
+    public SubcategoryAdapter(ArrayList<ChildData> childDataArrayList, Context context, String mainkey, ArrayList<String> subKeys) {
+        this.childDataArrayList = childDataArrayList;
         this.context = context;
         this.mainkey = mainkey;
         this.subKeys = subKeys;
@@ -37,56 +37,34 @@ public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Subject subject = subjects.get(position);
-        holder.maintv.setText(subject.getName());
+        final ChildData childData = childDataArrayList.get(position);
+        holder.maintv.setText(childData.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (subject.hasSubcategories()) {
-                    // Open Subcategories Activity
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("subMainCategoryKey", subject.getKey());
-
-                    editor.apply();
-
-
-
-                   // editor.putString("subsubMainCategoryKey", subject.getKey());
-                    Toast.makeText(context, "Sub SUb Main Key " + subject.getKey(), Toast.LENGTH_SHORT).show();
-
-
-
-                    Intent intent = new Intent(context, SubcategoriesActivity.class);
-                    intent.putExtra("categoryKey", subject.getKey());
-
-                    Boolean subpathtrue = true;
-                    intent.putExtra("isSubPath",subpathtrue);
-
-
-                    Toast.makeText(context, "Subcategories", Toast.LENGTH_SHORT).show();
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Add this line
-                    context.startActivity(intent);
+                boolean hasSubCategories = childData.hasSubcategories();
+// Create an Intent to redirect to the appropriate activity
+                Intent intent;
+                if (hasSubCategories) {
+                    // Redirect to SubcategoryActivity
+                    intent = new Intent(context, SubcategoriesActivity.class);
                 } else {
-                    // Open Questions Activity
-                    Intent intent = new Intent(context, QuestionsActivity.class);
-                    intent.putExtra("categoryKey", subject.getKey());
-                    Toast.makeText(context, "Questions", Toast.LENGTH_SHORT).show();
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("subMainCategoryKey", subject.getKey());
-
-
-                    editor.apply();
-
-
-                    intent.putExtra("mainkey",mainkey);
-                    intent.putStringArrayListExtra("subKeyArray",subKeys);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Add this line
-                    context.startActivity(intent);
+                    // Redirect to QuestionActivity
+                    intent = new Intent(context, QuestionsActivity.class);
                 }
+
+                // Pass the necessary data as extras in the Intent
+                intent.putExtra("name", childData.getName());
+                intent.putExtra("key", childData.getKey());
+                intent.putExtra("jsonObject", childData.getJsonObject().toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+
             }
+
 
         });
 
@@ -94,6 +72,6 @@ public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return subjects.size();
+        return childDataArrayList.size();
     }
 }

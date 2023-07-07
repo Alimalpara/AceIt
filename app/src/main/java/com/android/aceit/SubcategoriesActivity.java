@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,136 +18,100 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SubcategoriesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private SubcategoryAdapter adapter;
-    private ArrayList<String> subcategoryList;
+    private ArrayList<ChildData> childDataArrayList;
     ArrayList<Subject> subjects;
     ArrayList<String> subKeys;
     String mainCategory, categoryKey;
-    String test;
-    String branch2;
 
-    private DatabaseReference databaseReference;
-    String sharedMainCategoryKey,sharedSubMainCategoryKey,sharedSubSubMainCategoryKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subcategories);
 
-        recyclerView = findViewById(R.id.rvSubcategories);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         subjects = new ArrayList<>();
 
-
-
-        //to get sharedPreference for mainCategoryKey
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-
-        sharedMainCategoryKey = sharedPreferences.getString("mainCategoryKey","null");
-        sharedSubMainCategoryKey = sharedPreferences.getString("subMainCategoryKey","null");
-        sharedSubSubMainCategoryKey = sharedPreferences.getString("subsubMainCategoryKey","null");
-
-
-        // Retrieve the category name from the intent
-        categoryKey = getIntent().getStringExtra("categoryKey");
-
-        mainCategory = categoryKey;
-        Boolean  subPath = getIntent().getBooleanExtra("isSubPath",false);
-
-
-        if(subPath){
-            databaseReference = FirebaseDatabase.getInstance().getReference()
-                    .child("subjects").child(sharedMainCategoryKey).child("subcategories").child(sharedSubMainCategoryKey).child("subcategories");
-            getData(databaseReference);
-        }else{
-            databaseReference = FirebaseDatabase.getInstance().getReference()
-                    .child("subjects").child(sharedMainCategoryKey).child("subcategories");
-            getData(databaseReference);
+        String jsonObjectString = getIntent().getStringExtra("jsonObject");
+       /* JSONObject jsonObject = null;
+// Convert the JSON string to a JSONObject
+        try {
+            jsonObject = new JSONObject(jsonObjectString);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        // Initialize Firebase database reference
-// Initialize Firebase database reference
-
-
-
-
-        // Initialize subcategory list
-        subcategoryList = new ArrayList<>();
-        subKeys = new ArrayList<>();
-
-
-
+        assert jsonObject != null;*/
+        savetoRV(jsonObjectString);
 
 
     }
 
-    public void getData(DatabaseReference databaseReference){
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot subcategorySnapshot : dataSnapshot.getChildren()) {
-                    String subcategoryName = subcategorySnapshot.child("name").getValue(String.class);
-                    subcategoryList.add(subcategoryName);
-                    String subjectKey = subcategorySnapshot.getKey();
-                    String subjectName = subcategorySnapshot.child("name").getValue(String.class);
-                    boolean hasSubcategories = hasSubcategoriesRecursive(subcategorySnapshot);
-                    Subject subject = new Subject( subjectName,subjectKey, hasSubcategories);
 
-                    subjects.add(subject);
-                    subKeys.add(subjectKey);
-                }
+    //new method
+    public void savetoRV(String jsonData) {
+        childDataArrayList = new ArrayList<>();
+        try {
 
-                // Set up the adapter with the subcategory list
-                adapter = new SubcategoryAdapter(subjects, SubcategoriesActivity.this,mainCategory,subKeys);
-                recyclerView.setAdapter(adapter);
-                Toast.makeText(SubcategoriesActivity.this, "Got data", Toast.LENGTH_SHORT).show();
+
+            JSONObject jsonObject = new JSONObject(jsonData);
+            JSONObject subcategoriesObject = jsonObject.getJSONObject("subcategories");
+
+            Iterator<String> keys = subcategoriesObject.keys();
+            while (keys.hasNext()) {
+                String subcategoryKey = keys.next();
+                JSONObject subcategoryObject = subcategoriesObject.getJSONObject(subcategoryKey);
+
+                // Perform any desired operations with the subcategory object
+                // For example, get the name of the subcategory
+                String subcategoryName = subcategoryObject.getString("name");
+                Boolean isSubCategory = hasSubcategoriesRecursive(subcategoryObject);
+                ChildData childData = new ChildData(subcategoryName,subcategoryKey,isSubCategory,subcategoryObject);
+                childDataArrayList.add(childData);
+
+                // ...
+
+                // Toast.makeText(this, "Child Node: " + childKey + ", Name: " + childName, Toast.LENGTH_SHORT).show();
+
+                // Perform any desired operations with the child node
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(SubcategoriesActivity.this, "Failed to fetch subcategories", Toast.LENGTH_SHORT).show();
-            }
-        });
+            recyclerView = findViewById(R.id.rvSubcategories);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new SubcategoryAdapter(childDataArrayList, SubcategoriesActivity.this,mainCategory,subKeys);
+            recyclerView.setAdapter(adapter);
+        } catch (JSONException e) {
+            Log.e("MyApp", "JSONException occurred", e);
+            Toast.makeText(this, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
-
 
     // Recursive method to check for subcategories
-    private boolean hasSubcategoriesRecursive(DataSnapshot subjectSnapshot) {
-        if (subjectSnapshot.hasChild("subcategories")) {
+    private boolean hasSubcategoriesRecursive(JSONObject subjectObject) {
+        if (subjectObject.has("subcategories")) {
             return true;
-        } else {
-            for (DataSnapshot childSnapshot : subjectSnapshot.getChildren()) {
-                boolean hasSubcategories = hasSubcategoriesRecursive(childSnapshot);
-                if (hasSubcategories) {
-                    return true;
-                }
-            }
         }
         return false;
     }
+
+
+
+
 }
 

@@ -1,9 +1,11 @@
 package com.android.aceit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,47 +32,42 @@ public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ChildData childData = new ChildData();
+        ChildData childData = childDataArrayList.get(position);
+        holder.maintv.setText(childData.getKey());
 
-       // final Subject subject = subjects.get(position);
-       // holder.maintv.setText(subjects.get(position));
 
-/*
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (subject.hasSubcategories()) {
-                    // Open Subcategories Activity
-                    Intent intent = new Intent(context, SubcategoriesActivity.class);
-                    intent.putExtra("categoryKey", subject.getKey());
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("mainCategoryKey", subject.getKey());
-                    editor.putInt("count",1);
-                    Toast.makeText(context, "main Key " + subject.getKey(), Toast.LENGTH_SHORT).show();
-                    editor.commit();
-
-                    Toast.makeText(context, "Subcategories", Toast.LENGTH_SHORT).show();
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Add this line
-                    context.startActivity(intent);
+                boolean hasSubCategories = childData.hasSubcategories();
+// Create an Intent to redirect to the appropriate activity
+                Intent intent;
+                if (hasSubCategories) {
+                    // Redirect to SubcategoryActivity
+                    intent = new Intent(context, SubcategoriesActivity.class);
                 } else {
-                    // Open Questions Activity
-                    Intent intent = new Intent(context, QuestionsActivity.class);
-                    intent.putExtra("categoryKey", subject.getKey());
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("mainCategoryKey", subject.getKey());
-
-                    Toast.makeText(context, "main Key " + subject.getKey(), Toast.LENGTH_SHORT).show();
-                    editor.commit();
-                    Toast.makeText(context, "Questions", Toast.LENGTH_SHORT).show();
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Add this line
-                    context.startActivity(intent);
+                    // Redirect to QuestionActivity
+                    intent = new Intent(context, QuestionsActivity.class);
                 }
+
+                // Pass the necessary data as extras in the Intent
+                intent.putExtra("name", childData.getName());
+                intent.putExtra("key", childData.getKey());
+                intent.putExtra("jsonObject", childData.getJsonObject().toString());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+
             }
         });
-*/
+
+        //extra snippet to learn
+        /*boolean hasSubcategories = childData.hasSubcategories();
+        String hasSubcategoriesText = hasSubcategories ? "Yes" : "No";
+        holder.maintv.setText(hasSubcategoriesText);*/
+
     }
 
     @Override

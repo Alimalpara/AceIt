@@ -54,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
         childDataArrayList = new ArrayList<>();
 
 
-        savetoRV(getJSonFromDevice());
-       // saveJSontoDevice();
+      savetoRV(getJSonFromDevice());
+       //saveJSontoDevice();
+
 
 
 
@@ -157,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject childObject = jsonObject.getJSONObject(childKey);
                 String childName = childObject.getString("name");
                 Boolean subcatergory = hasSubcategoriesRecursive(childObject);
-                ChildData childData = new ChildData(childName,subcatergory,childObject);
+
+                ChildData childData = new ChildData(childName,childKey,subcatergory,childObject);
                 childDataArrayList.add(childData);
 
 
