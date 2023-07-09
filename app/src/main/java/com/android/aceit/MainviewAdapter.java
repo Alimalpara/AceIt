@@ -33,7 +33,7 @@ public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ChildData childData = childDataArrayList.get(position);
-        holder.maintv.setText(childData.getKey());
+        holder.maintv.setText(childData.getName());
 
 
 

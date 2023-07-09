@@ -31,7 +31,8 @@ public class QuestionsAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
       QuestionModel questionModel = questionModels.get(position);
-      holder.maintv.setText(questionModel.getQuestion());
+      String question = questionModel.getQuestion()+" " +questionModel.getId();
+      holder.maintv.setText(question);
         Toast.makeText(context, "Quest "+questionModel.getQuestion(), Toast.LENGTH_SHORT).show();
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +43,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 // Pass the question and answer as extra data
                 intent.putExtra("question", questionModel.getQuestion());
                 intent.putExtra("answer", questionModel.getAnswer());
+                intent.putExtra("id",questionModel.getId());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // Add this line
 
                 // Start the next activity

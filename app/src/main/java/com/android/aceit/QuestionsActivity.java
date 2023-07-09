@@ -75,9 +75,10 @@ public class QuestionsActivity extends AppCompatActivity {
                 // Get the question and answer text from the question object
                 String questionText = questionObject.getString("questionText");
                 String answerText = questionObject.getString("answerText");
+                String qid = questionObject.getString("id");
 
                 // Create a new QuestionModel object and add it to the list
-                QuestionModel questionModel = new QuestionModel(questionText,answerText);
+                QuestionModel questionModel = new QuestionModel(questionText,answerText,qid);
 
                 questionList.add(questionModel);
             }

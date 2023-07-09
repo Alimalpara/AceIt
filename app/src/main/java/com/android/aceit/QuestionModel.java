@@ -4,11 +4,21 @@ import java.io.Serializable;
 
 public class QuestionModel implements Serializable {
     String question;
-    String Answer;
+    String answer;
+    String id;
 
-    public QuestionModel(String question, String answer) {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public QuestionModel(String question, String answer, String id) {
         this.question = question;
-        Answer = answer;
+        this.answer = answer;
+        this.id = id;
     }
 
     public QuestionModel() {
@@ -24,10 +34,10 @@ public class QuestionModel implements Serializable {
     }
 
     public String getAnswer() {
-        return Answer;
+        return answer;
     }
 
     public void setAnswer(String answer) {
-        Answer = answer;
+        this.answer = answer;
     }
 }
