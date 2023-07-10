@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
-    TextView maintv;
+    public TextView maintv;
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);

@@ -1,4 +1,4 @@
-package com.android.aceit;
+package com.android.aceit.Models;
 
 public class Subject {
     private String name;

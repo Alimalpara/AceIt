@@ -1,41 +1,48 @@
-package com.android.aceit;
+package com.android.aceit.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.aceit.Activities.QuestionsActivity;
+import com.android.aceit.Activities.SubcategoriesActivity;
+import com.android.aceit.Models.ChildData;
+import com.android.aceit.R;
+import com.android.aceit.ViewHolder;
+
 import java.util.ArrayList;
 
-public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
-    private Context context;
+public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
     private ArrayList<ChildData> childDataArrayList;
+    public Context context;
+    String mainkey;
+    ArrayList<String> subKeys;
+    int count;
 
-
-
-    public MainviewAdapter(Context context, ArrayList<ChildData> childDataArrayList) {
-        this.context = context;
+    public SubcategoryAdapter(ArrayList<ChildData> childDataArrayList, Context context, String mainkey, ArrayList<String> subKeys) {
         this.childDataArrayList = childDataArrayList;
+        this.context = context;
+        this.mainkey = mainkey;
+        this.subKeys = subKeys;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.mainrvrow, parent, false);
+        // Inflate the item layout
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mainrvrow, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ChildData childData = childDataArrayList.get(position);
+        final ChildData childData = childDataArrayList.get(position);
         holder.maintv.setText(childData.getName());
-
-
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +68,9 @@ public class MainviewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 
             }
-        });
 
-        //extra snippet to learn
-        /*boolean hasSubcategories = childData.hasSubcategories();
-        String hasSubcategoriesText = hasSubcategories ? "Yes" : "No";
-        holder.maintv.setText(hasSubcategoriesText);*/
+
+        });
 
     }
 

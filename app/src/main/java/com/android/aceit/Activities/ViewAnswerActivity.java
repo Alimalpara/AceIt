@@ -1,4 +1,4 @@
-package com.android.aceit;
+package com.android.aceit.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.aceit.DatabaseHelper;
+import com.android.aceit.R;
 
 public class ViewAnswerActivity extends AppCompatActivity {
     TextView questiontv, answertv;
@@ -68,20 +71,35 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
                 // Check if the question is in favorites
                 boolean isFavorite = isQuestionInFavorites(qid);
+                boolean result = false;
                 if (isFavorite) {
                     // Remove the question from favorites
-                    databaseHelper.removeFavoriteQuestion(qid);
-                    AddtoFavouritebtn.setText("Add to Favorites");
+                   result =  databaseHelper.removeFavoriteQuestion(qid);
+                   if(result){
+                       AddtoFavouritebtn.setText("Add to Favorites");
+                   }
+                   else{
+                       Toast.makeText(ViewAnswerActivity.this, " Error deleting", Toast.LENGTH_SHORT).show();
+
+                   }
+
+
 
 
                 } else {
-                    databaseHelper.addFavoriteQuestion(qid,question,answer);
-                    AddtoFavouritebtn.setText("Remove from Favorites");
+                   result = databaseHelper.addFavoriteQuestion(qid,question,answer);
+
+
+                    if(result){
+                        AddtoFavouritebtn.setText("Remove from Favorites");
+                    }
+                    else{
+                        Toast.makeText(ViewAnswerActivity.this, " Error Adding", Toast.LENGTH_SHORT).show();
+
+                    }
 
 
             }
-                // Toggle the favorite status
-                isFavorite = !isFavorite;
         }
 
 

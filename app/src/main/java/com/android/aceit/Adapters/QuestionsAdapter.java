@@ -1,14 +1,18 @@
-package com.android.aceit;
+package com.android.aceit.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.aceit.Activities.ViewAnswerActivity;
+import com.android.aceit.Models.QuestionModel;
+import com.android.aceit.R;
+import com.android.aceit.ViewHolder;
 
 import java.util.ArrayList;
 
