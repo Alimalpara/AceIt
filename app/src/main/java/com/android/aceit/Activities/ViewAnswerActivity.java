@@ -11,18 +11,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.aceit.DatabaseHelper;
+import com.android.aceit.Models.QuestionModel;
 import com.android.aceit.R;
 
 public class ViewAnswerActivity extends AppCompatActivity {
     TextView questiontv, answertv;
-    Button AddtoFavouritebtn;
+    Button AddtoFavouritebtn,updatebutton;
     private DatabaseHelper databaseHelper;
+    String question,answer,qid;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_answer);
+
+        Toast.makeText(this, "View answser activity ", Toast.LENGTH_SHORT).show();
 
         // Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
@@ -31,11 +35,16 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
         questiontv = (TextView) findViewById(R.id.tvViewQuestion);
         answertv = (TextView) findViewById(R.id.tvViewAnswer);
+        //refernce tp button
+        AddtoFavouritebtn = findViewById(R.id.btnaddtoFavourite);
+        updatebutton = (Button) findViewById(R.id.btnUpdate);
+
+
 
         // Get the question and answer from the intent extras
-        String question = getIntent().getStringExtra("question");
-        String answer = getIntent().getStringExtra("answer");
-        String qid = getIntent().getStringExtra("qid");
+        question = getIntent().getStringExtra("question");
+      answer = getIntent().getStringExtra("answer");
+     qid = getIntent().getStringExtra("qid");
 
         // Set the question and answer text
         questiontv.setText(question);
@@ -45,13 +54,15 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
 // Check if the question is in favorites
-        boolean isFavorite = isQuestionInFavorites(qid);
+        boolean isFavorite = databaseHelper.isQuestionInFavorites(qid);
 
-        //refernce tp button
-        AddtoFavouritebtn = findViewById(R.id.btnaddtoFavourite);
 
         //initial set
         initialSet(isFavorite);
+
+        //update question
+
+        updateFavouriteQuestion();
 
 
 
@@ -70,13 +81,14 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
                 // Check if the question is in favorites
-                boolean isFavorite = isQuestionInFavorites(qid);
+                boolean isFavorite = databaseHelper.isQuestionInFavorites(qid);
                 boolean result = false;
                 if (isFavorite) {
                     // Remove the question from favorites
                    result =  databaseHelper.removeFavoriteQuestion(qid);
                    if(result){
                        AddtoFavouritebtn.setText("Add to Favorites");
+                       updatebutton.setVisibility(View.GONE);
                    }
                    else{
                        Toast.makeText(ViewAnswerActivity.this, " Error deleting", Toast.LENGTH_SHORT).show();
@@ -115,6 +127,9 @@ public class ViewAnswerActivity extends AppCompatActivity {
             AddtoFavouritebtn.setText("Add to Favorites");
         }
     }
+
+    //local method
+/*
     private boolean isQuestionInFavorites(String questionId) {
         String tableName = "favorite_questions";
         String columnName = "question_id";
@@ -138,8 +153,41 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
         return isInFavorites;
     }
+*/
 
 
+    public void updateFavouriteQuestion(){
+        boolean isfavourite = databaseHelper.isQuestionInFavorites(qid);
+
+        if (isfavourite) {
+            QuestionModel favoriteQuestion = databaseHelper.getQuestionFromFavorites(qid);
+            if (favoriteQuestion != null) {
+                String favoriteQuestionText = favoriteQuestion.getQuestion();
+                String favoriteAnswerText = favoriteQuestion.getAnswer();
+
+                if (!question.equals(favoriteQuestionText) || !answer.equals(favoriteAnswerText)) {
+                    // Question is different from the favorite in the database
+                    // Show the update button and set OnClickListener
+                    updatebutton.setVisibility(View.VISIBLE);
+                    updatebutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Call the method to update the favorite question in the database
+                           boolean isupdated=  databaseHelper.updateFavoriteQuestion(qid, question, answer);
+                           if(isupdated){
+                               updatebutton.setVisibility(View.GONE);
+                           }else{
+                               Toast.makeText(ViewAnswerActivity.this, "Error while updating", Toast.LENGTH_SHORT).show();
+                           }
+                        }
+                    });
+                }
+            }
+        }
+
+
+
+    }
 
 }
 

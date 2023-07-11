@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.aceit.InterviewHelp;
 import com.android.aceit.Models.ChildData;
 import com.android.aceit.Adapters.MainviewAdapter;
 import com.android.aceit.R;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     MainviewAdapter mainviewAdapter;
 
     ArrayList<ChildData> childDataArrayList;
-    Button favourite ;
+    Button favourite,help ;
 
 
 
@@ -58,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InterviewHelp.class));
+            }
+        });
+
 
 
         //two methods combined savetoRv and  passinmg the json data
@@ -67,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void initViews(){
         favourite = (Button) findViewById(R.id.btnFavoutie);
+        help = (Button) findViewById(R.id.btntoHelp);
 
 
         }
@@ -91,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public String getJSonFromDevice(){
-        Toast.makeText(this, "Inside getjson ", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(this, "Inside getjson ", Toast.LENGTH_SHORT).show();
 
         String jsonString ;
           try {
@@ -129,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     //new method
     public void savetoRV(String jsonData) {
         try {
-            Toast.makeText(this, "Inside rv", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Inside rv", Toast.LENGTH_SHORT).show();
             JSONObject jsonObject = new JSONObject(jsonData);
             Iterator<String> keys = jsonObject.keys();
             while (keys.hasNext()) {
