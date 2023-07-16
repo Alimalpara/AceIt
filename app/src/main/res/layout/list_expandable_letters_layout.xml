@@ -1,0 +1,44 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#9C0707"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvexpandLetterTitile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="This is title"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvExpandLetterContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="this is cotent"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvexpandLetterTitile"
+        app:layout_constraintTop_toBottomOf="@id/tvexpandLetterTitile" />
+
+    <Button
+        android:id="@+id/btnexpandLetter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use this template"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tvExpandLetterContent"
+        app:layout_constraintTop_toBottomOf="@id/tvExpandLetterContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

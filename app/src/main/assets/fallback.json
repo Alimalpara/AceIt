@@ -1,0 +1,212 @@
+{
+  "civil": {
+    "name": "Civil",
+    "questions": {
+      "question1": {
+        "id": "civil_question1",
+        "answerText": "Answer 1 - Civil",
+        "questionText": "Question 1 - Civil"
+      },
+      "question2": {
+        "id": "civil_question2",
+        "answerText": "Answer 2 - Civil",
+        "questionText": "Question 2 - Civil"
+      },
+      "question3": {
+        "id": "civil_question3",
+        "answerText": "Answer 3 - Civil",
+        "questionText": "Question 3 - Civil"
+      },
+      "question4": {
+        "id": "civil_question4",
+        "answerText": "Answer 4 - Civil",
+        "questionText": "Question 4 - Civil"
+      },
+      "question5": {
+        "id": "civil_question5",
+        "answerText": "Answer 5 - Civil",
+        "questionText": "Question 5 - Civil"
+      }
+    }
+  },
+  "it": {
+    "name": "IT",
+    "subcategories": {
+      "csharp": {
+        "name": "C#",
+        "subcategories": {
+          "sub1": {
+            "name": "Subcategory 1",
+            "subcategories": {
+              "sub1Subcategory1": {
+                "name": "Subcategory 1.1",
+                "questions": {
+                  "sub1Subcategory1Question1": {
+                    "id": "csharp_sub1_sub1Subcategory1Question1",
+                    "answerText": "Answer 1 - Subcategory 1.1",
+                    "questionText": "Question 1 - Subcategory 1.1"
+                  },
+                  "sub1Subcategory1Question2": {
+                    "id": "csharp_sub1_sub1Subcategory1Question2",
+                    "answerText": "Answer 2 - Subcategory 1.1",
+                    "questionText": "Question 2 - Subcategory 1.1"
+                  }
+                }
+              },
+              "sub1Subcategory2": {
+                "name": "Subcategory 1.2",
+                "questions": {
+                  "sub1Subcategory2Question1": {
+                    "id": "csharp_sub1_sub1Subcategory2Question1",
+                    "answerText": "Answer 1 - Subcategory 1.2",
+                    "questionText": "Question 1 - Subcategory 1.2"
+                  },
+                  "sub1Subcategory2Question2": {
+                    "id": "csharp_sub1_sub1Subcategory2Question2",
+                    "answerText": "Answer 2 - Subcategory 1.2",
+                    "questionText": "Question 2 - Subcategory 1.2"
+                  }
+                }
+              }
+            }
+          },
+          "sub2": {
+            "name": "Subcategory 2",
+            "questions": {
+              "sub2Question1": {
+                "id": "csharp_sub2_sub2Question1",
+                "answerText": "Answer 1 - Subcategory 2",
+                "questionText": "Question 1 - Subcategory 2"
+              },
+              "sub2Question2": {
+                "id": "csharp_sub2_sub2Question2",
+                "answerText": "Answer 2 - Subcategory 2",
+                "questionText": "Question 2 - Subcategory 2"
+              }
+            }
+          }
+        }
+      },
+      "java": {
+        "name": "Java",
+        "questions": {
+          "question1": {
+            "id": "java_question1",
+            "answerText": "Answer 1 - Java",
+            "questionText": "Question 1 - Java"
+          },
+          "question2": {
+            "id": "java_question2",
+            "answerText": "Answer 2 - Java",
+            "questionText": "Question 2 - Java"
+          },
+          "question3": {
+            "id": "java_question3",
+            "answerText": "Answer 3 - Java",
+            "questionText": "Question 3 - Java"
+          },
+          "question4": {
+            "id": "java_question4",
+            "answerText": "Answer 4 - Java",
+            "questionText": "Question 4 - Java"
+          },
+          "question5": {
+            "id": "java_question5",
+            "answerText": "Answer 5 - Java",
+            "questionText": "Question 5 - Java"
+          }
+        }
+      },
+      "javascript": {
+        "name": "JavaScript",
+        "questions": {
+          "question1": {
+            "id": "javascript_question1",
+            "answerText": "Answer 1 - JavaScript",
+            "questionText": "Question 1 - JavaScript"
+          },
+          "question2": {
+            "id": "javascript_question2",
+            "answerText": "Answer 2 - JavaScript",
+            "questionText": "Question 2 - JavaScript"
+          },
+          "question3": {
+            "id": "javascript_question3",
+            "answerText": "Answer 3 - JavaScript",
+            "questionText": "Question 3 - JavaScript"
+          },
+          "question4": {
+            "id": "javascript_question4",
+            "answerText": "Answer 4 - JavaScript",
+            "questionText": "Question 4 - JavaScript"
+          },
+          "question5": {
+            "id": "javascript_question5",
+            "answerText": "Answer 5 - JavaScript",
+            "questionText": "Question 5 - JavaScript"
+          }
+        }
+      }
+    }
+  },
+  "mechanical": {
+    "name": "Mechanical",
+    "questions": {
+      "question1": {
+        "id": "mechanical_question1",
+        "answerText": "Answer 1 - Mechanical",
+        "questionText": "Question 1 - Mechanical"
+      },
+      "question2": {
+        "id": "mechanical_question2",
+        "answerText": "Answer 2 - Mechanical",
+        "questionText": "Question 2 - Mechanical"
+      },
+      "question3": {
+        "id": "mechanical_question3",
+        "answerText": "Answer 3 - Mechanical",
+        "questionText": "Question 3 - Mechanical"
+      },
+      "question4": {
+        "id": "mechanical_question4",
+        "answerText": "Answer 4 - Mechanical",
+        "questionText": "Question 4 - Mechanical"
+      },
+      "question5": {
+        "id": "mechanical_question5",
+        "answerText": "Answer 5 - Mechanical",
+        "questionText": "Question 5 - Mechanical"
+      }
+    }
+  },
+  "softskill": {
+    "name": "Soft Skills",
+    "questions": {
+      "question1": {
+        "id": "softskill_question1",
+        "answerText": "Answer 1 - Soft Skills",
+        "questionText": "Question 1 - Soft Skills"
+      },
+      "question2": {
+        "id": "softskill_question2",
+        "answerText": "Answer 2 - Soft Skills",
+        "questionText": "Question 2 - Soft Skills"
+      },
+      "question3": {
+        "id": "softskill_question3",
+        "answerText": "Answer 3 - Soft Skills",
+        "questionText": "Question 3 - Soft Skills"
+      },
+      "question4": {
+        "id": "softskill_question4",
+        "answerText": "Answer 4 - Soft Skills",
+        "questionText": "Question 4 - Soft Skills"
+      },
+      "question5": {
+        "id": "softskill_question5",
+        "answerText": "Answer 5 - Soft Skills",
+        "questionText": "Question 5 - Soft Skills"
+      }
+    }
+  }
+}
