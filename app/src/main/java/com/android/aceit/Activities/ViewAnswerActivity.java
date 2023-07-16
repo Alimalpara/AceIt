@@ -2,6 +2,7 @@ package com.android.aceit.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.android.aceit.R;
 
 public class ViewAnswerActivity extends AppCompatActivity {
     TextView questiontv, answertv;
-    Button AddtoFavouritebtn,updatebutton;
+    Button AddtoFavouritebtn,updatebutton,share;
     private DatabaseHelper databaseHelper;
     String question,answer,qid;
 
@@ -38,6 +39,10 @@ public class ViewAnswerActivity extends AppCompatActivity {
         //refernce tp button
         AddtoFavouritebtn = findViewById(R.id.btnaddtoFavourite);
         updatebutton = (Button) findViewById(R.id.btnUpdate);
+
+        share= (Button) findViewById(R.id.btnviewAnswerShare);
+
+
 
 
 
@@ -117,6 +122,14 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
     });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                shareContent(question,answer);
+            }
+        });
     }
 
     private void initialSet(Boolean isFavorite){
@@ -188,6 +201,22 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
     }
+
+    private void shareContent(String question, String answer) {
+        String shareText = "Question: " + question + "\nAnswer: " + answer;
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+
+        // Check if there are any apps available to handle the share intent
+        if (shareIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
+        } else {
+            Toast.makeText(this, "No apps available to share", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 }
 

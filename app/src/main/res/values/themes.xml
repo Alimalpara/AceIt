@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="checkBoxStyle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+<!--
+        to add checked color
+-->
+        <item name="colorAccent">@android:color/holo_orange_dark</item>
+        <item name="android:textColorSecondary">#F6EBEB</item><!--uncheked box color -->
+    </style>
 </resources>

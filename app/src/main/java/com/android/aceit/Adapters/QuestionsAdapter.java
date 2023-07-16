@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.aceit.Activities.ViewAnswerActivity;
 import com.android.aceit.Models.QuestionModel;
 import com.android.aceit.R;
-import com.android.aceit.ViewHolder;
+import com.android.aceit.MyViewHolder;
 
 import java.util.ArrayList;
 
-public class QuestionsAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class QuestionsAdapter extends RecyclerView.Adapter<MyViewHolder> {
     ArrayList<QuestionModel> questionModels;
     Context context;
 
@@ -27,13 +27,13 @@ public class QuestionsAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.mainrvrow, parent, false);
-        return new ViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
       QuestionModel questionModel = questionModels.get(position);
       String question = questionModel.getQuestion()+" " +questionModel.getId();
       holder.maintv.setText(question);

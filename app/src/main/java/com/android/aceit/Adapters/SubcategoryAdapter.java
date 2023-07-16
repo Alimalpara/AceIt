@@ -13,11 +13,11 @@ import com.android.aceit.Activities.QuestionsActivity;
 import com.android.aceit.Activities.SubcategoriesActivity;
 import com.android.aceit.Models.ChildData;
 import com.android.aceit.R;
-import com.android.aceit.ViewHolder;
+import com.android.aceit.MyViewHolder;
 
 import java.util.ArrayList;
 
-public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class SubcategoryAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private ArrayList<ChildData> childDataArrayList;
     public Context context;
     String mainkey;
@@ -33,14 +33,14 @@ public class SubcategoryAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate the item layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mainrvrow, parent, false);
-        return new ViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final ChildData childData = childDataArrayList.get(position);
         holder.maintv.setText(childData.getName());
 
