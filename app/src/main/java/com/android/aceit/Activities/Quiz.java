@@ -21,249 +21,6 @@ import java.util.Locale;
 
 
 
-/*
-public class Quiz extends AppCompatActivity {
-
-    TextView timer, question;
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMillis = 90000;
-    private int currentQuestionIndex = 0;
-    private ArrayList<QuestionModel> questionList;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
-
-
-        timer = (TextView) findViewById(R.id.tvtimerQuiz);
-        question = (TextView) findViewById(R.id.tvQuizQuestion);
-
-
-        setQuestionQuiz();
-        // ...
-        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timeLeftInMillis = millisUntilFinished;
-                updateTimerText(); // Update the timer TextView
-            }
-
-            @Override
-            public void onFinish() {
-                // Timer finished, handle the logic here
-            }
-
-        };
-        startQuiz();
-
-
-        Toast.makeText(this, "question" + questionList.size(), Toast.LENGTH_SHORT).show();
-
-    }
-
-    private void updateTimerText() {
-        int minutes = (int) (timeLeftInMillis / 1000) / 60;
-        int seconds = (int) (timeLeftInMillis / 1000) % 60;
-
-        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        timer.setText(timeFormatted);
-    }
-
-    public void setQuestionQuiz() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            questionList = (ArrayList<QuestionModel>) getIntent().getSerializableExtra("questionList");
-            if (questionList != null && questionList.size() > 0) {
-                // Shuffle the questionList
-                Collections.shuffle(questionList);
-
-                // Display the first question
-                displayQuestion();
-            }
-        }
-    }
-
-    private void displayQuestion() {
-        if (currentQuestionIndex < questionList.size()) {
-            QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
-            question.setText(currentQuestion.getQuestion());
-            currentQuestionIndex++;
-        } else {
-            // No more questions to display, handle the logic here
-        }
-
-    }
-
-    private void startQuiz() {
-        // Start the countdown timer
-        // Start the countdown timer
-        if (countDownTimer != null) {
-            countDownTimer.start();
-        }
-    }
-}
-*/
-/*
-public class Quiz extends AppCompatActivity {
-
-    TextView timer, question;
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMillis = 10000;
-    private int currentQuestionIndex = 0;
-    private ArrayList<QuestionModel> questionList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
-
-        timer = findViewById(R.id.tvtimerQuiz);
-        question = findViewById(R.id.tvQuizQuestion);
-
-        setQuestionQuiz();
-        startQuiz();
-    }
-
-    private void updateTimerText() {
-        int minutes = (int) (timeLeftInMillis / 1000) / 60;
-        int seconds = (int) (timeLeftInMillis / 1000) % 60;
-        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        timer.setText(timeFormatted);
-    }
-
-    public void setQuestionQuiz() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            questionList = (ArrayList<QuestionModel>) getIntent().getSerializableExtra("questionList");
-            if (questionList != null && questionList.size() > 0) {
-                Collections.shuffle(questionList);
-                displayQuestion();
-            }
-        }
-    }
-
-    private void displayQuestion() {
-        if (currentQuestionIndex < questionList.size()) {
-            QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
-            question.setText(currentQuestion.getQuestion());
-            currentQuestionIndex++;
-        } else {
-            // No more questions to display, handle the logic here
-        }
-    }
-
-    private void startQuiz() {
-        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timeLeftInMillis = millisUntilFinished;
-                updateTimerText();
-            }
-
-            @Override
-            public void onFinish() {
-                // Timer finished, handle the logic here
-                displayQuestion();
-            }
-        };
-
-        // Start the countdown timer
-        if (countDownTimer != null) {
-            countDownTimer.start();
-        }
-    }
-}
-*/
-
-/*
-public class Quiz extends AppCompatActivity {
-
-    TextView timer, question;
-    private CountDownTimer countDownTimer;
-    private long timeLeftInMillis = 10000;
-    private int currentQuestionIndex = 0;
-    private ArrayList<QuestionModel> questionList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
-
-        timer = findViewById(R.id.tvtimerQuiz);
-        question = findViewById(R.id.tvQuizQuestion);
-
-        setQuestionQuiz();
-        startQuiz();
-    }
-
-    private void updateTimerText() {
-        int minutes = (int) (timeLeftInMillis / 1000) / 60;
-        int seconds = (int) (timeLeftInMillis / 1000) % 60;
-        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        timer.setText(timeFormatted);
-    }
-
-    public void setQuestionQuiz() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            questionList = (ArrayList<QuestionModel>) getIntent().getSerializableExtra("questionList");
-            if (questionList != null && questionList.size() > 0) {
-                Collections.shuffle(questionList);
-            }
-        }
-    }
-
-    private void displayQuestion() {
-        if (currentQuestionIndex < questionList.size()) {
-            QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
-            question.setText(currentQuestion.getQuestion());
-            currentQuestionIndex++;
-        } else {
-            Toast.makeText(this, "Questions completed", Toast.LENGTH_SHORT).show();
-            countDownTimer.cancel();
-            updateTimerText(); // Update the timer text one last time
-            endQuiz(); // Call the method to handle quiz completion
-            return;
-
-        }
-    }
-
-    private void startQuiz() {
-        // Display the first question
-        displayQuestion();
-
-        // Start the countdown timer
-        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timeLeftInMillis = millisUntilFinished;
-                updateTimerText();
-            }
-
-            @Override
-            public void onFinish() {
-                // Restart the quiz with a new question
-                timeLeftInMillis = 10000; // Reset the timer duration
-                startQuiz();
-            }
-        };
-
-        // Start the countdown timer
-        countDownTimer.start();
-    }
-
-    private void endQuiz() {
-        Toast.makeText(this, "Quiz completed", Toast.LENGTH_SHORT).show();
-        // Quiz ended, handle the logic here
-        if (countDownTimer != null) {
-            countDownTimer.cancel();
-        }
-
-    }
-}
-*/
 
 public class Quiz extends AppCompatActivity {
 
@@ -277,6 +34,8 @@ public class Quiz extends AppCompatActivity {
     private TextToSpeech textToSpeech;
     private boolean isSpeaking = false;
     Handler handler ;
+    private long initialTimeInMillis = 5000; // Initial time for each question
+
 
 
     @Override
@@ -355,8 +114,10 @@ public class Quiz extends AppCompatActivity {
 
     private void startQuiz() {
         // Display the first question
-
+// Delay before setting the next question
         displayQuestion();
+
+
 
         // Start the countdown timer
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
@@ -371,12 +132,17 @@ public class Quiz extends AppCompatActivity {
                 // Restart the quiz with a new question if quiz is not completed
                 if (!quizCompleted) {
                     timeLeftInMillis = 5000; // Reset the timer duration
-                  //  / Delay before setting the next question
-                    startQuiz(); // Restart the quiz
 
-
-
-                }else{
+                    Toast.makeText(Quiz.this, "Delayeed" , Toast.LENGTH_SHORT).show();
+                    // Pause for 2 seconds before setting the next question
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startQuiz(); // Set the next question
+                        }
+                    }, 2000); // Adjust the pause duration as needed (e.g., 2000 milliseconds = 2 seconds)
+                } else {
                     Snackbar.make(question, "Quiz is over", Snackbar.LENGTH_LONG).show();
                     endQuiz();
                 }
