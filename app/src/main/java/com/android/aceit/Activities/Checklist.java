@@ -143,15 +143,6 @@ public class Checklist extends AppCompatActivity {
         int randomValue = random.nextInt(10000); // Adjust the range as per your requirement
         return currentTime + randomValue;
     }
-    private void refreshAdapter() {
-        // Retrieve the latest data from the database
-        checklistItems = dbHelper.getAllChecklistItems();
-
-        // Update the adapter with the new data
-        checklistAdapter.setData(checklistItems);
-        int newItemPosition = checklistItems.size() - 1;
-        checklistAdapter.notifyItemInserted(newItemPosition);
-    }
 
 
 }

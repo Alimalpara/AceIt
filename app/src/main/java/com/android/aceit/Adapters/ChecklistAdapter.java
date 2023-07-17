@@ -142,13 +142,6 @@ DatabaseHelper databaseHelper;
     }
 
 
-
-
-    @Override
-    public int getItemCount() {
-        return checklistItems.size();
-    }
-
     private void openBottomSheetDialog(String itemText, long id, MyViewHolder holder) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, com.google.android.material.R.style.Theme_Design_BottomSheetDialog);
         View bottomSheetView = LayoutInflater.from(context).inflate(R.layout.bottom_sheet_checklist, null);
@@ -188,41 +181,14 @@ DatabaseHelper databaseHelper;
     }
 
 
-    public void updateItem(int position, ChecklistItem newItem) {
-        checklistItems.set(position, newItem);
-        notifyItemChanged(position);
+
+    @Override
+    public int getItemCount() {
+        return checklistItems.size();
     }
 
-    public void updateItemById(long itemId, ChecklistItem newItem) {
-        int position = getPositionById(itemId);
-        if (position != -1) {
-            updateItem(position, newItem);
-        }
-    }
 
-    public void removeItem(int position) {
-        checklistItems.remove(position);
-        notifyItemRemoved(position);
-    }
 
-    public void removeItemById(long itemId) {
-        int position = getPositionById(itemId);
-        if (position != -1) {
-            removeItem(position);
-        }
-    }
-    public int getPositionById(long itemId) {
-        for (int i = 0; i < checklistItems.size(); i++) {
-            if (checklistItems.get(i).getId() == itemId) {
-                return i;
-            }
-        }
-        return -1; // Item not found
-    }
-    public void setData(ArrayList<ChecklistItem> data) {
-        checklistItems = data;
-        notifyDataSetChanged();
-    }
 
     // ...
 }
