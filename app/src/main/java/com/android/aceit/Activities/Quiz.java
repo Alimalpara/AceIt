@@ -86,15 +86,15 @@ public class Quiz extends AppCompatActivity {
     }
 
 
-    private void displayQuestion() {
+   /* private void displayQuestion() {
         if (currentQuestionIndex < questionList.size()) {
 
             Toast.makeText(this, "ran times " + currentQuestionIndex, Toast.LENGTH_SHORT).show();
             QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
             question.setText(currentQuestion.getQuestion());
 
-           /* //to speak current wuestion
-            speakQuestion(currentQuestion.getQuestion());*/
+           *//* //to speak current wuestion
+            speakQuestion(currentQuestion.getQuestion());*//*
 
 
             currentQuestionIndex++;
@@ -152,12 +152,69 @@ public class Quiz extends AppCompatActivity {
         // Start the countdown timer
         countDownTimer.start();
     }
+*/
+
+    private void displayQuestion() {
+        if (currentQuestionIndex < questionList.size()) {
+
+            if(currentQuestionIndex==0){
+                QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
+                question.setText(currentQuestion.getQuestion());
+                startCountdown();
+                currentQuestionIndex++;
+            }else{
+                Toast.makeText(this, "Setting a new question", Toast.LENGTH_SHORT).show();
+                // Pause for 2 seconds before setting the next question
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
+                        question.setText(currentQuestion.getQuestion());
+                        currentQuestionIndex++;
+                        startCountdown(); // Start the countdown for the next question
+                    }
+                }, 2000); // Adjust the pause duration as needed (e.g., 2000 milliseconds = 2 seconds)
+            }
 
 
+        } else {
+            // No more questions to display, handle the logic here
+            Toast.makeText(this, "No more questions to display", Toast.LENGTH_SHORT).show();
+            quizCompleted = true;
+            countDownTimer.cancel();
+            timeLeftInMillis = 0; // Reset the timer duration
+            updateTimerText(); // Update the timer text one last time
+            endQuiz(); // Call the method to handle quiz completion
+        }
+    }
+
+    private void startQuiz() {
+        displayQuestion(); // Start the quiz by displaying the first question
+    }
+
+    private void startCountdown() {
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateTimerText();
+            }
+
+            @Override
+            public void onFinish() {
+                timeLeftInMillis = 5000;
+                displayQuestion(); // Set the next question
+            }
+        };
+
+        countDownTimer.start();
+    }
 
 
     private void endQuiz() {
 
+        Snackbar.make(question, "Quiz is over", Snackbar.LENGTH_LONG).show();
         Toast.makeText(this, "TImer stioooed", Toast.LENGTH_SHORT).show();
         // Quiz ended, handle the logic here
         if (countDownTimer != null) {
