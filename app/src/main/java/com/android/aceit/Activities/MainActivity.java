@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //checklist
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,11 +76,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //letter creation
         cv_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start the next activity
                 Intent intent = new Intent(MainActivity.this, LettersList.class);
+                //passing to activity letterlist then to adapterlitst then to activity
                 intent.putExtra("Type_of_letter", 1); // Pass the ID as an extra data with the key "ITEM_ID"
                 startActivity(intent);
 

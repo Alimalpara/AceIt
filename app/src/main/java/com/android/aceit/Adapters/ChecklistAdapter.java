@@ -117,7 +117,9 @@ DatabaseHelper databaseHelper;
 
 
 
-        holder.checkList_imagebtn.setOnClickListener(new View.OnClickListener() {
+
+        //commented as swipoe is impleeneted so no use now
+       /* holder.checkList_imagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
               boolean isDeleted =   databaseHelper.deleteChecklistItem(item.getId());
@@ -137,8 +139,26 @@ DatabaseHelper databaseHelper;
 
                 holder.checkList_imagebtn.setVisibility(View.GONE);
             }
-        });
+        });*/
 
+    }
+
+    //method called when swipe is done
+    public void removeItem(int position) {
+        boolean isDeleted = databaseHelper.deleteChecklistItem(checklistItems.get(position).getId());
+
+        if (isDeleted) {
+            // Remove the item from the data source
+            checklistItems.remove(position);
+            // Notify the adapter of the item removal
+            notifyItemRemoved(position);
+            // Notify the adapter of the range of items that have changed after the deletion
+            notifyItemRangeChanged(position, getItemCount());
+
+            Toast.makeText(context, "Item deleted", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Failed to delete item", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

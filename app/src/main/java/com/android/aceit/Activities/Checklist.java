@@ -1,10 +1,12 @@
 package com.android.aceit.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +23,7 @@ import com.android.aceit.Adapters.ChecklistAdapter;
 import com.android.aceit.DatabaseHelper;
 import com.android.aceit.Models.ChecklistItem;
 import com.android.aceit.R;
+import com.android.aceit.SwipeToDeleteCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -59,6 +62,26 @@ public class Checklist extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rvChecklistRecycler);
         floatingActionButton = (FloatingActionButton) findViewById(R.id.fbbtnChecklist);
         arrayList = new ArrayList<>();
+       /* ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                // Not needed for swipe-to-delete functionality
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                // Step 2: Delete the item from the adapter
+                int position = viewHolder.getAdapterPosition();
+                checklistAdapter.removeItem(position);
+                Toast.makeText(Checklist.this, "Item deleted", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemTouchHelperCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+*/
+
 
 // Add default data to the SQLite database
        // addDefaultData();
@@ -141,7 +164,10 @@ public class Checklist extends AppCompatActivity {
         // Set up the RecyclerView adapter with the retrieved checklist items
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         checklistAdapter = new ChecklistAdapter(Checklist.this, checklistItems);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(checklistAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(checklistAdapter);
+
     }
 
     private long generateUniqueItemId() {
@@ -150,6 +176,7 @@ public class Checklist extends AppCompatActivity {
         int randomValue = random.nextInt(10000); // Adjust the range as per your requirement
         return currentTime + randomValue;
     }
+
 
     //to close this activity
     @Override
