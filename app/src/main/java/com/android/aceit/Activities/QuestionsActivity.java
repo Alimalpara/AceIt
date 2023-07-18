@@ -28,7 +28,8 @@ public class QuestionsActivity extends AppCompatActivity {
 
     ArrayList<QuestionModel> questionModels;
 
-    Button startQuiz;
+    Button startLiveQuiz;
+    Button startPracticeMode;
 
 
     @Override
@@ -38,7 +39,8 @@ public class QuestionsActivity extends AppCompatActivity {
         questionModels = new ArrayList<>();
         recyclerView = findViewById(R.id.rvQuestions);
 
-        startQuiz = (Button) findViewById(R.id.btnStartQuiz);
+        startLiveQuiz = (Button) findViewById(R.id.btnStartLiveModeQuiz);
+        startPracticeMode = findViewById(R.id.btnStartPracticeQuiz);
 
 
         // Retrieve the intent extras
@@ -84,14 +86,25 @@ public class QuestionsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        startQuiz.setOnClickListener(new View.OnClickListener() {
+        startLiveQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QuestionsActivity.this, Quiz.class);
                 intent.putExtra("questionList", questionList);
+                intent.putExtra("type",1);
                 startActivity(intent);
             }
         });
+        startPracticeMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuestionsActivity.this, Quiz.class);
+                intent.putExtra("questionList", questionList);
+                intent.putExtra("type",2);
+                startActivity(intent);
+            }
+        });
+
 
 // Use the populated questionList as needed
 

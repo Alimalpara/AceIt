@@ -6,40 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Quiz">
 
-    <TextView
-        android:id="@+id/tvtimerQuiz"
-        android:layout_width="173dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="119dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="119dp"
-        android:text="TextView"
-        android:textSize="34sp"
+    <include
+        android:id="@+id/liveQUiz"
+        layout="@layout/livemodequiz"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvQuizQuestion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-        android:text="TextView"
+    <include
+        android:id="@+id/practiceQuiz"
+        layout="@layout/practicemodequiz"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvtimerQuiz" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnRecord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="247dp"
-        android:layout_marginEnd="153dp"
-        android:text="Record"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuizQuestion" />
 </androidx.constraintlayout.widget.ConstraintLayout>
