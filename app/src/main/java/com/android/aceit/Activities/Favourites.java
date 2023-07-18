@@ -2,6 +2,7 @@ package com.android.aceit.Activities;
 
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,11 +24,18 @@ public class Favourites extends AppCompatActivity {
     DatabaseHelper databaseHelper;
     FavouriteAdapter favouriteAdapter;
     ArrayList<QuestionModel> favouritesArrraylist;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourites);
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Favourites");
+        }
 
 
         recyclerView = (RecyclerView) findViewById(R.id.rvFavourites);
@@ -132,6 +140,14 @@ public class Favourites extends AppCompatActivity {
         populateRecyclerView();
     }
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
+
+
+        finish();
+        return false;
+    }
 
 }
 

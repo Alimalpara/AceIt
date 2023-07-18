@@ -6,14 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activities.InterviewHelp">
 
-    <Button
-        android:id="@+id/btnScheduleInterview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="183dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="134dp"
-        android:text="Schedule Interview"
+    <include
+        android:id="@+id/ihResumeSubmitLayout"
+        layout="@layout/resume_submit_layout"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/ihInterviewScheduleLayout"
+        layout="@layout/interview_schedule_layout"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

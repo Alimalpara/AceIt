@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,6 +21,7 @@ public class ViewAnswerActivity extends AppCompatActivity {
     Button AddtoFavouritebtn,updatebutton,share;
     private DatabaseHelper databaseHelper;
     String question,answer,qid;
+    ActionBar actionBar;
 
 
     @Override
@@ -27,6 +29,12 @@ public class ViewAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_answer);
 
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Content");
+        }
         Toast.makeText(this, "View answser activity ", Toast.LENGTH_SHORT).show();
 
         // Initialize DatabaseHelper
@@ -216,7 +224,14 @@ public class ViewAnswerActivity extends AppCompatActivity {
             Toast.makeText(this, "No apps available to share", Toast.LENGTH_SHORT).show();
         }
     }
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
 
+
+        finish();
+        return false;
+    }
 
 }
 

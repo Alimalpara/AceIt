@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,12 +31,20 @@ public class QuestionsActivity extends AppCompatActivity {
 
     Button startLiveQuiz;
     Button startPracticeMode;
+    ActionBar actionBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Questions");
+        }
+
         questionModels = new ArrayList<>();
         recyclerView = findViewById(R.id.rvQuestions);
 
@@ -137,7 +146,14 @@ public class QuestionsActivity extends AppCompatActivity {
     }
 
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
 
+
+        finish();
+        return false;
+    }
 
 
 

@@ -93,18 +93,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        //interview help Inter
         btnScheduleInterviewHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendInterviewMail();
+                Intent intent = new Intent(MainActivity.this, InterviewHelp.class);
+                intent.putExtra("helptype", 1); // Pass the ID as an extra data with the key "ITEM_ID"
+                startActivity(intent);
 
             }
         });
         btnResumeUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InterviewHelp.class);
+                intent.putExtra("helptype", 2); // Pass the ID as an extra data with the key "ITEM_ID"
+                startActivity(intent);
 
-                sendResumeCheck();
             }
         });
 
@@ -231,47 +237,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void sendInterviewMail(){
-       /* Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("text/plain");*/
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-        emailIntent.setData(Uri.parse("mailto:"));
-
-        String[] recipientEmails = {"alimalpara@gmail.com"};
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, recipientEmails);
-
-        String subject = "Testing Interview schedule process";
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-
-        String body = "Hey this is name age and type ";
-        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
-
-       /* Uri attachmentUri = ...; // Uri of the file you want to attach
-        emailIntent.putExtra(Intent.EXTRA_STREAM, attachmentUri);*/
-
-        startActivity(Intent.createChooser(emailIntent, "Send Email"));
-
-    }
-    public void sendResumeCheck(){
-       /* Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("text/plain");*/
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-        emailIntent.setData(Uri.parse("mailto:"));
-
-        String[] recipientEmails = {"alimalpara@gmail.com"};
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, recipientEmails);
-
-        String subject = "Testing resume process";
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-
-        String body = "Hey this is name age and type ";
-        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
-
-       /* Uri attachmentUri = ...; // Uri of the file you want to attach
-        emailIntent.putExtra(Intent.EXTRA_STREAM, attachmentUri);*/
-
-        startActivity(Intent.createChooser(emailIntent, "Send Email"));
-
-    }
 
 }

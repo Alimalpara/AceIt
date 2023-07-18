@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
@@ -37,12 +38,18 @@ public class Checklist extends AppCompatActivity {
 
 
     ConstraintLayout bottomSheet;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checklist);
-
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Checklist");
+        }
         dbHelper = new DatabaseHelper(this);
 
 
@@ -144,5 +151,13 @@ public class Checklist extends AppCompatActivity {
         return currentTime + randomValue;
     }
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
+
+
+        finish();
+        return false;
+    }
 
 }

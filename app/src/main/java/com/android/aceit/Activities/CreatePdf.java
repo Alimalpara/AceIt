@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -27,12 +28,19 @@ public class CreatePdf extends AppCompatActivity {
     Button savebtn;
     String content;
     int type_of_letter;
-
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_pdf);
+
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Save Letter");
+        }
         savebtn = (Button) findViewById(R.id.btnSavePDf);
 
         content = getIntent().getStringExtra("CONTENT");
@@ -178,7 +186,14 @@ public class CreatePdf extends AppCompatActivity {
     }
 
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
 
+
+        finish();
+        return false;
+    }
 }
 
         // Get the letter content from the EditText

@@ -7,8 +7,8 @@
     tools:context=".Activities.Quiz">
 
     <include
-        android:id="@+id/liveQUiz"
-        layout="@layout/livemodequiz"
+        android:id="@+id/ihResumeSubmitLayout"
+        layout="@layout/live_mode_quiz"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
 
     <include
         android:id="@+id/practiceQuiz"
-        layout="@layout/practicemodequiz"
+        layout="@layout/practice_mode_quiz"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

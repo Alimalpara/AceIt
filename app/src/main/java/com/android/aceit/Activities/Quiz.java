@@ -1,16 +1,10 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -55,13 +49,18 @@ public class Quiz extends AppCompatActivity {
     Button startLiveModeQuiz, startPracticeModeQuiz, practiceNextQuestion, practicePreviousQuestion;
 
     TextView practiceSetQuestion;
+    ActionBar actionBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
+       actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+        }
 
         handler = new Handler();
 
@@ -124,7 +123,7 @@ public class Quiz extends AppCompatActivity {
                 // Check if there are more questions
                 if (currentQuestionIndex < questionList.size() - 1) {
                     currentQuestionIndex++; // Increment the index to move to the next question
-                    setQuestionToTextView(); // Set the question to the TextView
+                    setQuestionToTextView(false); // Set the question to the TextView
                 }
                 updateButtonVisibility(); // Update the visibility of previous and next buttons
             }
@@ -137,7 +136,7 @@ public class Quiz extends AppCompatActivity {
                 // Check if there are previous questions
                 if (currentQuestionIndex > 0) {
                     currentQuestionIndex--; // Decrement the index to move to the previous question
-                    setQuestionToTextView(); // Set the question to the TextView
+                    setQuestionToTextView(true); // Set the question to the TextView
                 }
                 updateButtonVisibility(); // Update the visibility of previous and next buttons
             }
@@ -145,7 +144,7 @@ public class Quiz extends AppCompatActivity {
 
 
     }
-
+    //type of quiz main logic
     public void typeofQuiz(int type){
         if(type==1){
             Toast.makeText(this, "Live mode", Toast.LENGTH_SHORT).show();
@@ -153,12 +152,14 @@ public class Quiz extends AppCompatActivity {
             liveInitial.setVisibility(View.VISIBLE);
             liveQuiz.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.GONE);
+            actionBar.setTitle("Live Mode");
         }else if(type==2){
             Toast.makeText(this, "Practice mode", Toast.LENGTH_SHORT).show();
             mainIncludeLive.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.VISIBLE);
             practiceInitial.setVisibility(View.VISIBLE);
             practiceQuiz.setVisibility(View.GONE);
+            actionBar.setTitle("Practice Mode");
         }
     }
 
@@ -167,7 +168,7 @@ public class Quiz extends AppCompatActivity {
 
         timer = findViewById(R.id.tvtimerQuiz);
         question = findViewById(R.id.tvQuizQuestion);
-        mainIncludeLive = (ConstraintLayout) findViewById(R.id.liveQUiz);
+        mainIncludeLive = (ConstraintLayout) findViewById(R.id.ihResumeSubmitLayout);
         mainIncludePractice = (ConstraintLayout) findViewById(R.id.practiceQuiz);
 
         //layouts
@@ -195,12 +196,16 @@ public class Quiz extends AppCompatActivity {
 
     //following methods for practice mode
     // Method to set the current question to the TextView
-    private void setQuestionToTextView() {
+    private void setQuestionToTextView(boolean slideToLeft) {
         if (currentQuestionIndex >= 0 && currentQuestionIndex < questionList.size()) {
             QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
             practiceSetQuestion.setText(currentQuestion.getQuestion());
+
+            Animation slideAnimation = AnimationUtils.loadAnimation(this, slideToLeft ? R.anim.slide_in_left : R.anim.slide_in_right);
+            practiceSetQuestion.startAnimation(slideAnimation);
         }
     }
+
 
     // Method to update the visibility of previous and next buttons
     private void updateButtonVisibility() {
@@ -359,6 +364,14 @@ public class Quiz extends AppCompatActivity {
     }
 
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
+
+
+        finish();
+        return false;
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,15 +20,20 @@ public class LettersList extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<ExpandableItem> expandableItems;
     LettersAdapter lettersAdapter;
-
+    ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letters_list);
 
-      setRecyclerView();
 
 
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+        }
+        setRecyclerView();
 
     }
 
@@ -39,13 +45,16 @@ public class LettersList extends AppCompatActivity {
 
         if (itemId == 1) {
             expandableItems = getCoverletters();
+            actionBar.setTitle("Cover Letters");
         } else if (itemId == 2) {
             expandableItems = getReferenceLetters();
+            actionBar.setTitle("Reference Letters");
         }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         lettersAdapter = new LettersAdapter(expandableItems, this,itemId);
         recyclerView.setAdapter(lettersAdapter);
+
     }
 
     // Method to retrieve cover letter data
@@ -79,5 +88,12 @@ public class LettersList extends AppCompatActivity {
 
         return referenceLetterList;
     }
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
 
+
+        finish();
+        return false;
+    }
 }

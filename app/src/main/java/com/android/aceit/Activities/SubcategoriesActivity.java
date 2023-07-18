@@ -1,5 +1,6 @@
 package com.android.aceit.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,13 +28,19 @@ public class SubcategoriesActivity extends AppCompatActivity {
     ArrayList<Subject> subjects;
     ArrayList<String> subKeys;
     String mainCategory, categoryKey;
+    ActionBar actionBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subcategories);
-
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+            actionBar.setTitle("Subcategories");
+        }
 
         subjects = new ArrayList<>();
 
@@ -100,7 +107,14 @@ public class SubcategoriesActivity extends AppCompatActivity {
     }
 
 
+    //to close this activity
+    @Override
+    public boolean onSupportNavigateUp() {
 
+
+        finish();
+        return false;
+    }
 
 }
 
