@@ -1,6 +1,7 @@
 package com.android.aceit.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,14 +46,16 @@ public class MainActivity extends AppCompatActivity {
     Button savebtn,btnResumeUpdate,btnScheduleInterviewHome;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         rv = findViewById(R.id.rvmain);
-        childDataArrayList = new ArrayList<>();
         initViews();
+        childDataArrayList = new ArrayList<>();
+
 
 
 
@@ -141,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             btnResumeUpdate = (Button) findViewById(R.id.btnResumeUpdate);
 
 
+
         }
 
 
@@ -226,8 +230,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Perform any desired operations with the child node
             }
-            rv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-            mainviewAdapter = new MainviewAdapter(getApplicationContext(), childDataArrayList);
+            rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+            mainviewAdapter = new MainviewAdapter(MainActivity.this, childDataArrayList);
             rv.setAdapter(mainviewAdapter);
         } catch (JSONException e) {
             Log.e("MyApp", "JSONException occurred", e);

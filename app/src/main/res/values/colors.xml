@@ -8,4 +8,47 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+<!--    Personal color now-->
+    <!-- White -->
+
+
+    <!-- Dark Blue -->
+    <color name="background_color_for_home_views">#1B1D27</color>
+
+    <!-- Dark Brown -->
+    <color name="background_color_for_edittext">#180F08</color>
+
+    <!-- Dark Purple -->
+    <color name="dark_purple">#531249</color>
+
+    <!-- Light Brown -->
+    <color name="light_brown">#C3744E</color>
+
+
+    <!-- Gray -->
+    <color name="color_for_line">#707070</color>
+
+    <!-- Black -->
+    <color name="background_color_for_rv_apartmain">#000000</color>
+
+    <!-- Dark Blue (Alternate) -->
+    <color name="primary_color">#10131C</color>
+    <color name="primary_variant_1">#1B1D27</color>
+    <color name="primary_variant_2">#262935</color>
+    <color name="primary_variant_3">#30333F</color>
+
+    <color name="secondary_light">#32415C</color>
+    <color name="secondary_medium">#546A83</color>
+    <color name="secondary_dark">#76839F</color>
+
+<!--    Text colors-->
+    <color name="main_Text_color">#FFFFFFFF</color>
+    <color name="button_text_color">#C3744E</color>
+    <color name="section_heading_color">#C3744E</color>
+    <color name="hint_text_color">#546A83</color>
+
+<!--    Button styles-->
+    <color name="custom_button_text_color">#C3744E</color>
+    <color name="stroke_color_for_button">#546A83</color>
 </resources>

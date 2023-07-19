@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
-    public TextView maintv;
+    public TextView mainRecylerviewText, maintv;
     public CheckBox checklist_checkBox;
     public TextView  checklist_textview,expand_title,expand_content;
     public Button expand_button;
@@ -29,6 +29,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         expand_title = itemView.findViewById(R.id.tvexpandLetterTitile);
         expand_content = itemView.findViewById(R.id.tvExpandLetterContent);
         expand_button = itemView.findViewById(R.id.btnexpandLetter);
+        mainRecylerviewText = itemView.findViewById(R.id.tvforrvMain);
 
         swipelayout = (ConstraintLayout) itemView.findViewById(R.id.cvChecklistSwipe);
 

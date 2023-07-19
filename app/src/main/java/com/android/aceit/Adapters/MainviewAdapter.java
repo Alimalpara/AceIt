@@ -31,14 +31,14 @@ public class MainviewAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.mainrvrow, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_for_main_recycler_view, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ChildData childData = childDataArrayList.get(position);
-        holder.maintv.setText(childData.getName());
+        holder.mainRecylerviewText.setText(childData.getName());
 
 
 
