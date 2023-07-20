@@ -30,7 +30,7 @@
     <color name="color_for_line">#707070</color>
 
     <!-- Black -->
-    <color name="background_color_for_rv_apartmain">#000000</color>
+    <color name="background_color_forlist_q_f_C">#000000</color>
 
     <!-- Dark Blue (Alternate) -->
     <color name="primary_color">#10131C</color>
@@ -49,6 +49,10 @@
     <color name="hint_text_color">#546A83</color>
 
 <!--    Button styles-->
-    <color name="custom_button_text_color">#C3744E</color>
-    <color name="stroke_color_for_button">#546A83</color>
+    <color name="custom_button_text_color">#76839F</color>
+    <color name="stroke_color_for_button">#C3744E</color>
+    <!-- Dark Blue -->
+    <color name="button_background_all">#1B1D27</color>
+<!--    for favourite icon-->
+    <color name="fav_icon">#C3744E</color>
 </resources>

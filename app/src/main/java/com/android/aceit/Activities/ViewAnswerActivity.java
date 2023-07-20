@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,6 +24,8 @@ public class ViewAnswerActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     String question,answer,qid;
     ActionBar actionBar;
+    boolean isFavorite = false;
+    private Menu menu; // Store the menu as a field
 
 
     @Override
@@ -35,7 +39,7 @@ public class ViewAnswerActivity extends AppCompatActivity {
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
             actionBar.setTitle("Content");
         }
-        Toast.makeText(this, "View answser activity ", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "View answser activity ", Toast.LENGTH_SHORT).show();
 
         // Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
@@ -45,10 +49,9 @@ public class ViewAnswerActivity extends AppCompatActivity {
         questiontv = (TextView) findViewById(R.id.tvViewQuestion);
         answertv = (TextView) findViewById(R.id.tvViewAnswer);
         //refernce tp button
-        AddtoFavouritebtn = findViewById(R.id.btnaddtoFavourite);
         updatebutton = (Button) findViewById(R.id.btnUpdate);
 
-        share= (Button) findViewById(R.id.btnviewAnswerShare);
+
 
 
 
@@ -67,11 +70,10 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
 // Check if the question is in favorites
-        boolean isFavorite = databaseHelper.isQuestionInFavorites(qid);
+        isFavorite = databaseHelper.isQuestionInFavorites(qid);
 
 
-        //initial set
-        initialSet(isFavorite);
+
 
         //update question
 
@@ -84,70 +86,16 @@ public class ViewAnswerActivity extends AppCompatActivity {
 
 
 
-        AddtoFavouritebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //databaseHelper.addFavoriteQuestion(qid,question,answer);
-               /* Boolean test = isQuestionInFavorites(qid);
-                Toast.makeText(ViewAnswerActivity.this, "test" + test, Toast.LENGTH_SHORT).show();*/
-
-
-                // Check if the question is in favorites
-                boolean isFavorite = databaseHelper.isQuestionInFavorites(qid);
-                boolean result = false;
-                if (isFavorite) {
-                    // Remove the question from favorites
-                   result =  databaseHelper.removeFavoriteQuestion(qid);
-                   if(result){
-                       AddtoFavouritebtn.setText("Add to Favorites");
-                       updatebutton.setVisibility(View.GONE);
-                   }
-                   else{
-                       Toast.makeText(ViewAnswerActivity.this, " Error deleting", Toast.LENGTH_SHORT).show();
-
-                   }
 
 
 
 
-                } else {
-                   result = databaseHelper.addFavoriteQuestion(qid,question,answer);
-
-
-                    if(result){
-                        AddtoFavouritebtn.setText("Remove from Favorites");
-                    }
-                    else{
-                        Toast.makeText(ViewAnswerActivity.this, " Error Adding", Toast.LENGTH_SHORT).show();
-
-                    }
-
-
-            }
-        }
 
 
 
-    });
 
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                shareContent(question,answer);
-            }
-        });
     }
 
-    private void initialSet(Boolean isFavorite){
-        // Set the initial button text based on the question's favorite status
-        if (isFavorite) {
-            AddtoFavouritebtn.setText("Remove from Favorites");
-        } else {
-            AddtoFavouritebtn.setText("Add to Favorites");
-        }
-    }
 
     //local method
 /*
@@ -176,6 +124,44 @@ public class ViewAnswerActivity extends AppCompatActivity {
     }
 */
 
+  public void addToFavouriteMethod(){
+      // Check if the question is in favorites
+      boolean isFavorite = databaseHelper.isQuestionInFavorites(qid);
+      //to update the icon
+      // Update the menu item icon based on the current favourite state
+
+
+
+      boolean result = false;
+      if (isFavorite) {
+          // Remove the question from favorites
+          result =  databaseHelper.removeFavoriteQuestion(qid);
+          if(result){
+             // AddtoFavouritebtn.setText("Add to Favorites");
+              updatebutton.setVisibility(View.GONE);
+          }
+          else{
+              Toast.makeText(ViewAnswerActivity.this, " Error deleting", Toast.LENGTH_SHORT).show();
+
+          }
+
+
+
+
+      } else {
+          result = databaseHelper.addFavoriteQuestion(qid,question,answer);
+
+
+          if(!result){
+              //AddtoFavouritebtn.setText("Remove from Favorites");
+              Toast.makeText(ViewAnswerActivity.this, " Error Adding", Toast.LENGTH_SHORT).show();
+          }
+
+
+      }
+      // Update the menu item icon based on the current favourite state
+      updateOptionsMenuIcons(!isFavorite);
+  }
 
     public void updateFavouriteQuestion(){
         boolean isfavourite = databaseHelper.isQuestionInFavorites(qid);
@@ -224,6 +210,50 @@ public class ViewAnswerActivity extends AppCompatActivity {
             Toast.makeText(this, "No apps available to share", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    //menu items
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.view_answer_menu, menu);
+        this.menu = menu; // Store the menu for later access
+        updateOptionsMenuIcons(isFavorite);
+
+        return true;
+    }
+    //to update
+    private void updateOptionsMenuIcons(Boolean isFavorite) {
+        if (menu == null) return; // Make sure the menu is not null
+
+        MenuItem favouriteMenuItem = menu.findItem(R.id.action_favorite);
+        if (isFavorite) {
+            favouriteMenuItem.setIcon(R.drawable.ic_baseline_favorite_24);
+        } else {
+            favouriteMenuItem.setIcon(R.drawable.ic_baseline_favorite_border_24);
+        }
+    }
+
+
+    //click events on menu item
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int itemId = item.getItemId();
+        if (itemId == R.id.action_share) {
+            // Handle the share action (e.g., open a share dialog)
+            shareContent(question,answer);
+            Toast.makeText(this, "share clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (itemId == R.id.action_favorite) {
+            // Handle the favorite action (e.g., add/remove from favorites)
+            addToFavouriteMethod();
+            Toast.makeText(this, "Favourite clicked", Toast.LENGTH_SHORT).show();
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     //to close this activity
     @Override
     public boolean onSupportNavigateUp() {

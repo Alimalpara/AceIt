@@ -28,14 +28,14 @@ public class QuestionsAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.mainrvrow, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_layout_for_q_s_f, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
       QuestionModel questionModel = questionModels.get(position);
-      String question = questionModel.getQuestion()+" " +questionModel.getId();
+      String question = questionModel.getQuestion();
       holder.maintv.setText(question);
        // Toast.makeText(context, "Quest "+questionModel.getQuestion(), Toast.LENGTH_SHORT).show();
         holder.itemView.setOnClickListener(new View.OnClickListener() {

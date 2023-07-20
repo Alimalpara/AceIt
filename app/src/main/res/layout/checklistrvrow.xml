@@ -5,66 +5,76 @@
     android:id="@+id/cvChecklistSwipe"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#4527A0"
 
+    android:layout_marginBottom="8dp"
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <CheckBox
-        android:id="@+id/cbCHecklistbtn"
-
-
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:checked="false"
-        android:theme="@style/checkBoxStyle"
+        android:background="@drawable/background_for_rv_main_home"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/etChecklistrv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@null"
-        android:clickable="true"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_for_rv_main_home"
+            app:layout_constraintBottom_toBottomOf="@+id/cbCHecklistbtn"
+            app:layout_constraintTop_toBottomOf="@+id/cbCHecklistbtn">
+
+            <TextView
+                android:id="@+id/etChecklistrv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
 
 
-        android:focusable="true"
-        android:minHeight="40dp"
-        android:text=""
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/ibbtnRemoveChecklist"
-        app:layout_constraintStart_toEndOf="@+id/cbCHecklistbtn"
-        app:layout_constraintTop_toTopOf="@+id/cbCHecklistbtn" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="40dp"
+                android:text="Chcklist"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cbCHecklistbtn"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/ibbtnRemoveChecklist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:background="@null"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/etChecklistrv"
-        app:srcCompat="@drawable/ic_baseline_close_24" />
+            <CheckBox
+                android:id="@+id/cbCHecklistbtn"
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/etChecklistrv"
-        app:layout_constraintTop_toBottomOf="@+id/etChecklistrv"></LinearLayout>
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:checked="false"
+                android:theme="@style/checkBoxStyle"
+                app:layout_constraintBottom_toBottomOf="@+id/etChecklistrv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etChecklistrv" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="299dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/light_brown"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/etChecklistrv"
+                app:layout_constraintStart_toStartOf="@+id/etChecklistrv"
+                app:layout_constraintTop_toBottomOf="@+id/etChecklistrv"></LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

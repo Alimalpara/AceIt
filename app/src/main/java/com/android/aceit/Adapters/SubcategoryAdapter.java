@@ -35,7 +35,7 @@ public class SubcategoryAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate the item layout
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mainrvrow, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout_for_q_s_f, parent, false);
         return new MyViewHolder(view);
     }
 

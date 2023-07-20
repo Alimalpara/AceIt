@@ -6,21 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
-    android:background="#B50606"
-    android:backgroundTint="#D40D0D"
+    android:background="@color/background_color_forlist_q_f_C"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <EditText
         android:id="@+id/etBottomsheet"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="95dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/background_color_for_edittext"
         android:ems="10"
+        android:minHeight="50dp"
+
         android:hint="Name"
         android:inputType="textNoSuggestions|textImeMultiLine"
-
+        android:paddingStart="8dp"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/btnBottomSheet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,9 +35,10 @@
         android:id="@+id/btnBottomSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="8dp"
         android:text="Button"
         app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/etBottomsheet"
         app:layout_constraintStart_toStartOf="@+id/etBottomsheet"
         app:layout_constraintTop_toBottomOf="@+id/etBottomsheet" />

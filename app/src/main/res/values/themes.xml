@@ -40,6 +40,7 @@
 <!--    for buttons-->
     <style name="CustomMaterialButton" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">8dp</item>
+        <item name="android:backgroundTint">@color/button_background_all</item>
         <item name="android:textColor">@color/custom_button_text_color</item>
         <item name="strokeColor">@color/stroke_color_for_button</item>
         <item name="strokeWidth">1dp</item>

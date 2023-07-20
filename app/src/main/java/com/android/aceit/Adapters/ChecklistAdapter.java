@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.aceit.DatabaseHelper;
@@ -75,8 +76,10 @@ DatabaseHelper databaseHelper;
         // Set the strike-through text if the item is checked
         if (item.isChecked()) {
             holder.checklist_textview.setPaintFlags(holder.checklist_textview.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.checklist_textview.setTextColor(ContextCompat.getColor(context, R.color.secondary_light));
         } else {
             holder.checklist_textview.setPaintFlags(holder.checklist_textview.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            holder.checklist_textview.setTextColor(ContextCompat.getColor(context, R.color.white));
         }
 
         // Set the checkbox listener
@@ -92,20 +95,17 @@ DatabaseHelper databaseHelper;
                 if (isChecked) {
                     //Toast.makeText(context, "Modified check ", Toast.LENGTH_SHORT).show();
                     holder.checklist_textview.setPaintFlags(holder.checklist_textview.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.checklist_textview.setTextColor(ContextCompat.getColor(context, R.color.secondary_light));
+
                 } else {
                    // Toast.makeText(context, "Modified uncheck ", Toast.LENGTH_SHORT).show();
                     holder.checklist_textview.setPaintFlags(holder.checklist_textview.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                    holder.checklist_textview.setTextColor(ContextCompat.getColor(context, R.color.white));
                 }
             }
         });
 
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                holder.checkList_imagebtn.setVisibility(View.VISIBLE);
-                return false;
-            }
-        });
+
         holder.checklist_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
