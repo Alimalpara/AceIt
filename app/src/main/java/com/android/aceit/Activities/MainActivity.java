@@ -2,6 +2,7 @@ package com.android.aceit.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,12 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //click lst4ent ot redirect
-        favourite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Favourites.class));
-            }
-        });
+        favourite.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Favourites.class)));
 
 
         //checklist
@@ -83,16 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //letter creation
-        cv_create.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create an Intent to start the next activity
-                Intent intent = new Intent(MainActivity.this, LettersList.class);
-                //passing to activity letterlist then to adapterlitst then to activity
-                intent.putExtra("Type_of_letter", 1); // Pass the ID as an extra data with the key "ITEM_ID"
-                startActivity(intent);
+        cv_create.setOnClickListener(v -> {
+            // Create an Intent to start the next activity
+            Intent intent = new Intent(MainActivity.this, LettersList.class);
+            //passing to activity letterlist then to adapterlitst then to activity
+            intent.putExtra("Type_of_letter", 1); // Pass the ID as an extra data with the key "ITEM_ID"
+            startActivity(intent);
 
-            }
         });
         ref_create.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,7 +223,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Perform any desired operations with the child node
             }
-            rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 3);
+            rv.setLayoutManager(gridLayoutManager);
             mainviewAdapter = new MainviewAdapter(MainActivity.this, childDataArrayList);
             rv.setAdapter(mainviewAdapter);
         } catch (JSONException e) {

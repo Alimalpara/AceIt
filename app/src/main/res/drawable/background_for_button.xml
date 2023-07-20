@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/background_color_for_home_views" />
+    <corners android:radius="8dp" />
+    <stroke
+        android:width="20dp"
+        android:color="#707070" />
+
+</shape>
