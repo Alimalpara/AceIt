@@ -43,8 +43,13 @@ public class Quiz extends AppCompatActivity {
     int type ;// Initial time for each question
 
     //mainlayouts
-    ConstraintLayout mainIncludePractice, mainIncludeLive,liveInitial,liveQuiz,
-            practiceInitial,practiceQuiz;
+    ConstraintLayout
+            //main included
+            mainIncludePractice, mainIncludeLive,
+    //live mdde
+            init_live_quiz_layout,live_quiz_layout_main,
+    //practice moede
+            init_pracice_quiz_layout,practice_quiz_layout_main;
 
     Button startLiveModeQuiz, startPracticeModeQuiz, practiceNextQuestion, practicePreviousQuestion;
 
@@ -78,8 +83,8 @@ public class Quiz extends AppCompatActivity {
         startLiveModeQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                liveQuiz.setVisibility(View.VISIBLE);
-                liveInitial.setVisibility(View.GONE);
+                live_quiz_layout_main.setVisibility(View.VISIBLE);
+                init_live_quiz_layout.setVisibility(View.GONE);
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -97,8 +102,8 @@ public class Quiz extends AppCompatActivity {
                 Intent intent = getIntent();
                 if (intent != null) {
                     questionList = (ArrayList<QuestionModel>) getIntent().getSerializableExtra("questionList");
-                    practiceInitial.setVisibility(View.GONE);
-                    practiceQuiz.setVisibility(View.VISIBLE);
+                    init_pracice_quiz_layout.setVisibility(View.GONE);
+                    practice_quiz_layout_main.setVisibility(View.VISIBLE);
                     practicePreviousQuestion.setVisibility(View.INVISIBLE);
                     practiceSetQuestion.setText("shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n" +
                             "shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n" +
@@ -149,16 +154,16 @@ public class Quiz extends AppCompatActivity {
         if(type==1){
             Toast.makeText(this, "Live mode", Toast.LENGTH_SHORT).show();
             mainIncludeLive.setVisibility(View.VISIBLE);
-            liveInitial.setVisibility(View.VISIBLE);
-            liveQuiz.setVisibility(View.GONE);
+            init_live_quiz_layout.setVisibility(View.VISIBLE);
+            live_quiz_layout_main.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.GONE);
             actionBar.setTitle("Live Mode");
         }else if(type==2){
             Toast.makeText(this, "Practice mode", Toast.LENGTH_SHORT).show();
             mainIncludeLive.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.VISIBLE);
-            practiceInitial.setVisibility(View.VISIBLE);
-            practiceQuiz.setVisibility(View.GONE);
+            init_pracice_quiz_layout.setVisibility(View.VISIBLE);
+            practice_quiz_layout_main.setVisibility(View.GONE);
             actionBar.setTitle("Practice Mode");
         }
     }
@@ -168,16 +173,16 @@ public class Quiz extends AppCompatActivity {
 
         timer = findViewById(R.id.tvtimerQuiz);
         question = findViewById(R.id.tvQuizQuestion);
-        mainIncludeLive = (ConstraintLayout) findViewById(R.id.ihResumeSubmitLayout);
-        mainIncludePractice = (ConstraintLayout) findViewById(R.id.practiceQuiz);
+        mainIncludeLive = (ConstraintLayout) findViewById(R.id.layoutIncludedForLivequiz);
+        mainIncludePractice = (ConstraintLayout) findViewById(R.id.layoutIncludedForPracticequiz);
 
         //layouts
-        liveInitial = (ConstraintLayout) findViewById(R.id.cvLiveModeStart);
-        liveQuiz = (ConstraintLayout) findViewById(R.id.cvLiveModeQuiz);
+        init_live_quiz_layout = (ConstraintLayout) findViewById(R.id.cvLiveModeStart);
+        live_quiz_layout_main = (ConstraintLayout) findViewById(R.id.cvLiveModeQuiz);
 
         //practice mode
-        practiceInitial = (ConstraintLayout) findViewById(R.id.cvPracticeModeStart);
-        practiceQuiz = (ConstraintLayout) findViewById(R.id.cvPracticeModeQuiz);
+        init_pracice_quiz_layout = (ConstraintLayout) findViewById(R.id.cvPracticeModeStart);
+        practice_quiz_layout_main = (ConstraintLayout) findViewById(R.id.cvPracticeModeQuiz);
 
 
         //mainbuttons to start the quiz
