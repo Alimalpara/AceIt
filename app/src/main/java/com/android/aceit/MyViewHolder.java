@@ -4,9 +4,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +18,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView  checklist_textview,expand_title,expand_content;
     public Button expand_button;
     public ConstraintLayout swipelayout;
+
+    public CardView expandcontentcardview;
+    public ImageView toggleForexpandandCollapseImage;
+
 
 
 
@@ -32,6 +38,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         mainRecylerviewText = itemView.findViewById(R.id.tvforrvMain);
 
         swipelayout = (ConstraintLayout) itemView.findViewById(R.id.cvChecklistSwipe);
+
+
+        //expand content
+        expandcontentcardview = itemView.findViewById(R.id.cardViewExpandContent);
+
+        toggleForexpandandCollapseImage = itemView.findViewById(R.id.ivExapndandCollapse);
 
         // Enable marquee effect for the TextView
         if (maintv != null) {

@@ -9,9 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.android.aceit.Adapters.FavouriteAdapter;
 import com.android.aceit.Adapters.LettersAdapter;
 import com.android.aceit.Models.ExpandableItem;
 import com.android.aceit.R;
@@ -28,7 +26,10 @@ public class LettersList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_letters_list);
+
 
 
 
@@ -37,6 +38,8 @@ public class LettersList extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
         }
+
+
         setRecyclerView();
 
         initViews();
@@ -49,6 +52,9 @@ public class LettersList extends AppCompatActivity {
                 intent.putExtra("Type_of_letter", itemId); // To set title accordingly
                 intent.putExtra("isPersonal",true);
                 startActivity(intent);
+
+
+
             }
         });
 

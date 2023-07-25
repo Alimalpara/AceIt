@@ -1,5 +1,6 @@
 package com.android.aceit.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.aceit.Activities.QuestionsActivity;
@@ -63,6 +66,7 @@ public class MainviewAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 context.startActivity(intent);
+
 
 
             }

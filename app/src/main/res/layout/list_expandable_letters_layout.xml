@@ -2,43 +2,105 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#9C0707"
-    android:padding="16dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvexpandLetterTitile"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewExpandContent"
+        android:layout_width="371dp"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="This is title"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvExpandLetterContent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="this is cotent"
-        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_for_q_f_c_card"
         android:visibility="gone"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnexpandLetter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvexpandLetterTitile"
-        app:layout_constraintTop_toBottomOf="@id/tvexpandLetterTitile" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewExpandTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color_forlist_q_f_C">
+
+            <TextView
+                android:id="@+id/tvExpandLetterContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Content for the reference and other"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewExpandTitle"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/background_for_q_f_c_card"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewExpandContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color_forlist_q_f_C">
+
+            <TextView
+                android:id="@+id/tvexpandLetterTitile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:text="Title"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/ivExapndandCollapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tvexpandLetterTitile"
+                app:layout_constraintStart_toEndOf="@+id/tvexpandLetterTitile"
+                app:layout_constraintTop_toTopOf="@+id/tvexpandLetterTitile"
+                app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnexpandLetter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Use this template"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/tvExpandLetterContent"
-        app:layout_constraintTop_toBottomOf="@id/tvExpandLetterContent" />
+        app:layout_constraintEnd_toEndOf="@+id/cardViewExpandContent"
+        app:layout_constraintStart_toStartOf="@+id/cardViewExpandContent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewExpandContent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

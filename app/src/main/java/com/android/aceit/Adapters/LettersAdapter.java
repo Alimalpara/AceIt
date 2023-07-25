@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,8 @@ public class LettersAdapter extends RecyclerView.Adapter<MyViewHolder> {
     ArrayList<ExpandableItem> expandableListItems;
     Context context;
     int type_of_letter;
+    private int expandedPosition = -1;
+
 
     public LettersAdapter(ArrayList<ExpandableItem> expandableListItems, Context context, int type_of_letter) {
         this.expandableListItems = expandableListItems;
@@ -41,19 +44,26 @@ public class LettersAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
        ExpandableItem item = expandableListItems.get(position);
 
+       int finalpos =holder.getAdapterPosition();
+
        holder.expand_title.setText(item.getTitle());
        holder.expand_content.setText(item.getContent());
 
 
         // Set the initial visibility of the content and button views
-        holder.expand_content.setVisibility(View.GONE);
-        holder.expand_button.setVisibility(View.GONE);
+        // Check if the item at the current position is expanded or not
+        boolean isExpanded = position == expandedPosition;
+        holder.expandcontentcardview.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+        holder. expand_button.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+        holder. toggleForexpandandCollapseImage.setRotation(isExpanded ? 180 : 0);
+
 
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Toast.makeText(context, "clickd", Toast.LENGTH_SHORT).show();
-               toggleExpansion(holder.expand_content,holder.expand_button);
+
+               toggleExpansion(holder.expandcontentcardview,holder.expand_button,holder.toggleForexpandandCollapseImage,finalpos);
            }
 
        });
@@ -75,13 +85,23 @@ public class LettersAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getItemCount() {
         return expandableListItems.size();
     }
-    private void toggleExpansion(View content, View button) {
+    private void toggleExpansion(View content, View button, ImageView imageView,int position) {
         if (content.getVisibility() == View.VISIBLE) {
             content.setVisibility(View.GONE);
             button.setVisibility(View.GONE);
+            imageView.setRotation(0);
+            expandedPosition = -1; // No item is expanded
+
         } else {
+            // Collapse the currently expanded item first, if any
+            if (expandedPosition != -1) {
+                notifyItemChanged(expandedPosition);
+            }
             content.setVisibility(View.VISIBLE);
             button.setVisibility(View.VISIBLE);
+            imageView.setRotation(180);
+            expandedPosition = position; // Update the expanded position
+
         }
     }
 }
