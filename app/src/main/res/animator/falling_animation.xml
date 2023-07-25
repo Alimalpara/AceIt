@@ -1,0 +1,8 @@
+<!-- falling_animation.xml -->
+<objectAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:propertyName="translationY"
+    android:valueFrom="-100dp"
+    android:valueTo="0"
+    android:duration="500"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator" />
