@@ -1,0 +1,6 @@
+<!-- res/drawable/edittext_custom_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/background_for_edittext" android:state_hovered="true" />
+
+</selector>

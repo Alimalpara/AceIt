@@ -205,7 +205,7 @@ public class Quiz extends AppCompatActivity {
         if (currentQuestionIndex >= 0 && currentQuestionIndex < questionList.size()) {
             QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
             practiceSetQuestion.setText(currentQuestion.getQuestion());
-            Animation slideAnimation = AnimationUtils.loadAnimation(this, slideToLeft ? R.anim.slide_in_from_left : R.anim.slide_out_to_right);
+            Animation slideAnimation = AnimationUtils.loadAnimation(this, slideToLeft ? R.anim.slide_in_left_quiz: R.anim.slide_in_right_quiz);
             practiceSetQuestion.startAnimation(slideAnimation);
 
         }
