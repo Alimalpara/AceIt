@@ -23,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_for_rv_main_home"
+            android:background="@color/background_color_for_checklist"
             app:layout_constraintBottom_toBottomOf="@+id/cbCHecklistbtn"
             app:layout_constraintTop_toBottomOf="@+id/cbCHecklistbtn">
 

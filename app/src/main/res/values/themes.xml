@@ -30,6 +30,9 @@
 
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
 
+<!--        potrati only-->
+
+
     </style>
 
     <style name="checkBoxStyle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

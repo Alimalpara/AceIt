@@ -14,10 +14,12 @@
 
 
     <!-- Dark Blue -->
-    <color name="background_color_for_home_views">#1B1D27</color>
+    <color name="background_color_for_home_views">#76839F</color>
+    <color name="background_color_for_checklist">#000000</color>
+    <color name="button_background_all">#76839F</color>
 
     <!-- Dark Brown -->
-    <color name="background_color_for_edittext">#C3744E</color>
+    <color name="background_color_for_edittext">#58616F</color>
 
     <!-- Dark Purple -->
     <color name="dark_purple">#531249</color>
@@ -49,10 +51,10 @@
     <color name="hint_text_color">#546A83</color>
 
 <!--    Button styles-->
-    <color name="custom_button_text_color">#76839F</color>
+    <color name="custom_button_text_color">#FFFFFFFF</color>
     <color name="stroke_color_for_button">#C3744E</color>
     <!-- Dark Blue -->
-    <color name="button_background_all">#1B1D27</color>
+
 <!--    for favourite icon-->
     <color name="fav_icon">#C3744E</color>
 </resources>

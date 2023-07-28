@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/background_color_for_edittext" />
+    <solid android:color="#58616F" /> <!-- Lighter Shade - Adjust the color as needed -->
+    <corners android:radius="4dp" /> <!-- Optional: Set corner radius as per your preference -->
 
 </shape>

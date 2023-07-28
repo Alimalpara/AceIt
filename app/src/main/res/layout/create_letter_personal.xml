@@ -16,11 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/background_for_edittext"
+
+
             android:hint="Enter your text"
             android:inputType="textMultiLine"
-            android:minHeight="48dp"
+
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,14 +36,14 @@
 
         <Button
             android:id="@+id/btnCreatePersonalLeter"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="86dp"
+            android:layout_marginBottom="24dp"
             android:text="Generate Reference Letter"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/etCreatePersonalLetter"
+            app:layout_constraintStart_toStartOf="@+id/etCreatePersonalLetter"
             app:layout_constraintTop_toBottomOf="@+id/etCreatePersonalLetter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

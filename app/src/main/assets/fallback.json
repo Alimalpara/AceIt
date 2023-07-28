@@ -1,211 +1,2361 @@
 {
+  "it": {
+    "name": "IT",
+    "subcategories": {
+      "data_analytics": {
+        "name": "Data Analytics",
+        "questions": {
+          "question1": {
+            "id": "data_analytics_question1",
+            "questionText": "Why did you choose a career in data analytics?",
+            "answerText": "I have always been fascinated by the power of data to drive insights and decision-making. Data analytics allows me to leverage my analytical skills to extract valuable information and solve complex problems."
+          },
+          "question2": {
+            "id": "data_analytics_question2",
+            "questionText": "How do you approach data cleaning and preparation to ensure data quality for analysis?",
+            "answerText": "I begin by identifying missing or inconsistent data, handle outliers, and standardize data formats to ensure accuracy and reliability in the analysis."
+          },
+          "question3": {
+            "id": "data_analytics_question3",
+            "questionText": "Describe a project where you effectively used data visualization to convey insights to stakeholders.",
+            "answerText": "In a sales analysis project, I used interactive charts and graphs to present sales trends, helping stakeholders identify growth opportunities."
+          },
+          "question4": {
+            "id": "data_analytics_question4",
+            "questionText": "How do you handle large datasets and ensure efficient data processing in your analysis?",
+            "answerText": "I use tools like Python or R to handle large datasets, optimize code for efficiency, and leverage parallel processing when necessary."
+          },
+          "question5": {
+            "id": "data_analytics_question5",
+            "questionText": "Describe a time when you applied statistical methods to derive meaningful insights from data.",
+            "answerText": "In a marketing campaign analysis, I used regression analysis to identify key factors influencing customer engagement."
+          },
+          "question6": {
+            "id": "data_analytics_question6",
+            "questionText": "How do you approach data modeling to create predictive or descriptive models?",
+            "answerText": "I select appropriate machine learning algorithms, split data into training and testing sets, and fine-tune the model to achieve accurate predictions."
+          },
+          "question7": {
+            "id": "data_analytics_question7",
+            "questionText": "Describe a project where you effectively used clustering techniques to segment data and discover patterns.",
+            "answerText": "In a customer segmentation project, I used K-means clustering to group customers based on similar behaviors and preferences."
+          },
+          "question8": {
+            "id": "data_analytics_question8",
+            "questionText": "How do you handle missing data points during analysis to minimize their impact on results?",
+            "answerText": "I employ various imputation techniques such as mean or median imputation, or use predictive models to fill missing values."
+          },
+          "question9": {
+            "id": "data_analytics_question9",
+            "questionText": "Describe a time when you successfully identified data-driven business opportunities for process improvement.",
+            "answerText": "In a manufacturing process analysis, I identified inefficiencies using data, leading to process optimizations and cost savings."
+          },
+          "question10": {
+            "id": "data_analytics_question10",
+            "questionText": "How do you validate the accuracy and reliability of your data analytics results?",
+            "answerText": "I cross-validate results with alternative methods, conduct sensitivity analyses, and collaborate with domain experts to ensure accuracy."
+          },
+          "question11": {
+            "id": "data_analytics_question11",
+            "questionText": "Describe a project where you effectively used data analytics to forecast future trends or demand.",
+            "answerText": "In a demand forecasting project, I used time series analysis to predict sales patterns and optimize inventory levels."
+          },
+          "question12": {
+            "id": "data_analytics_question12",
+            "questionText": "How do you approach data privacy and confidentiality while working with sensitive information?",
+            "answerText": "I adhere strictly to data privacy regulations, encrypt sensitive data, and ensure access is granted only to authorized personnel."
+          },
+          "question13": {
+            "id": "data_analytics_question13",
+            "questionText": "Describe a time when you effectively used data analytics to identify cost-saving opportunities for a company.",
+            "answerText": "In a financial analysis project, I used data to identify areas of inefficiency, leading to cost-saving strategies and increased profitability."
+          },
+          "question14": {
+            "id": "data_analytics_question14",
+            "questionText": "How do you approach A/B testing for experimental analysis and data-driven decision-making?",
+            "answerText": "I design experiments with proper control and treatment groups, analyze results using statistical tests, and make data-driven decisions based on outcomes."
+          },
+          "question15": {
+            "id": "data_analytics_question15",
+            "questionText": "Describe a project where you used data analytics to optimize marketing strategies and improve ROI.",
+            "answerText": "In a digital marketing campaign, I used data analytics to identify the most effective channels and messaging, resulting in improved ROI."
+          },
+          "question16": {
+            "id": "data_analytics_question16",
+            "questionText": "How do you stay updated with the latest tools and techniques in data analytics?",
+            "answerText": "I attend conferences, enroll in online courses, and read industry publications to keep abreast of the latest advancements in data analytics."
+          },
+          "question17": {
+            "id": "data_analytics_question17",
+            "questionText": "Describe a time when you effectively used sentiment analysis to gauge customer satisfaction.",
+            "answerText": "In a social media sentiment analysis project, I used natural language processing to assess customer sentiment and improve brand perception."
+          },
+          "question18": {
+            "id": "data_analytics_question18",
+            "questionText": "How do you approach data integration from multiple sources to create a unified dataset for analysis?",
+            "answerText": "I use data integration tools and techniques like data blending or ETL processes to combine data from different sources."
+          },
+          "question19": {
+            "id": "data_analytics_question19",
+            "questionText": "Describe a project where you effectively used data analytics to detect and prevent fraud.",
+            "answerText": "In a financial fraud detection project, I used anomaly detection techniques to identify suspicious activities and prevent fraudulent transactions."
+          },
+          "question20": {
+            "id": "data_analytics_question20",
+            "questionText": "How do you ensure data security and backup during data analytics projects?",
+            "answerText": "I implement secure data storage, regularly backup data, and restrict access to sensitive information to ensure data security."
+          },
+          "question21": {
+            "id": "data_analytics_question21",
+            "questionText": "Describe a time when you effectively used data analytics to optimize inventory management.",
+            "answerText": "In a retail inventory analysis, I used demand forecasting and inventory turnover metrics to optimize stock levels and reduce carrying costs."
+          },
+          "question22": {
+            "id": "data_analytics_question22",
+            "questionText": "How do you handle data bias and ensure fairness in your data analytics models?",
+            "answerText": "I evaluate data for potential bias, use bias mitigation techniques, and continuously monitor model performance for fairness."
+          },
+          "question23": {
+            "id": "data_analytics_question23",
+            "questionText": "Describe a project where you effectively used data analytics to improve customer retention.",
+            "answerText": "In a subscription-based business, I analyzed customer behavior data to identify churn patterns and implement targeted retention strategies."
+          },
+          "question24": {
+            "id": "data_analytics_question24",
+            "questionText": "How do you approach exploratory data analysis to gain initial insights from a dataset?",
+            "answerText": "I use data visualization tools and summary statistics to explore relationships and patterns within the data."
+          },
+          "question25": {
+            "id": "data_analytics_question25",
+            "questionText": "Describe a time when you effectively used data analytics to optimize website user experience.",
+            "answerText": "In a web analytics project, I analyzed user behavior data and made website design improvements to enhance user engagement."
+          },
+          "question26": {
+            "id": "data_analytics_question26",
+            "questionText": "How do you handle incomplete or inconsistent data during the data analytics process?",
+            "answerText": "I identify data issues, work with relevant stakeholders to correct data errors, and document data cleaning steps for transparency."
+          },
+          "question27": {
+            "id": "data_analytics_question27",
+            "questionText": "Describe a project where you effectively used data analytics to improve patient outcomes in healthcare.",
+            "answerText": "In a healthcare quality improvement project, I analyzed patient data to identify best practices and enhance patient care protocols."
+          },
+          "question28": {
+            "id": "data_analytics_question28",
+            "questionText": "How do you approach data storytelling to present complex data insights in a compelling manner?",
+            "answerText": "I structure data-driven narratives, use visualizations, and relate data insights to the business context to engage stakeholders effectively."
+          },
+          "question29": {
+            "id": "data_analytics_question29",
+            "questionText": "Describe a time when you effectively used data analytics to optimize supply chain operations.",
+            "answerText": "In a supply chain analysis project, I used data to identify bottlenecks, streamline processes, and improve overall supply chain efficiency."
+          },
+          "question30": {
+            "id": "data_analytics_question30",
+            "questionText": "How do you handle tight deadlines and manage multiple data analytics projects simultaneously?",
+            "answerText": "I prioritize tasks, delegate when appropriate, and maintain open communication with stakeholders to meet project deadlines effectively."
+          }
+        }
+      },
+      "web_development": {
+        "name": "Web Development",
+        "questions": {
+          "question1": {
+            "id": "web_dev_question1",
+            "questionText": "What are the key differences between front-end and back-end web development?",
+            "answerText": "Front-end development involves creating the user interface and user experience, while back-end development focuses on server-side logic, database management, and application functionality."
+          },
+          "question2": {
+            "id": "web_dev_question2",
+            "questionText": "Can you explain the difference between HTTP and HTTPS protocols?",
+            "answerText": "HTTP (Hypertext Transfer Protocol) is unsecured, while HTTPS (Hypertext Transfer Protocol Secure) encrypts data to ensure secure communication between the client and server."
+          },
+          "question3": {
+            "id": "web_dev_question3",
+            "questionText": "Describe a project where you successfully implemented responsive web design for multi-device compatibility.",
+            "answerText": "In a website project, I used media queries and flexible layouts to ensure that the site adapts to different screen sizes, providing a consistent user experience."
+          },
+          "question4": {
+            "id": "web_dev_question4",
+            "questionText": "How do you optimize web page loading times to enhance user experience?",
+            "answerText": "I minimize image sizes, leverage browser caching, and use Content Delivery Networks (CDNs) to reduce loading times and improve site performance."
+          },
+          "question5": {
+            "id": "web_dev_question5",
+            "questionText": "Can you explain the importance of cross-browser compatibility in web development?",
+            "answerText": "Cross-browser compatibility ensures that a website functions correctly and appears consistent across different web browsers, improving user accessibility."
+          },
+          "question6": {
+            "id": "web_dev_question6",
+            "questionText": "Describe a time when you effectively used client-side scripting (e.g., JavaScript) to enhance website interactivity.",
+            "answerText": "In a web application, I used JavaScript to create dynamic forms and interactive elements, providing a seamless user experience."
+          },
+          "question7": {
+            "id": "web_dev_question7",
+            "questionText": "How do you approach web accessibility to make websites usable for people with disabilities?",
+            "answerText": "I follow Web Content Accessibility Guidelines (WCAG) to ensure that web content is accessible to users with disabilities, using semantic HTML and ARIA attributes."
+          },
+          "question8": {
+            "id": "web_dev_question8",
+            "questionText": "Describe a project where you successfully integrated third-party APIs (e.g., Google Maps) into a web application.",
+            "answerText": "In a location-based web app, I integrated the Google Maps API to provide real-time mapping and geolocation functionality."
+          },
+          "question9": {
+            "id": "web_dev_question9",
+            "questionText": "How do you ensure web application security and protect against common vulnerabilities (e.g., XSS, CSRF)?",
+            "answerText": "I implement input validation, use secure authentication mechanisms, and regularly update dependencies to prevent security threats."
+          },
+          "question10": {
+            "id": "web_dev_question10",
+            "questionText": "Describe a time when you effectively used server-side scripting (e.g., PHP, Python) to handle form submissions and data processing.",
+            "answerText": "In a web application, I used server-side scripting to validate form inputs, process user data, and store it in a database."
+          },
+          "question11": {
+            "id": "web_dev_question11",
+            "questionText": "How do you handle web application performance monitoring and optimization to identify and address bottlenecks?",
+            "answerText": "I use performance monitoring tools, conduct code profiling, and optimize database queries to improve application performance."
+          },
+          "question12": {
+            "id": "web_dev_question12",
+            "questionText": "Describe a project where you successfully implemented user authentication and authorization features.",
+            "answerText": "In a web platform, I used OAuth for user authentication and role-based access control to manage user permissions."
+          },
+          "question13": {
+            "id": "web_dev_question13",
+            "questionText": "How do you approach web caching strategies to improve application response times and reduce server load?",
+            "answerText": "I implement browser caching, use CDN caching, and leverage server-side caching to reduce latency and improve performance."
+          },
+          "question14": {
+            "id": "web_dev_question14",
+            "questionText": "Describe a time when you effectively used a CSS preprocessor (e.g., Sass, Less) to simplify stylesheet management.",
+            "answerText": "In a large-scale project, I used Sass to modularize CSS and use variables, mixins, and nesting, streamlining the development process."
+          },
+          "question15": {
+            "id": "web_dev_question15",
+            "questionText": "Can you explain the concept of Single-Page Applications (SPAs) and their benefits?",
+            "answerText": "SPAs load only once and dynamically update content, enhancing user experience and reducing server load by minimizing page reloads."
+          },
+          "question16": {
+            "id": "web_dev_question16",
+            "questionText": "Describe a project where you successfully implemented asynchronous programming (e.g., AJAX) for dynamic content loading.",
+            "answerText": "In a web application, I used AJAX to fetch data from the server asynchronously, updating specific parts of the page without requiring a full page refresh."
+          },
+          "question17": {
+            "id": "web_dev_question17",
+            "questionText": "How do you approach web application localization to cater to users from different regions and languages?",
+            "answerText": "I use internationalization techniques, support multiple language files, and implement locale-specific content to enable easy translation."
+          },
+          "question18": {
+            "id": "web_dev_question18",
+            "questionText": "Describe a time when you effectively used CSS animations and transitions to enhance website interactivity.",
+            "answerText": "In a portfolio website, I used CSS animations to create visually engaging transitions for menu navigation and project showcases."
+          },
+          "question19": {
+            "id": "web_dev_question19",
+            "questionText": "How do you ensure SEO (Search Engine Optimization) best practices are followed in web development?",
+            "answerText": "I use semantic HTML, optimize meta tags, use descriptive URLs, and ensure fast page loading to improve search engine rankings."
+          },
+          "question20": {
+            "id": "web_dev_question20",
+            "questionText": "Describe a project where you successfully implemented a content management system (CMS) for easy website updates.",
+            "answerText": "In a website redesign, I integrated a CMS like WordPress, enabling clients to update content without requiring technical knowledge."
+          },
+          "question21": {
+            "id": "web_dev_question21",
+            "questionText": "Can you explain the importance of web performance optimization (WPO) for better search engine rankings?",
+            "answerText": "WPO improves page loading times, which is a crucial factor in search engine algorithms for ranking websites higher."
+          },
+          "question22": {
+            "id": "web_dev_question22",
+            "questionText": "Describe a time when you effectively used websockets for real-time communication in a web application.",
+            "answerText": "In a chat application, I implemented websockets to enable real-time messaging between users, eliminating the need for manual page refreshes."
+          },
+          "question23": {
+            "id": "web_dev_question23",
+            "questionText": "How do you handle browser compatibility issues and ensure consistent performance across different devices?",
+            "answerText": "I perform cross-browser testing, use feature detection, and provide fallback options to ensure consistent performance on various browsers and devices."
+          },
+          "question24": {
+            "id": "web_dev_question24",
+            "questionText": "Describe a project where you successfully implemented web accessibility features for users with disabilities.",
+            "answerText": "In a web application, I added alternative text for images, used semantic HTML, and provided ARIA attributes to ensure accessibility compliance."
+          },
+          "question25": {
+            "id": "web_dev_question25",
+            "questionText": "How do you approach web application scalability to handle increased user traffic and growing data requirements?",
+            "answerText": "I use cloud-based services, employ load balancing, and optimize database queries to ensure the application can scale with user demand."
+          },
+          "question26": {
+            "id": "web_dev_question26",
+            "questionText": "Describe a time when you effectively used front-end frameworks (e.g., React, Angular, Vue.js) to simplify web development.",
+            "answerText": "In a web application, I used React.js to create reusable components and manage state, enhancing development efficiency and code maintainability."
+          },
+          "question27": {
+            "id": "web_dev_question27",
+            "questionText": "How do you handle web application version control to manage code changes and collaborate with team members?",
+            "answerText": "I use version control systems like Git, create branches for feature development, and use pull requests for code reviews and merging."
+          },
+          "question28": {
+            "id": "web_dev_question28",
+            "questionText": "Describe a project where you successfully implemented a secure payment gateway for e-commerce transactions.",
+            "answerText": "In an e-commerce website, I integrated a secure payment gateway like PayPal or Stripe to ensure safe and encrypted payment processing."
+          },
+          "question29": {
+            "id": "web_dev_question29",
+            "questionText": "How do you approach web application deployment to ensure smooth release and minimize downtime?",
+            "answerText": "I use continuous integration and continuous deployment (CI/CD) pipelines to automate testing and deployment, ensuring a seamless release process."
+          },
+          "question30": {
+            "id": "web_dev_question30",
+            "questionText": "Describe a time when you effectively used serverless architecture (e.g., AWS Lambda) for web application development.",
+            "answerText": "In a web application project, I utilized AWS Lambda functions for serverless processing and data manipulation, reducing infrastructure costs."
+          }
+        }
+      },
+      "application_development": {
+        "name": "Application Development",
+        "questions": {
+          "question1": {
+            "id": "app_dev_question1",
+            "questionText": "What is the difference between native, web, and hybrid mobile app development?",
+            "answerText": "Native apps are developed for a specific platform (e.g., Android or iOS), web apps run on web browsers, and hybrid apps combine elements of both native and web apps."
+          },
+          "question2": {
+            "id": "app_dev_question2",
+            "questionText": "Can you explain the software development lifecycle for application development?",
+            "answerText": "The software development lifecycle includes phases like requirement analysis, design, development, testing, deployment, and maintenance."
+          },
+          "question3": {
+            "id": "app_dev_question3",
+            "questionText": "Describe a project where you used agile development methodologies for application development.",
+            "answerText": "In a mobile app project, we followed agile sprints, conducting frequent releases and gathering user feedback to iteratively improve the application."
+          },
+          "question4": {
+            "id": "app_dev_question4",
+            "questionText": "How do you ensure that your application is secure from potential cyber threats and vulnerabilities?",
+            "answerText": "I conduct security assessments, use encryption, implement secure authentication methods, and regularly update dependencies to protect against cyber threats."
+          },
+          "question5": {
+            "id": "app_dev_question5",
+            "questionText": "Can you explain the importance of user experience (UX) in application development?",
+            "answerText": "UX is crucial as it determines how users interact with the application. A positive user experience leads to increased user satisfaction and retention."
+          },
+          "question6": {
+            "id": "app_dev_question6",
+            "questionText": "Describe a time when you successfully optimized application performance to reduce loading times.",
+            "answerText": "In a web application project, I used performance profiling tools and optimized database queries to reduce loading times and enhance user experience."
+          },
+          "question7": {
+            "id": "app_dev_question7",
+            "questionText": "How do you approach application testing to ensure quality and minimize bugs?",
+            "answerText": "I perform comprehensive unit testing, integration testing, and user acceptance testing to identify and resolve bugs throughout the development process."
+          },
+          "question8": {
+            "id": "app_dev_question8",
+            "questionText": "Can you explain the concept of responsive design and its importance in application development?",
+            "answerText": "Responsive design ensures that the application adapts to different screen sizes and devices, providing a consistent user experience across platforms."
+          },
+          "question9": {
+            "id": "app_dev_question9",
+            "questionText": "Describe a project where you successfully implemented real-time features like push notifications.",
+            "answerText": "In a messaging app project, I integrated push notification services to deliver real-time updates to users, enhancing engagement."
+          },
+          "question10": {
+            "id": "app_dev_question10",
+            "questionText": "How do you handle application data storage and synchronization between multiple devices?",
+            "answerText": "I use databases and cloud storage to store application data and implement data synchronization protocols to ensure consistency across devices."
+          },
+          "question11": {
+            "id": "app_dev_question11",
+            "questionText": "Describe a time when you effectively collaborated with cross-functional teams for application development.",
+            "answerText": "In a complex project, I collaborated with designers, developers, and quality assurance teams, ensuring seamless communication and successful project delivery."
+          },
+          "question12": {
+            "id": "app_dev_question12",
+            "questionText": "Can you explain the concept of API integration and its role in application development?",
+            "answerText": "API integration allows applications to communicate with external services, expanding functionality and accessing third-party resources."
+          },
+          "question13": {
+            "id": "app_dev_question13",
+            "questionText": "Describe a project where you successfully implemented accessibility features for users with disabilities.",
+            "answerText": "In a website project, I followed Web Content Accessibility Guidelines (WCAG) to ensure accessibility for users with visual impairments or motor disabilities."
+          },
+          "question14": {
+            "id": "app_dev_question14",
+            "questionText": "How do you ensure data privacy and compliance with data protection regulations in your applications?",
+            "answerText": "I implement data encryption, adhere to data protection regulations like GDPR, and obtain user consent for data processing."
+          },
+          "question15": {
+            "id": "app_dev_question15",
+            "questionText": "Describe a time when you used containerization (e.g., Docker) for application deployment.",
+            "answerText": "In a microservices-based application, I used Docker containers to encapsulate services, facilitating seamless deployment and scaling."
+          },
+          "question16": {
+            "id": "app_dev_question16",
+            "questionText": "How do you approach application localization and internationalization to cater to a global audience?",
+            "answerText": "I use localization libraries, support multiple languages, and adjust UI elements to accommodate different cultural preferences."
+          },
+          "question17": {
+            "id": "app_dev_question17",
+            "questionText": "Describe a project where you effectively used caching mechanisms to improve application performance.",
+            "answerText": "In a web application, I implemented caching for frequently accessed data, reducing server load and improving response times."
+          },
+          "question18": {
+            "id": "app_dev_question18",
+            "questionText": "Can you explain the importance of version control in application development?",
+            "answerText": "Version control tracks changes to code, allowing for collaboration, code review, and easy rollbacks to previous states."
+          },
+          "question19": {
+            "id": "app_dev_question19",
+            "questionText": "Describe a time when you successfully migrated an application to a different technology stack.",
+            "answerText": "In a legacy application, I conducted a smooth migration to a modern technology stack, improving performance and maintainability."
+          },
+          "question20": {
+            "id": "app_dev_question20",
+            "questionText": "How do you ensure application compatibility across different devices and operating systems?",
+            "answerText": "I conduct thorough testing on various devices and use cross-platform development frameworks to ensure compatibility."
+          },
+          "question21": {
+            "id": "app_dev_question21",
+            "questionText": "Describe a project where you successfully implemented a payment gateway for in-app purchases.",
+            "answerText": "In a mobile app, I integrated a secure payment gateway to facilitate seamless in-app purchases for users."
+          },
+          "question22": {
+            "id": "app_dev_question22",
+            "questionText": "Can you explain the concept of continuous integration and continuous deployment (CI/CD) in application development?",
+            "answerText": "CI/CD automates the process of code integration, testing, and deployment, ensuring faster and more reliable software releases."
+          },
+          "question23": {
+            "id": "app_dev_question23",
+            "questionText": "Describe a time when you effectively managed application updates and bug fixes for a live application.",
+            "answerText": "In a software update, I carefully planned and tested the changes, minimizing disruptions to users and resolving reported bugs promptly."
+          },
+          "question24": {
+            "id": "app_dev_question24",
+            "questionText": "How do you approach application performance monitoring to proactively identify and address performance issues?",
+            "answerText": "I use performance monitoring tools, conduct regular health checks, and analyze user feedback to optimize application performance."
+          },
+          "question25": {
+            "id": "app_dev_question25",
+            "questionText": "Describe a project where you successfully implemented a chatbot or conversational AI feature in an application.",
+            "answerText": "In a customer support application, I integrated a chatbot to provide instant responses to common queries, reducing support response times."
+          },
+          "question26": {
+            "id": "app_dev_question26",
+            "questionText": "How do you ensure scalability in application architecture to handle increasing user demand?",
+            "answerText": "I use cloud-based services, load balancing, and horizontal scaling to ensure the application can handle increased user traffic."
+          },
+          "question27": {
+            "id": "app_dev_question27",
+            "questionText": "Describe a time when you effectively handled a critical application outage and restored services promptly.",
+            "answerText": "During a server outage, I quickly identified the issue, coordinated with the infrastructure team, and restored services to minimize downtime."
+          },
+          "question28": {
+            "id": "app_dev_question28",
+            "questionText": "Can you explain the concept of microservices architecture and its benefits in application development?",
+            "answerText": "Microservices architecture involves breaking down the application into small, independent services, enabling better scalability and maintainability."
+          },
+          "question29": {
+            "id": "app_dev_question29",
+            "questionText": "Describe a project where you successfully integrated analytics tools to gain insights into user behavior.",
+            "answerText": "In a web application, I integrated analytics tools to track user interactions and identify areas for user experience improvement."
+          },
+          "question30": {
+            "id": "app_dev_question30",
+            "questionText": "How do you approach application documentation to facilitate knowledge transfer and onboarding of new team members?",
+            "answerText": "I maintain clear and up-to-date documentation, including code comments, API documentation, and architecture diagrams, to ease onboarding and knowledge sharing."
+          }
+        }
+      },
+      "software_development": {
+        "name": "Software Development",
+        "questions": {
+          "question1": {
+            "id": "soft_dev_question1",
+            "questionText": "What is the difference between Agile and Waterfall software development methodologies?",
+            "answerText": "Agile is an iterative and incremental approach, promoting flexibility and collaboration. Waterfall is a linear, sequential model with defined phases. Agile responds well to changing requirements, while Waterfall is suitable for projects with fixed requirements."
+          },
+          "question2": {
+            "id": "soft_dev_question2",
+            "questionText": "How do you ensure code quality in your software development process?",
+            "answerText": "I follow coding standards, conduct code reviews, and perform unit testing to ensure code quality. Additionally, I use automated testing tools and continuous integration practices."
+          },
+          "question3": {
+            "id": "soft_dev_question3",
+            "questionText": "Can you explain the SOLID principles of object-oriented design?",
+            "answerText": "SOLID stands for Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. These principles promote maintainable and scalable software architecture."
+          },
+          "question4": {
+            "id": "soft_dev_question4",
+            "questionText": "Describe a time when you successfully resolved a critical software bug under pressure.",
+            "answerText": "During a tight deadline, we encountered a critical bug in the system. I quickly identified the root cause, fixed the issue, and conducted thorough testing to ensure no regressions."
+          },
+          "question5": {
+            "id": "soft_dev_question5",
+            "questionText": "How do you ensure effective communication and collaboration within your development team?",
+            "answerText": "I encourage regular stand-up meetings, use collaboration tools like Slack or Microsoft Teams, and foster an open and supportive team culture."
+          },
+          "question6": {
+            "id": "soft_dev_question6",
+            "questionText": "Can you explain the concept of version control and how it benefits the software development process?",
+            "answerText": "Version control tracks changes to source code, enabling collaboration, code review, and rollbacks to previous states. It ensures better code management and prevents code conflicts."
+          },
+          "question7": {
+            "id": "soft_dev_question7",
+            "questionText": "Describe a time when you successfully implemented a new technology or programming language in a project.",
+            "answerText": "In a recent project, we integrated a machine learning library to enhance data analysis capabilities, resulting in more accurate predictions and improved user experience."
+          },
+          "question8": {
+            "id": "soft_dev_question8",
+            "questionText": "How do you ensure security in software development and protect against potential vulnerabilities?",
+            "answerText": "I follow secure coding practices, conduct security audits, and use encryption and authentication mechanisms to safeguard against potential threats."
+          },
+          "question9": {
+            "id": "soft_dev_question9",
+            "questionText": "Can you explain the concept of design patterns and their role in software development?",
+            "answerText": "Design patterns are reusable solutions to common software design problems. They promote modularity, flexibility, and maintainability in code."
+          },
+          "question10": {
+            "id": "soft_dev_question10",
+            "questionText": "Describe a time when you successfully optimized the performance of a software application.",
+            "answerText": "In an e-commerce application, I identified performance bottlenecks and implemented caching mechanisms and database optimizations, resulting in faster response times and improved user experience."
+          },
+          "question11": {
+            "id": "soft_dev_question11",
+            "questionText": "How do you handle software requirements that are unclear or constantly changing?",
+            "answerText": "I engage stakeholders in frequent communication, use agile methodologies to adapt to changing requirements, and document any ambiguities for clarification."
+          },
+          "question12": {
+            "id": "soft_dev_question12",
+            "questionText": "Can you explain the concept of Test-Driven Development (TDD) and its benefits?",
+            "answerText": "TDD involves writing tests before writing code. It helps ensure code correctness, improves code design, and provides a safety net for future code changes."
+          },
+          "question13": {
+            "id": "soft_dev_question13",
+            "questionText": "Describe a situation where you successfully collaborated with the QA team to identify and resolve software defects.",
+            "answerText": "In a testing phase, the QA team discovered critical defects. I worked closely with them to reproduce and fix the issues, ensuring a smooth product release."
+          },
+          "question14": {
+            "id": "soft_dev_question14",
+            "questionText": "How do you approach software architecture design to create scalable and maintainable systems?",
+            "answerText": "I focus on modularity, separation of concerns, and use design patterns to create flexible and scalable software architecture."
+          },
+          "question15": {
+            "id": "soft_dev_question15",
+            "questionText": "Can you explain the concept of continuous integration and continuous deployment (CI/CD)?",
+            "answerText": "CI/CD automates the process of building, testing, and deploying code changes. It ensures a faster and more reliable software development lifecycle."
+          },
+          "question16": {
+            "id": "soft_dev_question16",
+            "questionText": "Describe a time when you effectively utilized an open-source library or framework in a project.",
+            "answerText": "In a web application project, I leveraged an open-source JavaScript framework to streamline development and deliver features more efficiently."
+          },
+          "question17": {
+            "id": "soft_dev_question17",
+            "questionText": "How do you handle software project deadlines and ensure timely delivery?",
+            "answerText": "I break down tasks into manageable units, prioritize work, and use project management tools to track progress and meet deadlines."
+          },
+          "question18": {
+            "id": "soft_dev_question18",
+            "questionText": "Can you explain the concept of refactoring and when it should be done in the software development process?",
+            "answerText": "Refactoring involves restructuring code without changing its functionality. It should be done when improving code readability, maintainability, or performance."
+          },
+          "question19": {
+            "id": "soft_dev_question19",
+            "questionText": "Describe a time when you successfully integrated third-party APIs in a software project.",
+            "answerText": "In a mobile app project, I integrated a payment gateway API, enabling seamless and secure online transactions for users."
+          },
+          "question20": {
+            "id": "soft_dev_question20",
+            "questionText": "How do you approach documentation in software development to ensure effective knowledge transfer?",
+            "answerText": "I maintain clear and up-to-date documentation, including code comments, API documentation, and user guides, to facilitate knowledge sharing and onboarding."
+          },
+          "question21": {
+            "id": "soft_dev_question21",
+            "questionText": "Can you explain the importance of code reviews and their importance in the development process?",
+            "answerText": "Code reviews involve peers reviewing each other's code for quality and adherence to coding standards. They promote knowledge sharing and help identify potential issues early in the development process."
+          },
+          "question22": {
+            "id": "soft_dev_question22",
+            "questionText": "Describe a time when you effectively resolved conflicts within a development team to achieve project goals.",
+            "answerText": "In a complex project, conflicting opinions arose within the team. I facilitated open discussions, encouraged compromise, and refocused the team on the project's objectives."
+          },
+          "question23": {
+            "id": "soft_dev_question23",
+            "questionText": "How do you stay updated with the latest trends and advancements in software development?",
+            "answerText": "I regularly attend conferences, participate in online forums, and read tech blogs and articles to stay updated with the latest tools and technologies."
+          },
+          "question24": {
+            "id": "soft_dev_question24",
+            "questionText": "Describe a project where you successfully implemented user feedback to improve software usability.",
+            "answerText": "In a mobile app project, we gathered user feedback through surveys and user testing. We used this feedback to make UI/UX improvements, resulting in higher user satisfaction."
+          },
+          "question25": {
+            "id": "soft_dev_question25",
+            "questionText": "Can you explain the importance of automated testing in the software development lifecycle?",
+            "answerText": "Automated testing ensures faster and more reliable testing, reduces human error, and provides immediate feedback on code changes."
+          },
+          "question26": {
+            "id": "soft_dev_question26",
+            "questionText": "Describe a situation when you effectively managed software project risks and mitigated potential issues.",
+            "answerText": "In a large-scale project, we identified potential risks early in the planning phase and developed contingency plans to minimize their impact on the project timeline."
+          },
+          "question27": {
+            "id": "soft_dev_question27",
+            "questionText": "How do you ensure accessibility and inclusivity in software development for users with diverse needs?",
+            "answerText": "I adhere to web accessibility guidelines, perform accessibility testing, and ensure that the software is usable by all users, including those with disabilities."
+          },
+          "question28": {
+            "id": "soft_dev_question28",
+            "questionText": "Describe a time when you successfully conducted software demos or training sessions for end-users.",
+            "answerText": "In a software launch, I conducted training sessions for end-users, providing hands-on guidance and addressing their questions and concerns."
+          },
+          "question29": {
+            "id": "soft_dev_question29",
+            "questionText": "How do you approach software maintenance and updates to ensure long-term product sustainability?",
+            "answerText": "I schedule regular maintenance, apply updates, and address bug fixes to keep the software current and reliable throughout its lifecycle."
+          },
+          "question30": {
+            "id": "soft_dev_question30",
+            "questionText": "Describe a project where you effectively managed software project scope and delivered within the allocated resources.",
+            "answerText": "In a tight-budget project, I prioritized features, maintained clear communication with stakeholders, and delivered a minimum viable product (MVP) that met their essential requirements."
+          }
+        }
+      },
+      "ai_engineering": {
+        "name": "AI Engineering",
+        "questions": {
+          "question1": {
+            "id": "ai_engineering_question1",
+            "questionText": "Why did you choose a career in AI engineering?",
+            "answerText": "I have always been passionate about artificial intelligence and its potential to transform industries. AI engineering allows me to apply my technical skills to create innovative AI solutions."
+          },
+          "question2": {
+            "id": "ai_engineering_question2",
+            "questionText": "How do you approach the development of AI models and algorithms for specific use cases?",
+            "answerText": "I start by understanding the problem domain, collect and preprocess data, select appropriate AI models, and fine-tune them for optimal performance."
+          },
+          "question3": {
+            "id": "ai_engineering_question3",
+            "questionText": "Describe a project where you successfully used deep learning algorithms to achieve high accuracy in image recognition.",
+            "answerText": "In a computer vision project, I implemented a convolutional neural network (CNN) to classify images with over 95% accuracy."
+          },
+          "question4": {
+            "id": "ai_engineering_question4",
+            "questionText": "How do you handle overfitting and underfitting issues in AI model training?",
+            "answerText": "I use techniques like dropout, regularization, and cross-validation to prevent overfitting, while adjusting model complexity to address underfitting."
+          },
+          "question5": {
+            "id": "ai_engineering_question5",
+            "questionText": "Describe a time when you effectively used natural language processing (NLP) techniques to process unstructured text data.",
+            "answerText": "In an NLP project, I used tokenization and sentiment analysis to analyze customer reviews and extract insights."
+          },
+          "question6": {
+            "id": "ai_engineering_question6",
+            "questionText": "How do you approach AI model interpretability to understand the rationale behind the model's decisions?",
+            "answerText": "I use techniques like LIME (Local Interpretable Model-Agnostic Explanations) or SHAP (SHapley Additive exPlanations) to explain AI model predictions."
+          },
+          "question7": {
+            "id": "ai_engineering_question7",
+            "questionText": "Describe a project where you effectively used AI for predictive maintenance in industrial applications.",
+            "answerText": "In an industrial IoT project, I used AI algorithms to predict equipment failures and schedule maintenance proactively, reducing downtime."
+          },
+          "question8": {
+            "id": "ai_engineering_question8",
+            "questionText": "How do you handle imbalanced datasets in AI model training for classification tasks?",
+            "answerText": "I use techniques like oversampling, undersampling, or synthetic data generation to balance the dataset and improve model performance."
+          },
+          "question9": {
+            "id": "ai_engineering_question9",
+            "questionText": "Describe a time when you implemented AI in a recommendation system to enhance user experience.",
+            "answerText": "In an e-commerce platform, I used collaborative filtering and matrix factorization to create personalized product recommendations."
+          },
+          "question10": {
+            "id": "ai_engineering_question10",
+            "questionText": "How do you approach hyperparameter tuning to optimize AI model performance?",
+            "answerText": "I use techniques like grid search or random search to explore the hyperparameter space and find the best combination for optimal results."
+          },
+          "question11": {
+            "id": "ai_engineering_question11",
+            "questionText": "Describe a project where you effectively used AI in healthcare to improve patient outcomes.",
+            "answerText": "In a medical diagnosis project, I developed a machine learning model to detect early signs of a disease, enabling timely interventions."
+          },
+          "question12": {
+            "id": "ai_engineering_question12",
+            "questionText": "How do you ensure AI model scalability and efficiency for large-scale data processing?",
+            "answerText": "I use distributed computing frameworks like Apache Spark or TensorFlow's distributed training to handle big data efficiently."
+          },
+          "question13": {
+            "id": "ai_engineering_question13",
+            "questionText": "Describe a time when you used AI in finance for fraud detection and prevention.",
+            "answerText": "In a financial institution, I implemented anomaly detection algorithms to identify fraudulent transactions and protect customers' accounts."
+          },
+          "question14": {
+            "id": "ai_engineering_question14",
+            "questionText": "How do you approach AI ethics and fairness when developing AI systems?",
+            "answerText": "I carefully consider potential biases and follow ethical guidelines to ensure fairness and inclusivity in AI applications."
+          },
+          "question15": {
+            "id": "ai_engineering_question15",
+            "questionText": "Describe a project where you used AI to optimize resource allocation in a supply chain.",
+            "answerText": "In a logistics project, I applied AI algorithms to optimize transportation routes and reduce supply chain costs."
+          },
+          "question16": {
+            "id": "ai_engineering_question16",
+            "questionText": "How do you handle real-time data processing in AI systems for immediate decision-making?",
+            "answerText": "I use stream processing frameworks like Apache Kafka or AWS Kinesis to ingest and process real-time data for AI models."
+          },
+          "question17": {
+            "id": "ai_engineering_question17",
+            "questionText": "Describe a time when you effectively used AI to analyze customer behavior and improve marketing strategies.",
+            "answerText": "In a marketing campaign, I used AI-driven customer segmentation to target specific customer groups with personalized offers."
+          },
+          "question18": {
+            "id": "ai_engineering_question18",
+            "questionText": "How do you approach AI model deployment and monitoring in production environments?",
+            "answerText": "I use containerization tools like Docker and implement monitoring systems to track model performance and detect anomalies."
+          },
+          "question19": {
+            "id": "ai_engineering_question19",
+            "questionText": "Describe a project where you effectively used AI in autonomous vehicles for navigation and obstacle avoidance.",
+            "answerText": "In a self-driving car project, I implemented AI algorithms to process sensor data and make real-time driving decisions."
+          },
+          "question20": {
+            "id": "ai_engineering_question20",
+            "questionText": "How do you handle AI model explainability in applications that require transparency?",
+            "answerText": "I use interpretable models like decision trees or LSTMs with attention mechanisms to provide explanations for model predictions."
+          },
+          "question21": {
+            "id": "ai_engineering_question21",
+            "questionText": "Describe a time when you used AI to analyze large-scale data for market trend forecasting.",
+            "answerText": "In a financial market analysis project, I applied AI algorithms to analyze historical data and predict market trends."
+          },
+          "question22": {
+            "id": "ai_engineering_question22",
+            "questionText": "How do you approach AI model retraining and updating to adapt to evolving data and requirements?",
+            "answerText": "I set up automated retraining pipelines and regularly update AI models to maintain accuracy in dynamic environments."
+          },
+          "question23": {
+            "id": "ai_engineering_question23",
+            "questionText": "Describe a project where you used AI for anomaly detection in cybersecurity.",
+            "answerText": "In a cybersecurity project, I used unsupervised learning algorithms to detect abnormal network behaviors and potential threats."
+          },
+          "question24": {
+            "id": "ai_engineering_question24",
+            "questionText": "How do you ensure data privacy and security in AI systems that handle sensitive information?",
+            "answerText": "I implement encryption and access controls, conduct regular security audits, and comply with data protection regulations."
+          },
+          "question25": {
+            "id": "ai_engineering_question25",
+            "questionText": "Describe a time when you effectively used AI to optimize energy consumption in smart buildings.",
+            "answerText": "In a smart building project, I used AI algorithms to analyze occupancy patterns and adjust HVAC systems for energy efficiency."
+          },
+          "question26": {
+            "id": "ai_engineering_question26",
+            "questionText": "How do you approach AI model transfer learning to leverage pre-trained models for new tasks?",
+            "answerText": "I fine-tune pre-trained models on domain-specific data to adapt them for new tasks, reducing training time and data requirements."
+          },
+          "question27": {
+            "id": "ai_engineering_question27",
+            "questionText": "Describe a project where you effectively used AI in the gaming industry for character behavior modeling.",
+            "answerText": "In a game development project, I used reinforcement learning to create NPCs with dynamic and intelligent behaviors."
+          },
+          "question28": {
+            "id": "ai_engineering_question28",
+            "questionText": "How do you handle AI model versioning and model lifecycle management?",
+            "answerText": "I use version control systems like Git and implement model versioning to track changes and manage the model's lifecycle."
+          },
+          "question29": {
+            "id": "ai_engineering_question29",
+            "questionText": "Describe a time when you used AI for predictive maintenance in industrial equipment to reduce downtime.",
+            "answerText": "In an industrial equipment maintenance project, I used AI algorithms to predict equipment failures and schedule preventive maintenance."
+          },
+          "question30": {
+            "id": "ai_engineering_question30",
+            "questionText": "How do you approach AI explainability for models used in critical applications like healthcare or finance?",
+            "answerText": "I use explainable AI techniques like LIME or SHAP to provide interpretable explanations for model predictions, ensuring transparency."
+          }
+        }
+      }
+    }
+  },
   "civil": {
     "name": "Civil",
     "questions": {
       "question1": {
+        "answerText": " Concrete and cement are often used interchangeably, but they refer to different materials in the field of civil engineering.  Cement is a binding agent used to hold construction materials together. It is a fine powder, primarily composed of limestone, clay, and other materials, which are heated at high temperatures to form a clinker. This clinker is then ground into a fine powder to produce cement. Cement acts as a glue that binds sand, gravel, and other aggregates to form concrete.  Concrete, on the other hand, is a composite material made by mixing cement, water, sand, and aggregates (such as gravel or crushed stone). The cement hydrates and forms a solid matrix that binds the aggregates together, creating a durable and strong construction material. Concrete is widely used in construction due to its excellent compressive strength, durability, and versatility.  In summary, cement is an ingredient used to make concrete, while concrete is the final product used in construction projects like buildings, bridges, and roads.Concrete and cement are often used interchangeably, but they refer to different materials in the field of civil engineering.  Cement is a binding agent used to hold construction materials together. It is a fine powder, primarily composed of limestone, clay, and other materials, which are heated at high temperatures to form a clinker. This clinker is then ground into a fine powder to produce cement. Cement acts as a glue that binds sand, gravel, and other aggregates to form concrete.  Concrete, on the other hand, is a composite material made by mixing cement, water, sand, and aggregates (such as gravel or crushed stone). The cement hydrates and forms a solid matrix that binds the aggregates together, creating a durable and strong construction material. Concrete is widely used in construction due to its excellent compressive strength, durability, and versatility.  In summary, cement is an ingredient used to make concrete, while concrete is the final product used in construction projects like buildings, bridges, and roads.Concrete and cement are often used interchangeably, but they refer to different materials in the field of civil engineering.  Cement is a binding agent used to hold construction materials together. It is a fine powder, primarily composed of limestone, clay, and other materials, which are heated at high temperatures to form a clinker. This clinker is then ground into a fine powder to produce cement. Cement acts as a glue that binds sand, gravel, and other aggregates to form concrete.  Concrete, on the other hand, is a composite material made by mixing cement, water, sand, and aggregates (such as gravel or crushed stone). The cement hydrates and forms a solid matrix that binds the aggregates together, creating a durable and strong construction material. Concrete is widely used in construction due to its excellent compressive strength, durability, and versatility.  In summary, cement is an ingredient used to make concrete, while concrete is the final product used in construction projects like buildings, bridges, and roads. ttyh",
         "id": "civil_question1",
-        "answerText": "Answer 1 - Civil",
-        "questionText": "Question 1 - Civil"
+        "questionText": "What is the difference between concrete and cement?"
       },
       "question2": {
+        "answerText": "Answer 2 - Civil Updated",
         "id": "civil_question2",
-        "answerText": "Answer 2 - Civil",
-        "questionText": "Question 2 - Civil"
+        "questionText": "Question 2 - Civil "
       },
       "question3": {
+        "answerText": "Answer 3 - Civil updated",
         "id": "civil_question3",
-        "answerText": "Answer 3 - Civil",
         "questionText": "Question 3 - Civil"
       },
       "question4": {
+        "answerText": "Answer 4 - Civil updated",
         "id": "civil_question4",
-        "answerText": "Answer 4 - Civil",
         "questionText": "Question 4 - Civil"
       },
       "question5": {
-        "id": "civil_question5",
         "answerText": "Answer 5 - Civil",
-        "questionText": "Question 5 - Civil"
+        "id": "civil_question5",
+        "questionText": "Question 5 - Civil aslo upadted"
       }
     }
   },
-  "it": {
-    "name": "IT",
-    "subcategories": {
-      "csharp": {
-        "name": "C#",
-        "subcategories": {
-          "sub1": {
-            "name": "Subcategory 1",
-            "subcategories": {
-              "sub1Subcategory1": {
-                "name": "Subcategory 1.1",
-                "questions": {
-                  "sub1Subcategory1Question1": {
-                    "id": "csharp_sub1_sub1Subcategory1Question1",
-                    "answerText": "Answer 1 - Subcategory 1.1",
-                    "questionText": "Question 1 - Subcategory 1.1"
-                  },
-                  "sub1Subcategory1Question2": {
-                    "id": "csharp_sub1_sub1Subcategory1Question2",
-                    "answerText": "Answer 2 - Subcategory 1.1",
-                    "questionText": "Question 2 - Subcategory 1.1"
-                  }
-                }
-              },
-              "sub1Subcategory2": {
-                "name": "Subcategory 1.2",
-                "questions": {
-                  "sub1Subcategory2Question1": {
-                    "id": "csharp_sub1_sub1Subcategory2Question1",
-                    "answerText": "Answer 1 - Subcategory 1.2",
-                    "questionText": "Question 1 - Subcategory 1.2"
-                  },
-                  "sub1Subcategory2Question2": {
-                    "id": "csharp_sub1_sub1Subcategory2Question2",
-                    "answerText": "Answer 2 - Subcategory 1.2",
-                    "questionText": "Question 2 - Subcategory 1.2"
-                  }
-                }
-              }
-            }
-          },
-          "sub2": {
-            "name": "Subcategory 2",
-            "questions": {
-              "sub2Question1": {
-                "id": "csharp_sub2_sub2Question1",
-                "answerText": "Answer 1 - Subcategory 2",
-                "questionText": "Question 1 - Subcategory 2"
-              },
-              "sub2Question2": {
-                "id": "csharp_sub2_sub2Question2",
-                "answerText": "Answer 2 - Subcategory 2",
-                "questionText": "Question 2 - Subcategory 2"
-              }
-            }
-          }
-        }
+  "softskills": {
+    "name": "Soft Skills",
+    "questions": {
+      "question1": {
+        "id": "soft_skillquestion1",
+        "questionText": "Tell me about a challenging situation you faced in your previous job and how you handled it.",
+        "answerText": "In my previous job, we faced a tight deadline for a project. I organized the team, delegated tasks based on individual strengths, and maintained open communication throughout. We successfully completed the project on time, exceeding expectations."
       },
-      "java": {
-        "name": "Java",
-        "questions": {
-          "question1": {
-            "id": "java_question1",
-            "answerText": "Answer 1 - Java",
-            "questionText": "Question 1 - Java"
-          },
-          "question2": {
-            "id": "java_question2",
-            "answerText": "Answer 2 - Java",
-            "questionText": "Question 2 - Java"
-          },
-          "question3": {
-            "id": "java_question3",
-            "answerText": "Answer 3 - Java",
-            "questionText": "Question 3 - Java"
-          },
-          "question4": {
-            "id": "java_question4",
-            "answerText": "Answer 4 - Java",
-            "questionText": "Question 4 - Java"
-          },
-          "question5": {
-            "id": "java_question5",
-            "answerText": "Answer 5 - Java",
-            "questionText": "Question 5 - Java"
-          }
-        }
+      "question2": {
+        "id": "soft_skillquestion2",
+        "questionText": "How do you handle conflicts or disagreements with team members?",
+        "answerText": "I believe in addressing conflicts directly and respectfully. I actively listen to the other person's perspective, seek common ground, and work towards a win-win solution. Constructive communication is essential in resolving conflicts."
       },
-      "javascript": {
-        "name": "JavaScript",
-        "questions": {
-          "question1": {
-            "id": "javascript_question1",
-            "answerText": "Answer 1 - JavaScript",
-            "questionText": "Question 1 - JavaScript"
-          },
-          "question2": {
-            "id": "javascript_question2",
-            "answerText": "Answer 2 - JavaScript",
-            "questionText": "Question 2 - JavaScript"
-          },
-          "question3": {
-            "id": "javascript_question3",
-            "answerText": "Answer 3 - JavaScript",
-            "questionText": "Question 3 - JavaScript"
-          },
-          "question4": {
-            "id": "javascript_question4",
-            "answerText": "Answer 4 - JavaScript",
-            "questionText": "Question 4 - JavaScript"
-          },
-          "question5": {
-            "id": "javascript_question5",
-            "answerText": "Answer 5 - JavaScript",
-            "questionText": "Question 5 - JavaScript"
-          }
-        }
+      "question3": {
+        "id": "soft_skillquestion3",
+        "questionText": "How do you prioritize tasks and manage your time effectively?",
+        "answerText": "I use a combination of to-do lists and calendar scheduling to prioritize tasks based on deadlines and importance. I also practice time blocking to ensure focused work on specific tasks without distractions."
+      },
+      "question4": {
+        "id": "soft_skillquestion4",
+        "questionText": "How do you handle stressful situations at work?",
+        "answerText": "I stay calm under pressure by taking deep breaths and focusing on the task at hand. I break down complex problems into smaller, manageable steps and seek support from colleagues when needed."
+      },
+      "question5": {
+        "id": "soft_skillquestion5",
+        "questionText": "How do you demonstrate adaptability in the workplace?",
+        "answerText": "I am open to change and embrace new challenges. I actively seek feedback to improve my skills and stay up-to-date with industry trends, allowing me to adapt to different situations and roles."
+      },
+      "question6": {
+        "id": "soft_skillquestion6",
+        "questionText": "Describe a time when you provided excellent customer service.",
+        "answerText": "In my previous role, a customer had an issue with our product. I actively listened to their concerns, empathized with their frustration, and provided a timely solution, ensuring their satisfaction and loyalty."
+      },
+      "question7": {
+        "id": "soft_skillquestion7",
+        "questionText": "How do you handle criticism and feedback from supervisors or peers?",
+        "answerText": "I view feedback as an opportunity to grow and improve. I appreciate constructive criticism and use it to enhance my skills and performance. I maintain a positive attitude and show gratitude for valuable input."
+      },
+      "question8": {
+        "id": "soft_skillquestion8",
+        "questionText": "Tell me about a time when you had to work collaboratively on a team project.",
+        "answerText": "During a team project, I collaborated with colleagues from different departments. I encouraged open communication, leveraged each team member's strengths, and celebrated our collective achievements, fostering a cohesive and productive team environment."
+      },
+      "question9": {
+        "id": "soft_skillquestion9",
+        "questionText": "How do you maintain a positive work attitude, even during challenging times?",
+        "answerText": "I focus on the bigger picture and the impact of my work. I remind myself of past successes and approach challenges as opportunities to learn and grow. Maintaining a positive mindset helps me stay motivated and resilient."
+      },
+      "question10": {
+        "id": "soft_skillquestion10",
+        "questionText": "How do you handle situations where you need to give constructive feedback to a colleague?",
+        "answerText": "I approach such situations with empathy and sensitivity. I schedule a private meeting, focus on specific behaviors, and offer actionable suggestions for improvement. I ensure the feedback is constructive and supportive."
+      },
+      "question11": {
+        "id": "soft_skillquestion11",
+        "questionText": "How do you handle tight deadlines and manage multiple tasks effectively?",
+        "answerText": "I prioritize tasks based on urgency and importance. I break down complex projects into smaller milestones, set realistic deadlines, and communicate openly with the team to ensure everyone is on track."
+      },
+      "question12": {
+        "id": "soft_skillquestion12",
+        "questionText": "Describe a time when you demonstrated strong leadership skills.",
+        "answerText": "In a group project, I took the initiative to lead the team. I delegated tasks based on individual strengths, encouraged open communication, and motivated the team to achieve our shared goal successfully."
+      },
+      "question13": {
+        "id": "soft_skillquestion13",
+        "questionText": "How do you handle ambiguity or situations where there is no clear solution?",
+        "answerText": "I embrace ambiguity as an opportunity for creativity and innovation. I research and gather information to make informed decisions. If necessary, I seek input from team members to explore various perspectives before reaching a solution."
+      },
+      "question14": {
+        "id": "soft_skillquestion14",
+        "questionText": "How do you stay motivated in your professional development and continuous learning?",
+        "answerText": "I set personal and professional goals to guide my growth. I regularly attend workshops, webinars, and conferences to expand my knowledge. I believe in continuous learning to stay relevant and excel in my field."
+      },
+      "question15": {
+        "id": "soft_skillquestion15",
+        "questionText": "Describe a time when you had to mediate a disagreement between team members.",
+        "answerText": "During a project, two team members had conflicting ideas. I acted as a mediator, facilitating a respectful conversation and finding common ground. By focusing on shared objectives, we resolved the issue amicably."
+      },
+      "question16": {
+        "id": "soft_skillquestion16",
+        "questionText": "How do you demonstrate empathy and emotional intelligence in the workplace?",
+        "answerText": "I actively listen to others, acknowledge their feelings, and respond with compassion. I put myself in their shoes to understand their perspectives better. Demonstrating empathy fosters a supportive and inclusive work environment."
+      },
+      "question17": {
+        "id": "soft_skillquestion17",
+        "questionText": "Tell me about a time when you successfully motivated a team to achieve a challenging goal.",
+        "answerText": "In a sales campaign, I motivated my team by highlighting the impact of our success on individual careers and the company's growth. I provided recognition and rewards, fostering a positive and enthusiastic team spirit."
+      },
+      "question18": {
+        "id": "soft_skillquestion18",
+        "questionText": "How do you ensure effective communication with team members from diverse backgrounds?",
+        "answerText": "I adapt my communication style to suit individual preferences and cultural differences. I actively seek feedback to ensure clarity and understanding, promoting a collaborative and inclusive work environment."
+      },
+      "question19": {
+        "id": "soft_skillquestion19",
+        "questionText": "Describe a time when you had to make a difficult decision with limited information.",
+        "answerText": "In a project, I faced a crucial decision with incomplete data. I analyzed available information, consulted colleagues for insights, and used my best judgment to make the decision. I remained open to adjusting the course if new data emerged."
+      },
+      "question20": {
+        "id": "soft_skillquestion20",
+        "questionText": "How do you handle setbacks and failures at work?",
+        "answerText": "I view setbacks as opportunities to learn and grow. I analyze what went wrong, identify lessons, and use them to improve my future approach. I maintain a positive attitude, knowing that failures are a natural part of the learning process."
+      },
+      "question21": {
+        "id": "soft_skillquestion21",
+        "questionText": "Tell me about a challenging situation you faced in your previous job and how you handled it.",
+        "answerText": "In my previous job, we faced a tight deadline for a project. I organized the team, delegated tasks based on individual strengths, and maintained open communication throughout. We successfully completed the project on time, exceeding expectations."
+      },
+      "question22": {
+        "id": "soft_skillquestion22",
+        "questionText": "How do you handle conflicts or disagreements with team members?",
+        "answerText": "I believe in addressing conflicts directly and respectfully. I actively listen to the other person's perspective, seek common ground, and work towards a win-win solution. Constructive communication is essential in resolving conflicts."
+      },
+      "question23": {
+        "id": "soft_skillquestion23",
+        "questionText": "How do you prioritize tasks and manage your time effectively?",
+        "answerText": "I use a combination of to-do lists and calendar scheduling to prioritize tasks based on deadlines and importance. I also practice time blocking to ensure focused work on specific tasks without distractions."
+      },
+      "question24": {
+        "id": "soft_skillquestion24",
+        "questionText": "How do you handle stressful situations at work?",
+        "answerText": "I stay calm under pressure by taking deep breaths and focusing on the task at hand. I break down complex problems into smaller, manageable steps and seek support from colleagues when needed."
+      },
+      "question25": {
+        "id": "soft_skillquestion25",
+        "questionText": "How do you demonstrate adaptability in the workplace?",
+        "answerText": "I am open to change and embrace new challenges. I actively seek feedback to improve my skills and stay up-to-date with industry trends, allowing me to adapt to different situations and roles."
+      },
+      "question26": {
+        "id": "soft_skillquestion26",
+        "questionText": "Describe a time when you provided excellent customer service.",
+        "answerText": "In my previous role, a customer had an issue with our product. I actively listened to their concerns, empathized with their frustration, and provided a timely solution, ensuring their satisfaction and loyalty."
+      },
+      "question27": {
+        "id": "soft_skillquestion27",
+        "questionText": "How do you handle criticism and feedback from supervisors or peers?",
+        "answerText": "I view feedback as an opportunity to grow and improve. I appreciate constructive criticism and use it to enhance my skills and performance. I maintain a positive attitude and show gratitude for valuable input."
+      },
+      "question28": {
+        "id": "soft_skillquestion28",
+        "questionText": "Tell me about a time when you had to work collaboratively on a team project.",
+        "answerText": "During a team project, I collaborated with colleagues from different departments. I encouraged open communication, leveraged each team member's strengths, and celebrated our collective achievements, fostering a cohesive and productive team environment."
+      },
+      "question29": {
+        "id": "soft_skillquestion29",
+        "questionText": "How do you maintain a positive work attitude, even during challenging times?",
+        "answerText": "I focus on the bigger picture and the impact of my work. I remind myself of past successes and approach challenges as opportunities to learn and grow. Maintaining a positive mindset helps me stay motivated and resilient."
+      },
+      "question30": {
+        "id": "soft_skillquestion30",
+        "questionText": "How do you handle situations where you need to give constructive feedback to a colleague?",
+        "answerText": "I approach such situations with empathy and sensitivity. I schedule a private meeting, focus on specific behaviors, and offer actionable suggestions for improvement. I ensure the feedback is constructive and supportive."
       }
     }
   },
   "mechanical": {
-    "name": "Mechanical",
+    "name": "Mechanical Engineering",
     "questions": {
       "question1": {
         "id": "mechanical_question1",
-        "answerText": "Answer 1 - Mechanical",
-        "questionText": "Question 1 - Mechanical"
+        "questionText": "Can you explain the basic principles of thermodynamics?",
+        "answerText": "Thermodynamics deals with energy transfer and conversion. It includes the first law (conservation of energy) and the second law (entropy increase in a closed system). These principles are fundamental in understanding energy utilization in mechanical systems."
       },
       "question2": {
         "id": "mechanical_question2",
-        "answerText": "Answer 2 - Mechanical",
-        "questionText": "Question 2 - Mechanical"
+        "questionText": "Describe a project where you applied your knowledge of fluid mechanics.",
+        "answerText": "In a previous project, I designed a cooling system for an electronic device. I analyzed fluid flow patterns, calculated pressure drops, and optimized the system to ensure efficient heat dissipation and maintain device performance."
       },
       "question3": {
         "id": "mechanical_question3",
-        "answerText": "Answer 3 - Mechanical",
-        "questionText": "Question 3 - Mechanical"
+        "questionText": "How do you ensure safety when designing mechanical systems or components?",
+        "answerText": "Safety is a top priority in mechanical engineering. I follow industry standards and conduct risk assessments throughout the design process. I perform stress and failure analysis to ensure components can withstand operating conditions without compromising safety."
       },
       "question4": {
         "id": "mechanical_question4",
-        "answerText": "Answer 4 - Mechanical",
-        "questionText": "Question 4 - Mechanical"
+        "questionText": "Explain the difference between static and dynamic loading in mechanical systems.",
+        "answerText": "Static loading involves constant forces applied to a structure or component, while dynamic loading refers to forces that vary with time. Understanding these load types is crucial in designing mechanical systems that can withstand varying stress levels."
       },
       "question5": {
         "id": "mechanical_question5",
-        "answerText": "Answer 5 - Mechanical",
-        "questionText": "Question 5 - Mechanical"
+        "questionText": "How do you approach material selection for mechanical components?",
+        "answerText": "Material selection depends on factors like mechanical properties, cost, and environmental conditions. I conduct material testing and analyze stress-strain curves to determine the most suitable material for specific applications."
+      },
+      "question6": {
+        "id": "mechanical_question6",
+        "questionText": "Describe a time when you solved a complex engineering problem using analytical methods.",
+        "answerText": "In a design project, I encountered a challenging problem with weight distribution. I used analytical methods to calculate the center of gravity, ensuring the stability and optimal performance of the system."
+      },
+      "question7": {
+        "id": "mechanical_question7",
+        "questionText": "Can you explain the working principle of a four-stroke internal combustion engine?",
+        "answerText": "A four-stroke engine follows four phases: intake, compression, power, and exhaust. During intake, air-fuel mixture enters the cylinder. In compression, the mixture is compressed. Power occurs when the spark ignites the mixture, resulting in an explosion that moves the piston. Lastly, exhaust releases the spent gases."
+      },
+      "question8": {
+        "id": "mechanical_question8",
+        "questionText": "How do you ensure mechanical designs are cost-effective?",
+        "answerText": "I optimize designs by considering material costs, manufacturing processes, and efficiency. I perform cost-benefit analysis to ensure that the chosen design meets performance requirements while remaining within budget constraints."
+      },
+      "question9": {
+        "id": "mechanical_question9",
+        "questionText": "Describe a situation where you improved the energy efficiency of a mechanical system.",
+        "answerText": "In a HVAC system upgrade, I implemented variable speed drives for motors, reducing energy consumption during low-demand periods. This improvement led to significant energy savings and lower operating costs."
+      },
+      "question10": {
+        "id": "mechanical_question10",
+        "questionText": "How do you keep yourself updated with the latest advancements in mechanical engineering?",
+        "answerText": "I attend conferences, workshops, and read technical journals regularly. Additionally, I participate in online courses to stay updated with the latest trends and technologies in the field."
+      },
+      "question11": {
+        "id": "mechanical_question11",
+        "questionText": "Can you explain the principles of heat transfer and their applications in mechanical systems?",
+        "answerText": "Heat transfer involves conduction, convection, and radiation. Understanding these principles is essential in designing efficient cooling systems, heat exchangers, and thermal insulation for mechanical applications."
+      },
+      "question12": {
+        "id": "mechanical_question12",
+        "questionText": "Describe a project where you used computer-aided design (CAD) software to design mechanical components.",
+        "answerText": "In a product development project, I used CAD software to create detailed 3D models of complex components. This allowed me to visualize the design, identify potential issues, and make necessary modifications before prototyping."
+      },
+      "question13": {
+        "id": "mechanical_question13",
+        "questionText": "How do you ensure compliance with industry standards and regulations in your mechanical designs?",
+        "answerText": "I stay updated with relevant codes and regulations, ensuring that my designs meet all safety and performance requirements. I also collaborate with other engineers and subject matter experts to verify compliance."
+      },
+      "question14": {
+        "id": "mechanical_question14",
+        "questionText": "Can you explain the concept of stress analysis in mechanical engineering?",
+        "answerText": "Stress analysis involves evaluating how forces and loads affect mechanical structures. It helps identify potential failure points and ensures the design can withstand expected operating conditions without deformation or failure."
+      },
+      "question15": {
+        "id": "mechanical_question15",
+        "questionText": "Describe a time when you collaborated with a multidisciplinary team to complete a complex project.",
+        "answerText": "In a cross-functional project, I collaborated with electrical and software engineers to develop an automated assembly line. Effective communication and seamless integration of different components resulted in a successful and efficient system."
+      },
+      "question16": {
+        "id": "mechanical_question16",
+        "questionText": "How do you ensure the reliability and durability of mechanical components in your designs?",
+        "answerText": "I conduct extensive testing, including fatigue and wear analysis, to validate the reliability and durability of mechanical components. This ensures that the designed systems can operate efficiently and withstand prolonged usage."
+      },
+      "question17": {
+        "id": "mechanical_question17",
+        "questionText": "Can you explain the working principles of a hydraulic system and its applications?",
+        "answerText": "Hydraulic systems use pressurized fluid to transmit power. They are used in various applications like construction equipment, industrial machinery, and aircraft landing gear, as they offer high power density and precise control."
+      },
+      "question18": {
+        "id": "mechanical_question18",
+        "questionText": "Describe a time when you successfully reduced friction and improved the efficiency of a mechanical system.",
+        "answerText": "In a conveyor system, I introduced low-friction bearings and optimized surface coatings. This reduced energy losses due to friction and improved the overall efficiency of material handling operations."
+      },
+      "question19": {
+        "id": "mechanical_question19",
+        "questionText": "How do you handle design modifications during the manufacturing process to ensure product quality?",
+        "answerText": "I work closely with manufacturing teams to address any design modifications required for producibility. We collaborate to maintain product integrity and quality while making necessary adjustments for efficient manufacturing."
+      },
+      "question20": {
+        "id": "mechanical_question20",
+        "questionText": "Can you explain the concept of torque and its significance in mechanical engineering?",
+        "answerText": "Torque is a measure of rotational force. In mechanical engineering, it is critical in designing components like gearboxes, engines, and motors. Understanding torque ensures that mechanical systems can handle the required power and rotation."
+      },
+      "question21": {
+        "id": "mechanical_question21",
+        "questionText": "Describe a time when you led a team in a mechanical engineering project, and how you motivated team members.",
+        "answerText": "I led a team in developing a robotic system. I motivated team members by recognizing their contributions, providing clear goals, and encouraging open communication. We celebrated milestones together, fostering a positive and productive team environment."
+      },
+      "question22": {
+        "id": "mechanical_question22",
+        "questionText": "How do you ensure accuracy and precision in your measurements during experiments or testing?",
+        "answerText": "I use calibrated instruments, conduct multiple trials, and follow standard measurement protocols to ensure accuracy and precision. I also analyze measurement uncertainties to maintain data integrity."
+      },
+      "question23": {
+        "id": "mechanical_question23",
+        "questionText": "Describe a situation where you identified a potential design flaw and proposed an effective solution.",
+        "answerText": "In a product development project, I noticed a structural weakness in a component. I conducted finite element analysis, identified the critical area, and proposed design modifications, resulting in a stronger and safer component."
+      },
+      "question24": {
+        "id": "mechanical_question24",
+        "questionText": "How do you prioritize safety features in mechanical designs, especially in high-risk applications?",
+        "answerText": "Safety is a non-negotiable aspect of any mechanical design. I conduct thorough risk assessments, apply safety factors, and use fail-safe mechanisms to ensure the reliability and protection of users and operators."
+      },
+      "question25": {
+        "id": "mechanical_question25",
+        "questionText": "Can you explain the process of mechanical vibration analysis and its role in equipment reliability?",
+        "answerText": "Vibration analysis helps identify potential faults or mechanical issues in machinery. By analyzing vibration patterns, we can detect abnormalities and perform preventive maintenance to enhance equipment reliability."
+      },
+      "question26": {
+        "id": "mechanical_question26",
+        "questionText": "Describe a time when you used your problem-solving skills to resolve an unexpected issue in a mechanical system.",
+        "answerText": "During a machine installation, we encountered alignment problems that affected performance. I coordinated with the team to diagnose the issue, adjusting components and aligning machinery to restore optimal functionality."
+      },
+      "question27": {
+        "id": "mechanical_question27",
+        "questionText": "How do you stay updated with the latest developments in mechanical engineering software and tools?",
+        "answerText": "I regularly attend software training programs and webinars to learn about the latest updates and functionalities of engineering tools. I also participate in online forums and communities to share knowledge and experiences with other professionals."
+      },
+      "question28": {
+        "id": "mechanical_question28",
+        "questionText": "Describe a time when you applied your knowledge of materials engineering to optimize the durability of a product.",
+        "answerText": "In a product redesign, I selected advanced composite materials that offered superior strength-to-weight ratios. This enhanced the product's durability while reducing its weight and manufacturing costs."
+      },
+      "question29": {
+        "id": "mechanical_question29",
+        "questionText": "How do you manage multiple projects and deadlines simultaneously, ensuring on-time delivery of quality work?",
+        "answerText": "I use project management tools to track progress and set milestones for each project. By breaking down tasks and establishing priorities, I ensure that each project receives the necessary attention to meet deadlines and quality standards."
+      },
+      "question30": {
+        "id": "mechanical_question30",
+        "questionText": "Can you explain the concept of mechanical resonance and its potential impact on mechanical systems?",
+        "answerText": "Mechanical resonance occurs when a system's natural frequency matches an external force frequency, resulting in excessive vibrations and potential damage. In mechanical designs, we take measures to avoid resonance and ensure the stability of the system."
       }
     }
   },
-  "softskill": {
-    "name": "Soft Skills",
+  "electrical": {
+    "name": "Electrical Engineering",
     "questions": {
       "question1": {
-        "id": "softskill_question1",
-        "answerText": "Answer 1 - Soft Skills",
-        "questionText": "Question 1 - Soft Skills"
+        "id": "electrical_question1",
+        "questionText": "Can you explain the difference between AC and DC circuits?",
+        "answerText": "AC (alternating current) changes direction periodically, commonly used in household power supply. DC (direct current) flows in one direction, often used in batteries and electronic devices."
       },
       "question2": {
-        "id": "softskill_question2",
-        "answerText": "Answer 2 - Soft Skills",
-        "questionText": "Question 2 - Soft Skills"
+        "id": "electrical_question2",
+        "questionText": "Describe a project where you applied your knowledge of digital electronics.",
+        "answerText": "In a digital electronics project, I designed a microcontroller-based temperature control system. The microcontroller monitored the temperature and controlled the heating element to maintain a stable temperature."
       },
       "question3": {
-        "id": "softskill_question3",
-        "answerText": "Answer 3 - Soft Skills",
-        "questionText": "Question 3 - Soft Skills"
+        "id": "electrical_question3",
+        "questionText": "How do you ensure electrical safety in your designs and installations?",
+        "answerText": "I adhere to safety standards and use proper insulation, grounding, and circuit protection mechanisms. I perform thorough testing and inspections to ensure electrical safety."
       },
       "question4": {
-        "id": "softskill_question4",
-        "answerText": "Answer 4 - Soft Skills",
-        "questionText": "Question 4 - Soft Skills"
+        "id": "electrical_question4",
+        "questionText": "Explain the working principle of transformers.",
+        "answerText": "Transformers transfer electrical energy between two or more coils through magnetic induction. They change voltage levels while preserving power in AC circuits."
       },
       "question5": {
-        "id": "softskill_question5",
-        "answerText": "Answer 5 - Soft Skills",
-        "questionText": "Question 5 - Soft Skills"
+        "id": "electrical_question5",
+        "questionText": "How do you calculate the power consumption of electrical devices?",
+        "answerText": "Power consumption (in watts) is calculated by multiplying the voltage across the device by the current passing through it (P = V * I)."
+      },
+      "question6": {
+        "id": "electrical_question6",
+        "questionText": "Describe a time when you solved a complex electrical engineering problem using analytical methods.",
+        "answerText": "In a power distribution project, I analyzed load requirements and performed load flow analysis to determine the optimal distribution system design."
+      },
+      "question7": {
+        "id": "electrical_question7",
+        "questionText": "Can you explain the concept of three-phase power systems and their advantages?",
+        "answerText": "Three-phase power systems have three alternating currents, which provide constant power delivery, reduce voltage drop, and allow efficient power transmission over long distances."
+      },
+      "question8": {
+        "id": "electrical_question8",
+        "questionText": "How do you ensure the efficiency of electrical motors in your designs?",
+        "answerText": "I select motors with high efficiency ratings and match them to the specific load requirements. I optimize motor control and incorporate energy-saving measures to enhance overall efficiency."
+      },
+      "question9": {
+        "id": "electrical_question9",
+        "questionText": "Describe a situation where you successfully handled a power outage or electrical fault.",
+        "answerText": "During a power outage, I conducted a thorough inspection to identify the fault location and safely restored power by implementing appropriate corrective measures."
+      },
+      "question10": {
+        "id": "electrical_question10",
+        "questionText": "How do you stay updated with the latest advancements in electrical engineering?",
+        "answerText": "I regularly attend technical seminars, workshops, and read research papers and journals to stay updated with the latest trends and innovations in the field."
+      },
+      "question11": {
+        "id": "electrical_question11",
+        "questionText": "Can you explain the working principle of a transistor and its applications?",
+        "answerText": "Transistors amplify and switch electrical signals. They are fundamental components in electronic devices like amplifiers, computer processors, and communication systems."
+      },
+      "question12": {
+        "id": "electrical_question12",
+        "questionText": "Describe a project where you used software tools like MATLAB or simulation software for electrical circuit analysis.",
+        "answerText": "In a control system design project, I used MATLAB to model and simulate the system's response to various inputs, optimizing its performance."
+      },
+      "question13": {
+        "id": "electrical_question13",
+        "questionText": "How do you ensure compliance with electrical codes and safety standards in your designs?",
+        "answerText": "I keep myself updated with relevant electrical codes and safety standards and incorporate them into my designs to ensure compliance and safety."
+      },
+      "question14": {
+        "id": "electrical_question14",
+        "questionText": "Can you explain the principles of electromagnetic induction and its applications?",
+        "answerText": "Electromagnetic induction involves the generation of electric current in a conductor when subjected to a changing magnetic field. It is used in generators, transformers, and induction motors."
+      },
+      "question15": {
+        "id": "electrical_question15",
+        "questionText": "Describe a time when you effectively collaborated with a cross-functional team on an electrical engineering project.",
+        "answerText": "In a renewable energy project, I collaborated with mechanical and civil engineers to design an integrated solar power system. Our seamless teamwork resulted in a successful and sustainable solution."
+      },
+      "question16": {
+        "id": "electrical_question16",
+        "questionText": "How do you protect electrical circuits from overcurrent and short circuits?",
+        "answerText": "I use fuses, circuit breakers, and overcurrent protection devices to prevent damage caused by excessive current flow in electrical circuits."
+      },
+      "question17": {
+        "id": "electrical_question17",
+        "questionText": "Describe a situation where you optimized the energy efficiency of an electrical system or building.",
+        "answerText": "In an energy audit, I identified areas of high energy consumption and implemented energy-efficient lighting, HVAC controls, and insulation to reduce overall energy usage."
+      },
+      "question18": {
+        "id": "electrical_question18",
+        "questionText": "How do you ensure the reliability and safety of electrical systems in critical applications?",
+        "answerText": "I conduct rigorous testing and fault analysis, using redundancy and backup systems to ensure continuous operation and safety in critical applications."
+      },
+      "question19": {
+        "id": "electrical_question19",
+        "questionText": "Can you explain the principles of power factor and its significance in electrical systems?",
+        "answerText": "Power factor measures the efficiency of power usage in electrical systems. A low power factor leads to wasteful power consumption and increased energy costs."
+      },
+      "question20": {
+        "id": "electrical_question20",
+        "questionText": "Describe a time when you successfully integrated renewable energy sources into an existing electrical grid.",
+        "answerText": "In a microgrid project, I integrated solar panels and wind turbines into the existing grid, optimizing the renewable energy contribution and minimizing reliance on conventional power sources."
+      },
+      "question21": {
+        "id": "electrical_question21",
+        "questionText": "How do you design and implement electrical circuits for maximum efficiency and minimal signal loss?",
+        "answerText": "I use impedance matching, signal conditioning, and noise reduction techniques to ensure efficient electrical circuits with minimal signal distortion."
+      },
+      "question22": {
+        "id": "electrical_question22",
+        "questionText": "Describe a situation where you successfully resolved electromagnetic interference (EMI) issues in an electrical system.",
+        "answerText": "In an electronic product design, I implemented shielding and filtering techniques to eliminate EMI, ensuring smooth operation and compliance with electromagnetic compatibility (EMC) standards."
+      },
+      "question23": {
+        "id": "electrical_question23",
+        "questionText": "How do you optimize power distribution to reduce energy losses and voltage drop?",
+        "answerText": "I use power factor correction, voltage regulation, and proper conductor sizing to minimize energy losses and maintain consistent voltage levels."
+      },
+      "question24": {
+        "id": "electrical_question24",
+        "questionText": "Can you explain the principles of digital signal processing (DSP) and its applications?",
+        "answerText": "DSP involves processing digital signals to enhance or analyze data. It is used in audio processing, image compression, and communication systems."
+      },
+      "question25": {
+        "id": "electrical_question25",
+        "questionText": "Describe a time when you conducted a failure analysis to determine the root cause of an electrical system malfunction.",
+        "answerText": "In a motor failure, I conducted a detailed analysis of the insulation system, temperature rise, and operating conditions to identify the root cause and prevent future failures."
+      },
+      "question26": {
+        "id": "electrical_question26",
+        "questionText": "How do you ensure electromagnetic compatibility (EMC) in complex electronic systems with multiple components?",
+        "answerText": "I use shielding, grounding, and separation techniques to mitigate electromagnetic interference, ensuring EMC compliance in complex electronic systems."
+      },
+      "question27": {
+        "id": "electrical_question27",
+        "questionText": "Describe a time when you provided technical support and training to colleagues or clients for electrical systems.",
+        "answerText": "I conducted workshops and training sessions to educate colleagues on the installation and operation of complex electrical systems, ensuring their effective use."
+      },
+      "question28": {
+        "id": "electrical_question28",
+        "questionText": "How do you approach cost-effective electrical system designs without compromising on quality and performance?",
+        "answerText": "I perform cost-benefit analyses, explore alternative component options, and leverage economies of scale to achieve cost-effective designs without compromising on quality and performance."
+      },
+      "question29": {
+        "id": "electrical_question29",
+        "questionText": "Can you explain the working principle of a brushless DC motor and its advantages over conventional motors?",
+        "answerText": "Brushless DC motors use electronic commutation, offering higher efficiency, longer lifespan, and reduced maintenance compared to brushed motors."
+      },
+      "question30": {
+        "id": "electrical_question30",
+        "questionText": "Describe a time when you successfully implemented energy storage solutions in a renewable energy project.",
+        "answerText": "In a solar power system, I integrated battery storage to store excess energy and provide continuous power during low sunlight conditions, optimizing energy utilization."
+      }
+    }
+  },
+  "chemical": {
+    "name": "Chemical Engineering",
+    "questions": {
+      "question1": {
+        "id": "chemical_question1",
+        "questionText": "Can you explain the role of a Chemical Engineer in the manufacturing industry?",
+        "answerText": "Chemical Engineers play a crucial role in designing, optimizing, and managing chemical processes. They are involved in research, development, and troubleshooting to ensure efficient and safe production of chemicals and materials."
+      },
+      "question2": {
+        "id": "chemical_question2",
+        "questionText": "Describe a project where you utilized your knowledge of process control and instrumentation.",
+        "answerText": "In a chemical plant project, I implemented advanced control algorithms and instrumentation to maintain consistent product quality and optimize process parameters, resulting in reduced raw material consumption."
+      },
+      "question3": {
+        "id": "chemical_question3",
+        "questionText": "How do you ensure the safety of chemical processes and handle hazardous materials?",
+        "answerText": "I follow strict safety protocols, conduct thorough risk assessments, and implement safety measures like containment systems and emergency response plans to handle hazardous materials safely."
+      },
+      "question4": {
+        "id": "chemical_question4",
+        "questionText": "Explain the concept of material and energy balances in chemical engineering.",
+        "answerText": "Material and energy balances involve accounting for all inputs and outputs in a chemical process to ensure mass and energy conservation. These balances are essential in process optimization and troubleshooting."
+      },
+      "question5": {
+        "id": "chemical_question5",
+        "questionText": "Describe a time when you successfully scaled up a laboratory process to industrial production.",
+        "answerText": "In a research project, I developed a new catalyst in the laboratory and successfully scaled up the synthesis process to pilot plant and later to full-scale production, maintaining product quality and yield."
+      },
+      "question6": {
+        "id": "chemical_question6",
+        "questionText": "How do you approach environmental sustainability in your chemical engineering projects?",
+        "answerText": "I focus on green engineering principles, minimizing waste generation, and optimizing energy consumption. I explore eco-friendly alternatives and ensure compliance with environmental regulations."
+      },
+      "question7": {
+        "id": "chemical_question7",
+        "questionText": "Can you explain the principles of heat transfer and their applications in chemical processes?",
+        "answerText": "Heat transfer principles, such as conduction, convection, and radiation, are vital in designing heat exchangers, reactors, and distillation columns for efficient energy utilization in chemical processes."
+      },
+      "question8": {
+        "id": "chemical_question8",
+        "questionText": "Describe a project where you utilized computational tools like Aspen Plus for process simulation and optimization.",
+        "answerText": "In a petrochemical project, I used Aspen Plus to simulate the entire process, allowing for optimization of operating conditions and assessing the feasibility of various design options."
+      },
+      "question9": {
+        "id": "chemical_question9",
+        "questionText": "How do you ensure product quality and consistency in chemical manufacturing?",
+        "answerText": "I implement rigorous quality control measures, perform routine testing, and use statistical process control to monitor product quality and ensure consistency in manufacturing processes."
+      },
+      "question10": {
+        "id": "chemical_question10",
+        "questionText": "Describe a situation where you successfully optimized a chemical process to reduce production costs.",
+        "answerText": "In a pharmaceutical project, I redesigned the synthesis process and optimized reaction conditions, leading to a significant reduction in raw material costs and overall production expenses."
+      },
+      "question11": {
+        "id": "chemical_question11",
+        "questionText": "Can you explain the principles of fluid mechanics and their applications in chemical engineering?",
+        "answerText": "Fluid mechanics principles are crucial in designing pumps, pipes, and reactors for efficient fluid flow and mixing in chemical processes."
+      },
+      "question12": {
+        "id": "chemical_question12",
+        "questionText": "Describe a time when you troubleshooted and resolved a complex technical issue in a chemical plant.",
+        "answerText": "In a chemical plant, we encountered a sudden drop in product yield. I conducted root cause analysis, identified the issue in the reactor, and made adjustments to stabilize the process and restore product yield."
+      },
+      "question13": {
+        "id": "chemical_question13",
+        "questionText": "How do you ensure efficient mass transfer in separation processes like distillation and extraction?",
+        "answerText": "I use appropriate equipment design, optimize operating conditions, and explore various packing and tray configurations to enhance mass transfer efficiency in separation processes."
+      },
+      "question14": {
+        "id": "chemical_question14",
+        "questionText": "Describe a project where you successfully implemented a novel catalytic process to improve reaction rates.",
+        "answerText": "In a petrochemical project, I designed and tested a novel catalyst that significantly improved the reaction rates, leading to increased production efficiency."
+      },
+      "question15": {
+        "id": "chemical_question15",
+        "questionText": "How do you approach process safety management and risk assessment in chemical engineering projects?",
+        "answerText": "I conduct hazard and operability (HAZOP) studies, implement safety instrumented systems, and follow process safety guidelines to mitigate potential risks in chemical processes."
+      },
+      "question16": {
+        "id": "chemical_question16",
+        "questionText": "Can you explain the concept of chemical kinetics and its significance in reaction rate determination?",
+        "answerText": "Chemical kinetics studies the rates of chemical reactions. Understanding reaction kinetics helps optimize reaction conditions and design reactors for efficient conversion."
+      },
+      "question17": {
+        "id": "chemical_question17",
+        "questionText": "Describe a time when you effectively collaborated with a cross-functional team to develop a new product.",
+        "answerText": "In a product development project, I collaborated with R&D, marketing, and production teams to successfully launch a new specialty chemical, meeting customer requirements and market demand."
+      },
+      "question18": {
+        "id": "chemical_question18",
+        "questionText": "How do you approach waste minimization and recycling in chemical manufacturing processes?",
+        "answerText": "I implement waste reduction strategies, explore recycling options, and optimize resource utilization to minimize environmental impact in chemical manufacturing."
+      },
+      "question19": {
+        "id": "chemical_question19",
+        "questionText": "Describe a situation where you effectively handled the commissioning and start-up of a chemical plant.",
+        "answerText": "During a plant start-up, I coordinated with the construction team, conducted performance tests, and ensured that all safety systems were functional, leading to a smooth commissioning process."
+      },
+      "question20": {
+        "id": "chemical_question20",
+        "questionText": "Can you explain the principles of reactor design and their applications in chemical engineering?",
+        "answerText": "Reactor design principles are critical in designing reactors for various reactions, such as batch, continuous, and catalytic reactors, to optimize reaction efficiency and selectivity."
+      },
+      "question21": {
+        "id": "chemical_question21",
+        "questionText": "Describe a time when you used process optimization techniques to increase production capacity.",
+        "answerText": "In a specialty chemical plant, I used statistical analysis and optimization techniques to identify process bottlenecks and increase production capacity by adjusting operating parameters."
+      },
+      "question22": {
+        "id": "chemical_question22",
+        "questionText": "How do you approach economic analysis and feasibility studies for chemical engineering projects?",
+        "answerText": "I perform cost estimation, conduct economic analyses, and evaluate the financial viability of projects, considering factors like capital investment, operating costs, and potential revenue."
+      },
+      "question23": {
+        "id": "chemical_question23",
+        "questionText": "Describe a project where you successfully designed and implemented a water treatment system in a chemical plant.",
+        "answerText": "In a chemical plant, I designed a water treatment system to remove impurities and contaminants from process water, ensuring compliance with environmental discharge regulations."
+      },
+      "question24": {
+        "id": "chemical_question24",
+        "questionText": "Can you explain the principles of chemical thermodynamics and their applications in chemical processes?",
+        "answerText": "Chemical thermodynamics involves studying energy changes during chemical reactions. Understanding thermodynamics helps optimize reaction conditions and predict product formation."
+      },
+      "question25": {
+        "id": "chemical_question25",
+        "questionText": "Describe a time when you successfully collaborated with a research institute or university for technology transfer in a chemical engineering project.",
+        "answerText": "In a collaborative project, we worked with a research institute to transfer a novel catalytic technology from the laboratory to an industrial-scale reactor, achieving successful commercialization."
+      },
+      "question26": {
+        "id": "chemical_question26",
+        "questionText": "How do you ensure the compliance of chemical processes with regulatory standards and environmental regulations?",
+        "answerText": "I regularly review and update process documentation to comply with regulatory requirements, environmental laws, and safety standards."
+      },
+      "question27": {
+        "id": "chemical_question27",
+        "questionText": "Describe a situation where you managed and optimized raw material inventory in a chemical plant.",
+        "answerText": "In a chemical plant, I implemented inventory control strategies, such as just-in-time (JIT) and economic order quantity (EOQ), to optimize raw material inventory levels and reduce carrying costs."
+      },
+      "question28": {
+        "id": "chemical_question28",
+        "questionText": "How do you approach process troubleshooting and root cause analysis in chemical engineering projects?",
+        "answerText": "I use systematic troubleshooting techniques, conduct data analysis, and employ process simulation tools to identify root causes and implement corrective actions."
+      },
+      "question29": {
+        "id": "chemical_question29",
+        "questionText": "Describe a project where you successfully designed and implemented a water treatment system in a chemical plant.",
+        "answerText": "In a chemical plant, I designed a water treatment system to remove impurities and contaminants from process water, ensuring compliance with environmental discharge regulations."
+      },
+      "question30": {
+        "id": "chemical_question30",
+        "questionText": "Can you explain the principles of mass transfer and their applications in chemical engineering processes like absorption and adsorption?",
+        "answerText": "Mass transfer principles govern the movement of substances between phases. In absorption and adsorption processes, understanding mass transfer helps optimize separation efficiency and adsorbent design."
+      }
+    }
+  },
+  "accounting": {
+    "name": "Accounting",
+    "questions": {
+      "question1": {
+        "id": "accounting_question1",
+        "questionText": "Can you explain the difference between accounts payable and accounts receivable?",
+        "answerText": "Accounts payable refers to money owed by a company to its suppliers and vendors, while accounts receivable refers to money owed to the company by its customers."
+      },
+      "question2": {
+        "id": "accounting_question2",
+        "questionText": "How do you ensure accuracy and completeness in financial transactions and records?",
+        "answerText": "I follow proper documentation, perform regular reconciliations, and conduct thorough reviews to ensure accuracy and completeness in financial records."
+      },
+      "question3": {
+        "id": "accounting_question3",
+        "questionText": "Describe a time when you effectively handled a complex financial analysis project.",
+        "answerText": "In a financial restructuring project, I conducted in-depth financial analysis and prepared a comprehensive report that helped the company make informed decisions."
+      },
+      "question4": {
+        "id": "accounting_question4",
+        "questionText": "How do you stay updated with accounting regulations and changes in financial reporting standards?",
+        "answerText": "I regularly attend seminars, read accounting journals, and participate in continuing education programs to stay informed about accounting regulations and updates."
+      },
+      "question5": {
+        "id": "accounting_question5",
+        "questionText": "Can you explain the concept of double-entry bookkeeping and its significance in accounting?",
+        "answerText": "Double-entry bookkeeping ensures that every financial transaction has equal debit and credit entries, maintaining the balance in the accounting equation."
+      },
+      "question6": {
+        "id": "accounting_question6",
+        "questionText": "Describe a situation where you effectively managed a company's cash flow to optimize financial resources.",
+        "answerText": "In a cash flow management project, I analyzed cash inflows and outflows, implemented better payment terms, and minimized unnecessary expenses."
+      },
+      "question7": {
+        "id": "accounting_question7",
+        "questionText": "How do you handle financial audits and ensure compliance with auditing standards?",
+        "answerText": "I prepare all necessary documentation, cooperate with auditors, and proactively address any issues to ensure a smooth and successful audit."
+      },
+      "question8": {
+        "id": "accounting_question8",
+        "questionText": "Describe a time when you successfully identified and rectified financial discrepancies in accounting records.",
+        "answerText": "During a financial audit, I discovered discrepancies in inventory records and worked closely with the inventory team to correct the errors."
+      },
+      "question9": {
+        "id": "accounting_question9",
+        "questionText": "How do you approach financial forecasting and budgeting to support strategic decision-making?",
+        "answerText": "I use historical data, industry trends, and market analysis to create accurate financial forecasts and budget plans that align with the company's goals."
+      },
+      "question10": {
+        "id": "accounting_question10",
+        "questionText": "Describe a project where you effectively implemented cost-saving measures for a company.",
+        "answerText": "In a cost-cutting initiative, I identified areas of inefficiency, renegotiated contracts, and optimized procurement processes, resulting in significant cost savings."
+      },
+      "question11": {
+        "id": "accounting_question11",
+        "questionText": "How do you handle financial statements, such as the balance sheet, income statement, and cash flow statement?",
+        "answerText": "I ensure accuracy and consistency in financial statements, perform variance analysis, and use them to assess the company's financial health."
+      },
+      "question12": {
+        "id": "accounting_question12",
+        "questionText": "Describe a time when you effectively managed accounts receivable to reduce outstanding payments and improve cash flow.",
+        "answerText": "In a receivables management project, I implemented credit policies, sent timely reminders, and negotiated payment terms, leading to reduced outstanding debts."
+      },
+      "question13": {
+        "id": "accounting_question13",
+        "questionText": "How do you maintain confidentiality and data integrity in financial transactions and records?",
+        "answerText": "I restrict access to sensitive financial information, use secure data storage methods, and adhere to confidentiality policies to maintain data integrity."
+      },
+      "question14": {
+        "id": "accounting_question14",
+        "questionText": "Describe a situation where you successfully collaborated with other departments to achieve financial objectives.",
+        "answerText": "In a budget planning project, I collaborated with department heads to understand their needs and align budget allocations with strategic priorities."
+      },
+      "question15": {
+        "id": "accounting_question15",
+        "questionText": "How do you approach tax planning and compliance to ensure adherence to tax regulations?",
+        "answerText": "I stay updated with tax laws, work with tax consultants, and accurately file tax returns to ensure compliance and optimize tax liabilities."
+      },
+      "question16": {
+        "id": "accounting_question16",
+        "questionText": "Describe a time when you effectively handled a company's financial reporting to stakeholders and investors.",
+        "answerText": "During a quarterly reporting cycle, I prepared accurate and comprehensive financial reports and presented them to stakeholders and investors."
+      },
+      "question17": {
+        "id": "accounting_question17",
+        "questionText": "How do you ensure proper documentation and record-keeping in accounting processes?",
+        "answerText": "I maintain organized and detailed documentation for all financial transactions, ensuring easy retrieval and compliance with audit requirements."
+      },
+      "question18": {
+        "id": "accounting_question18",
+        "questionText": "Describe a project where you successfully implemented financial controls to prevent fraud and errors.",
+        "answerText": "In a financial risk assessment, I identified weak areas and established robust internal controls, mitigating the risk of fraud and errors."
+      },
+      "question19": {
+        "id": "accounting_question19",
+        "questionText": "How do you handle fixed asset management and depreciation calculations?",
+        "answerText": "I maintain a fixed asset register, calculate depreciation using appropriate methods, and reconcile the register with physical assets regularly."
+      },
+      "question20": {
+        "id": "accounting_question20",
+        "questionText": "Describe a situation where you effectively managed a company's payroll processing.",
+        "answerText": "During a payroll transition, I ensured accurate calculations, complied with tax regulations, and addressed employee inquiries promptly."
+      },
+      "question21": {
+        "id": "accounting_question21",
+        "questionText": "How do you approach financial data analysis to identify trends and patterns?",
+        "answerText": "I use data analysis tools, conduct ratio analysis, and prepare financial reports that aid in identifying trends and making data-driven decisions."
+      },
+      "question22": {
+        "id": "accounting_question22",
+        "questionText": "Describe a project where you successfully implemented financial software or accounting systems.",
+        "answerText": "In an accounting system upgrade, I led the implementation process, trained employees, and ensured a smooth transition to the new system."
+      },
+      "question23": {
+        "id": "accounting_question23",
+        "questionText": "How do you handle foreign currency transactions and currency exchange rate fluctuations?",
+        "answerText": "I use currency hedging techniques, monitor exchange rates, and calculate foreign currency gains or losses to manage currency risk."
+      },
+      "question24": {
+        "id": "accounting_question24",
+        "questionText": "Describe a time when you effectively managed accounts payable to optimize payment schedules and cash flow.",
+        "answerText": "In a vendor management project, I negotiated favorable payment terms, maintained good vendor relationships, and optimized payment schedules."
+      },
+      "question25": {
+        "id": "accounting_question25",
+        "questionText": "How do you ensure compliance with Generally Accepted Accounting Principles (GAAP) in financial reporting?",
+        "answerText": "I follow GAAP guidelines, consult accounting standards, and conduct periodic reviews to ensure compliance in financial reporting."
+      },
+      "question26": {
+        "id": "accounting_question26",
+        "questionText": "Describe a project where you successfully implemented an automated accounting process.",
+        "answerText": "In an automation project, I introduced automated workflows for invoice processing, reducing manual errors and increasing efficiency."
+      },
+      "question27": {
+        "id": "accounting_question27",
+        "questionText": "How do you approach financial risk assessment and management for a company?",
+        "answerText": "I identify financial risks, conduct risk assessments, and develop risk mitigation strategies to safeguard the company's financial health."
+      },
+      "question28": {
+        "id": "accounting_question28",
+        "questionText": "Describe a situation where you effectively managed a company's inventory control and valuation.",
+        "answerText": "In an inventory management project, I implemented better inventory tracking systems and ensured accurate valuation methods for inventory items."
+      },
+      "question29": {
+        "id": "accounting_question29",
+        "questionText": "How do you handle year-end financial closing and reporting processes?",
+        "answerText": "I prepare year-end financial statements, conduct reconciliations, and complete necessary financial disclosures for regulatory compliance."
+      },
+      "question30": {
+        "id": "accounting_question30",
+        "questionText": "Describe a time when you effectively used financial modeling and forecasting to support business decision-making.",
+        "answerText": "In a strategic planning project, I created financial models to assess various scenarios, providing valuable insights for decision-makers."
+      }
+    }
+  },
+  "aeronautics": {
+    "name": "Aeronautics Engineering",
+    "questions": {
+      "question1": {
+        "id": "aeronautics_question1",
+        "questionText": "What are the main differences between aeronautical engineering and aerospace engineering?",
+        "answerText": "Aeronautical engineering deals with the design and development of aircraft that operate within Earth's atmosphere, while aerospace engineering includes both aircraft and spacecraft design and development."
+      },
+      "question2": {
+        "id": "aeronautics_question2",
+        "questionText": "Can you explain the principles of aerodynamics and their importance in aircraft design?",
+        "answerText": "Aerodynamics involves the study of airflow around aircraft surfaces, and it is crucial in determining lift, drag, and overall aircraft performance."
+      },
+      "question3": {
+        "id": "aeronautics_question3",
+        "questionText": "Describe a project where you successfully designed and tested an aircraft wing for optimal lift and efficiency.",
+        "answerText": "In a wing design project, I used computational tools and wind tunnel testing to optimize wing shape, resulting in increased lift and reduced drag."
+      },
+      "question4": {
+        "id": "aeronautics_question4",
+        "questionText": "How do you approach aircraft structural design and analysis to ensure safety and durability?",
+        "answerText": "I use finite element analysis and stress testing to ensure aircraft structures can withstand operational loads and are safe for flight."
+      },
+      "question5": {
+        "id": "aeronautics_question5",
+        "questionText": "Describe a time when you effectively resolved a complex aircraft systems integration issue.",
+        "answerText": "In an aircraft upgrade project, I identified compatibility issues between new and existing systems and implemented effective integration solutions."
+      },
+      "question6": {
+        "id": "aeronautics_question6",
+        "questionText": "How do you stay updated with the latest advancements in aeronautical engineering technology and research?",
+        "answerText": "I regularly attend conferences, participate in industry forums, and read scientific journals to stay informed about the latest developments."
+      },
+      "question7": {
+        "id": "aeronautics_question7",
+        "questionText": "Describe a project where you successfully optimized aircraft propulsion systems for improved fuel efficiency.",
+        "answerText": "In an engine optimization project, I analyzed engine performance data and made modifications to enhance fuel efficiency and reduce emissions."
+      },
+      "question8": {
+        "id": "aeronautics_question8",
+        "questionText": "How do you approach aircraft performance analysis to determine range, endurance, and maximum speed?",
+        "answerText": "I use performance charts and conduct flight simulations to assess aircraft performance under various conditions."
+      },
+      "question9": {
+        "id": "aeronautics_question9",
+        "questionText": "Describe a time when you effectively managed a team to complete an aircraft design project within the given timeline.",
+        "answerText": "In a design competition, I led a team of engineers, assigned tasks, and maintained open communication to meet project deadlines successfully."
+      },
+      "question10": {
+        "id": "aeronautics_question10",
+        "questionText": "How do you ensure compliance with aviation regulations and certification requirements in aircraft design?",
+        "answerText": "I work closely with regulatory authorities, follow certification guidelines, and perform thorough compliance checks to meet aviation standards."
+      },
+      "question11": {
+        "id": "aeronautics_question11",
+        "questionText": "Describe a project where you successfully improved aircraft stability and control characteristics.",
+        "answerText": "In a flight dynamics project, I adjusted control surfaces and implemented flight control algorithms to enhance aircraft stability."
+      },
+      "question12": {
+        "id": "aeronautics_question12",
+        "questionText": "How do you approach aircraft materials selection to optimize weight and strength?",
+        "answerText": "I conduct material testing, evaluate weight-to-strength ratios, and select materials that offer the best combination of performance and durability."
+      },
+      "question13": {
+        "id": "aeronautics_question13",
+        "questionText": "Describe a time when you effectively troubleshooted and resolved an aircraft systems malfunction.",
+        "answerText": "During flight testing, I identified a systems issue, analyzed data, and collaborated with the maintenance team to rectify the problem."
+      },
+      "question14": {
+        "id": "aeronautics_question14",
+        "questionText": "How do you approach aircraft noise reduction and environmental impact mitigation?",
+        "answerText": "I use advanced noise analysis tools, explore innovative engine designs, and implement noise reduction measures to minimize environmental impact."
+      },
+      "question15": {
+        "id": "aeronautics_question15",
+        "questionText": "Describe a project where you successfully designed and tested an aircraft control system for precision and reliability.",
+        "answerText": "In a control system design project, I used simulations and physical testing to ensure precise and reliable aircraft control."
+      },
+      "question16": {
+        "id": "aeronautics_question16",
+        "questionText": "How do you approach aircraft icing analysis and develop anti-icing strategies?",
+        "answerText": "I use icing prediction models, study weather patterns, and design effective anti-icing systems to ensure safe flight in icy conditions."
+      },
+      "question17": {
+        "id": "aeronautics_question17",
+        "questionText": "Describe a time when you effectively collaborated with aerodynamicists and structural engineers to optimize aircraft design.",
+        "answerText": "In a multidisciplinary project, I worked closely with aerodynamicists and structural engineers to balance aerodynamics and structural integrity."
+      },
+      "question18": {
+        "id": "aeronautics_question18",
+        "questionText": "How do you ensure aircraft safety in extreme conditions, such as turbulence or icing?",
+        "answerText": "I conduct safety assessments, design robust safety systems, and analyze flight data to enhance aircraft safety under various conditions."
+      },
+      "question19": {
+        "id": "aeronautics_question19",
+        "questionText": "Describe a project where you successfully designed and tested an aircraft landing gear system for stability and impact resistance.",
+        "answerText": "In a landing gear design project, I used simulations and physical tests to ensure the landing gear could withstand landing impact."
+      },
+      "question20": {
+        "id": "aeronautics_question20",
+        "questionText": "How do you approach aircraft avionics integration to ensure seamless communication between onboard systems?",
+        "answerText": "I use avionics interface standards, conduct system integration tests, and verify avionics compatibility to ensure seamless communication."
+      },
+      "question21": {
+        "id": "aeronautics_question21",
+        "questionText": "Describe a time when you effectively managed weight and balance considerations in aircraft design.",
+        "answerText": "In a weight optimization project, I carefully considered material choices and component placement to maintain aircraft balance."
+      },
+      "question22": {
+        "id": "aeronautics_question22",
+        "questionText": "How do you approach aircraft propulsion system selection for different aircraft types?",
+        "answerText": "I consider aircraft mission requirements, performance goals, and operational conditions to choose the most suitable propulsion system."
+      },
+      "question23": {
+        "id": "aeronautics_question23",
+        "questionText": "Describe a project where you successfully analyzed and improved aircraft aerodynamic efficiency.",
+        "answerText": "In a performance improvement project, I analyzed airflow patterns, modified wing designs, and optimized aircraft aerodynamics."
+      },
+      "question24": {
+        "id": "aeronautics_question24",
+        "questionText": "How do you ensure compliance with airworthiness regulations and conduct flight testing for new aircraft designs?",
+        "answerText": "I follow airworthiness standards, perform thorough flight testing, and collaborate with test pilots to meet certification requirements."
+      },
+      "question25": {
+        "id": "aeronautics_question25",
+        "questionText": "Describe a time when you effectively managed aircraft maintenance schedules and inspections for a fleet.",
+        "answerText": "In a fleet maintenance project, I implemented a maintenance calendar, coordinated inspections, and ensured timely repairs."
+      },
+      "question26": {
+        "id": "aeronautics_question26",
+        "questionText": "How do you approach aircraft system redundancy and fail-safe design to enhance flight safety?",
+        "answerText": "I incorporate redundant systems, conduct failure mode analysis, and implement fail-safe measures to enhance flight safety."
+      },
+      "question27": {
+        "id": "aeronautics_question27",
+        "questionText": "Describe a project where you successfully integrated advanced materials (e.g., composites) into aircraft design.",
+        "answerText": "In a lightweighting project, I integrated composite materials into aircraft structures to reduce weight and improve fuel efficiency."
+      },
+      "question28": {
+        "id": "aeronautics_question28",
+        "questionText": "How do you approach aircraft fuel system design to optimize fuel storage and distribution?",
+        "answerText": "I analyze fuel consumption patterns, design efficient fuel storage systems, and ensure optimal fuel distribution during flight."
+      },
+      "question29": {
+        "id": "aeronautics_question29",
+        "questionText": "Describe a time when you effectively managed an aircraft performance enhancement project to achieve specific goals.",
+        "answerText": "In a performance improvement initiative, I analyzed engine parameters, modified engine components, and achieved higher thrust."
+      },
+      "question30": {
+        "id": "aeronautics_question30",
+        "questionText": "How do you approach aircraft flight control system design to ensure stability and maneuverability?",
+        "answerText": "I use control system analysis, implement fly-by-wire technology, and conduct simulations to optimize aircraft flight control."
+      }
+    }
+  },
+  "nursing": {
+    "name": "Nursing",
+    "questions": {
+      "question1": {
+        "id": "nursing_question1",
+        "questionText": "Why did you choose a career in nursing?",
+        "answerText": "I chose nursing because I have a strong passion for helping others and providing compassionate care to patients during their most vulnerable times."
+      },
+      "question2": {
+        "id": "nursing_question2",
+        "questionText": "How do you handle stressful situations in a fast-paced healthcare environment?",
+        "answerText": "I stay calm under pressure, prioritize tasks, and rely on my training to make quick and informed decisions."
+      },
+      "question3": {
+        "id": "nursing_question3",
+        "questionText": "Describe a time when you effectively communicated with a patient's family during a difficult medical situation.",
+        "answerText": "In a critical care setting, I explained the patient's condition in a compassionate and understandable manner, addressing their concerns and providing support."
+      },
+      "question4": {
+        "id": "nursing_question4",
+        "questionText": "How do you stay updated with the latest medical advancements and nursing practices?",
+        "answerText": "I attend regular workshops, participate in continuing education programs, and read medical journals to stay informed about advancements in nursing."
+      },
+      "question5": {
+        "id": "nursing_question5",
+        "questionText": "Describe a project where you successfully collaborated with a healthcare team to improve patient outcomes.",
+        "answerText": "In a quality improvement project, I worked with the interdisciplinary team to implement evidence-based practices, resulting in better patient outcomes."
+      },
+      "question6": {
+        "id": "nursing_question6",
+        "questionText": "How do you handle challenging patient situations and maintain a positive attitude?",
+        "answerText": "I practice active listening, show empathy, and focus on providing patient-centered care to address their concerns and maintain a positive environment."
+      },
+      "question7": {
+        "id": "nursing_question7",
+        "questionText": "Describe a time when you effectively advocated for a patient's needs and preferences.",
+        "answerText": "In a patient care plan meeting, I ensured that the patient's preferences and cultural beliefs were respected and integrated into their care."
+      },
+      "question8": {
+        "id": "nursing_question8",
+        "questionText": "How do you ensure patient safety in a clinical setting?",
+        "answerText": "I follow safety protocols, conduct regular assessments, and communicate effectively with the healthcare team to prevent adverse events."
+      },
+      "question9": {
+        "id": "nursing_question9",
+        "questionText": "Describe a project where you successfully implemented infection control measures to prevent the spread of infections.",
+        "answerText": "In a hospital unit, I educated staff on proper hand hygiene and isolation protocols, leading to a reduction in healthcare-associated infections."
+      },
+      "question10": {
+        "id": "nursing_question10",
+        "questionText": "How do you handle end-of-life care and support patients and families during difficult times?",
+        "answerText": "I provide compassionate care, listen to patients' wishes, and offer emotional support to patients and their families during end-of-life care."
+      },
+      "question11": {
+        "id": "nursing_question11",
+        "questionText": "Describe a time when you effectively used critical thinking to address a complex patient care issue.",
+        "answerText": "In a challenging patient case, I assessed the situation, gathered relevant information, and collaborated with the healthcare team to develop a comprehensive care plan."
+      },
+      "question12": {
+        "id": "nursing_question12",
+        "questionText": "How do you ensure patient confidentiality and maintain HIPAA compliance?",
+        "answerText": "I strictly adhere to HIPAA guidelines, secure patient information, and only discuss patient details with authorized healthcare providers."
+      },
+      "question13": {
+        "id": "nursing_question13",
+        "questionText": "Describe a project where you successfully implemented patient education programs.",
+        "answerText": "In a community health initiative, I developed educational materials and conducted workshops to promote health awareness and preventive care."
+      },
+      "question14": {
+        "id": "nursing_question14",
+        "questionText": "How do you approach medication administration to ensure accuracy and prevent medication errors?",
+        "answerText": "I use the \"Five Rights\" of medication administration, verify patient information, and double-check medication dosages before administration."
+      },
+      "question15": {
+        "id": "nursing_question15",
+        "questionText": "Describe a time when you effectively managed a patient care crisis and implemented appropriate interventions.",
+        "answerText": "In a cardiac emergency, I initiated CPR, called for assistance, and followed the established emergency protocols to stabilize the patient."
+      },
+      "question16": {
+        "id": "nursing_question16",
+        "questionText": "How do you handle difficult interactions with patients who may be uncooperative or resistant to care?",
+        "answerText": "I remain patient, use therapeutic communication techniques, and try to understand their concerns to build trust and rapport."
+      },
+      "question17": {
+        "id": "nursing_question17",
+        "questionText": "Describe a project where you successfully implemented fall prevention strategies in a healthcare setting.",
+        "answerText": "In a geriatric unit, I conducted fall risk assessments, implemented fall precautions, and educated patients and staff on fall prevention measures."
+      },
+      "question18": {
+        "id": "nursing_question18",
+        "questionText": "How do you approach ethical dilemmas in patient care and make informed decisions?",
+        "answerText": "I consult the healthcare team, consider ethical principles, and follow institutional policies to make morally sound decisions."
+      },
+      "question19": {
+        "id": "nursing_question19",
+        "questionText": "Describe a time when you effectively delegated tasks to nursing assistants while ensuring quality patient care.",
+        "answerText": "In a busy shift, I delegated non-clinical tasks to nursing assistants, providing clear instructions and monitoring patient care closely."
+      },
+      "question20": {
+        "id": "nursing_question20",
+        "questionText": "How do you approach cultural sensitivity and provide culturally competent care to diverse patient populations?",
+        "answerText": "I seek to understand different cultural backgrounds, respect patients' beliefs, and tailor care plans to meet their specific cultural needs."
+      },
+      "question21": {
+        "id": "nursing_question21",
+        "questionText": "Describe a project where you effectively used evidence-based practice to improve nursing care.",
+        "answerText": "In a post-operative unit, I implemented evidence-based pain management protocols, leading to better pain control and patient satisfaction."
+      },
+      "question22": {
+        "id": "nursing_question22",
+        "questionText": "How do you handle patient education and ensure they understand their treatment plans?",
+        "answerText": "I use simple language, visual aids, and encourage patients to ask questions to ensure they have a clear understanding of their treatment plans."
+      },
+      "question23": {
+        "id": "nursing_question23",
+        "questionText": "Describe a time when you effectively managed a patient's complex wound care and promoted healing.",
+        "answerText": "In a wound care clinic, I used advanced wound dressings, monitored healing progress, and collaborated with wound care specialists to promote healing."
+      },
+      "question24": {
+        "id": "nursing_question24",
+        "questionText": "How do you approach pediatric patient care to create a comfortable and supportive environment for children and their families?",
+        "answerText": "I use age-appropriate communication, provide play therapy, and involve parents in care decisions to create a positive and supportive environment."
+      },
+      "question25": {
+        "id": "nursing_question25",
+        "questionText": "Describe a project where you successfully managed patient flow and optimized nursing resources in a busy healthcare setting.",
+        "answerText": "In a high-volume emergency department, I coordinated patient flow, ensured timely care, and allocated nursing resources efficiently."
+      },
+      "question26": {
+        "id": "nursing_question26",
+        "questionText": "How do you approach nursing documentation to maintain accurate and comprehensive patient records?",
+        "answerText": "I document patient care promptly, use standardized nursing terminology, and record observations and interventions accurately."
+      },
+      "question27": {
+        "id": "nursing_question27",
+        "questionText": "Describe a time when you effectively managed a patient's pain using non-pharmacological interventions.",
+        "answerText": "In a post-operative patient, I used relaxation techniques, positioning, and heat therapy to manage pain and reduce the need for pain medications."
+      },
+      "question28": {
+        "id": "nursing_question28",
+        "questionText": "How do you handle conflicts or disagreements with colleagues in a professional manner?",
+        "answerText": "I approach conflicts with open communication, actively listen to others' perspectives, and seek common ground to reach resolutions."
+      },
+      "question29": {
+        "id": "nursing_question29",
+        "questionText": "Describe a project where you successfully implemented infection prevention strategies during a disease outbreak.",
+        "answerText": "During a flu outbreak, I implemented isolation precautions, educated staff on infection control, and monitored the spread of the virus."
+      },
+      "question30": {
+        "id": "nursing_question30",
+        "questionText": "How do you prioritize patient care tasks during a busy shift to ensure all patients receive timely and quality care?",
+        "answerText": "I use a systematic approach, prioritize urgent tasks, and delegate non-critical tasks to other team members to manage patient care effectively."
+      }
+    }
+  },
+  "medical": {
+    "name": "Medical",
+    "questions": {
+      "question1": {
+        "id": "medical_question1",
+        "questionText": "Why did you choose a career in medicine?",
+        "answerText": "I chose a career in medicine because I have a deep passion for helping others and making a positive impact on people's lives through healthcare."
+      },
+      "question2": {
+        "id": "medical_question2",
+        "questionText": "How do you handle stressful situations in a high-pressure medical environment?",
+        "answerText": "I stay composed under pressure, prioritize tasks, and rely on my medical training and experience to make well-informed decisions."
+      },
+      "question3": {
+        "id": "medical_question3",
+        "questionText": "Describe a time when you effectively communicated with a patient and their family during a challenging medical diagnosis.",
+        "answerText": "In a cancer diagnosis case, I empathetically explained the treatment plan and addressed their concerns to provide emotional support."
+      },
+      "question4": {
+        "id": "medical_question4",
+        "questionText": "How do you stay updated with the latest medical advancements and research?",
+        "answerText": "I regularly attend medical conferences, read scientific journals, and participate in continuing medical education to stay informed about the latest developments."
+      },
+      "question5": {
+        "id": "medical_question5",
+        "questionText": "Describe a project where you successfully collaborated with a healthcare team to improve patient outcomes.",
+        "answerText": "In a patient care initiative, I collaborated with nurses, therapists, and other specialists to develop a comprehensive care plan, resulting in improved patient recovery."
+      },
+      "question6": {
+        "id": "medical_question6",
+        "questionText": "How do you approach patient safety and minimize medical errors in your practice?",
+        "answerText": "I adhere to safety protocols, verify patient information, and practice evidence-based medicine to ensure patient safety and prevent medical errors."
+      },
+      "question7": {
+        "id": "medical_question7",
+        "questionText": "Describe a time when you effectively advocated for a patient's needs and preferences.",
+        "answerText": "In a treatment decision, I ensured that the patient's values and preferences were respected and integrated into their care plan."
+      },
+      "question8": {
+        "id": "medical_question8",
+        "questionText": "How do you handle difficult interactions with patients and their families?",
+        "answerText": "I approach these situations with empathy and active listening, acknowledging their concerns and working collaboratively to address them."
+      },
+      "question9": {
+        "id": "medical_question9",
+        "questionText": "Describe a project where you successfully implemented infection control measures to prevent the spread of infections.",
+        "answerText": "In a hospital unit, I educated staff on proper hand hygiene and implemented isolation protocols to reduce healthcare-associated infections."
+      },
+      "question10": {
+        "id": "medical_question10",
+        "questionText": "How do you approach end-of-life care and support patients and their families during difficult times?",
+        "answerText": "I provide compassionate care, actively listen to patients' wishes, and offer emotional support to patients and their families during end-of-life care."
+      },
+      "question11": {
+        "id": "medical_question11",
+        "questionText": "Describe a time when you effectively used critical thinking to diagnose a complex medical condition.",
+        "answerText": "In a challenging case, I analyzed symptoms, ordered appropriate tests, and collaborated with specialists to reach an accurate diagnosis."
+      },
+      "question12": {
+        "id": "medical_question12",
+        "questionText": "How do you approach ethical dilemmas in patient care and make well-informed decisions?",
+        "answerText": "I consult with colleagues, consider ethical principles, and follow institutional policies to make sound decisions in patient care."
+      },
+      "question13": {
+        "id": "medical_question13",
+        "questionText": "Describe a project where you successfully implemented patient education programs.",
+        "answerText": "In a community health initiative, I developed educational materials and conducted workshops to promote health awareness and preventive care."
+      },
+      "question14": {
+        "id": "medical_question14",
+        "questionText": "How do you approach medication management to ensure patient safety and prevent medication errors?",
+        "answerText": "I use the \"Five Rights\" of medication administration, verify medication orders, and monitor patients for any adverse reactions."
+      },
+      "question15": {
+        "id": "medical_question15",
+        "questionText": "Describe a time when you effectively managed a medical emergency and implemented life-saving interventions.",
+        "answerText": "In an emergency room setting, I responded promptly, initiated necessary interventions, and coordinated with the medical team to stabilize the patient."
+      },
+      "question16": {
+        "id": "medical_question16",
+        "questionText": "How do you ensure patient confidentiality and maintain HIPAA compliance?",
+        "answerText": "I strictly adhere to HIPAA guidelines, secure patient information, and only share patient details with authorized healthcare providers."
+      },
+      "question17": {
+        "id": "medical_question17",
+        "questionText": "Describe a project where you successfully provided healthcare services in a resource-limited setting.",
+        "answerText": "During a medical mission, I delivered healthcare services to underserved communities, working with limited resources to improve patient outcomes."
+      },
+      "question18": {
+        "id": "medical_question18",
+        "questionText": "How do you approach cultural sensitivity and provide culturally competent care to diverse patient populations?",
+        "answerText": "I seek to understand different cultural backgrounds, respect patients' beliefs, and tailor care plans to meet their specific cultural needs."
+      },
+      "question19": {
+        "id": "medical_question19",
+        "questionText": "Describe a time when you effectively managed a patient's chronic condition and improved their overall health.",
+        "answerText": "In a diabetic patient's case, I collaborated with a multidisciplinary team, educated the patient on self-management, and helped them achieve better glucose control."
+      },
+      "question20": {
+        "id": "medical_question20",
+        "questionText": "How do you handle conflicts or disagreements with colleagues in a professional manner?",
+        "answerText": "I address conflicts openly, practice active listening, and seek common ground to resolve disagreements in a respectful manner."
+      },
+      "question21": {
+        "id": "medical_question21",
+        "questionText": "Describe a project where you successfully implemented health promotion strategies to improve community health.",
+        "answerText": "In a public health initiative, I organized health fairs, conducted health screenings, and promoted healthy lifestyle choices to the community."
+      },
+      "question22": {
+        "id": "medical_question22",
+        "questionText": "How do you approach diagnostic testing and select appropriate tests to reach an accurate diagnosis?",
+        "answerText": "I consider the patient's medical history, symptoms, and evidence-based guidelines to determine the most appropriate diagnostic tests."
+      },
+      "question23": {
+        "id": "medical_question23",
+        "questionText": "Describe a time when you effectively managed a patient's chronic pain through non-pharmacological interventions.",
+        "answerText": "In a chronic pain management case, I used physical therapy, relaxation techniques, and heat therapy to help the patient manage their pain without excessive medication."
+      },
+      "question24": {
+        "id": "medical_question24",
+        "questionText": "How do you approach pediatric patient care and create a comforting environment for children and their families?",
+        "answerText": "I use child-friendly communication, involve parents in care decisions, and provide play therapy to create a positive and comforting experience."
+      },
+      "question25": {
+        "id": "medical_question25",
+        "questionText": "Describe a project where you successfully implemented measures to improve patient satisfaction and quality of care.",
+        "answerText": "In a hospital setting, I led a quality improvement project that involved regular patient feedback, resulting in improved patient satisfaction scores."
+      },
+      "question26": {
+        "id": "medical_question26",
+        "questionText": "How do you ensure medical documentation accuracy and completeness in patient records?",
+        "answerText": "I maintain thorough and organized documentation, use standardized medical terminology, and record all relevant medical information."
+      },
+      "question27": {
+        "id": "medical_question27",
+        "questionText": "Describe a time when you effectively managed patient education and ensured patients understood their treatment plans.",
+        "answerText": "In a chronic disease management case, I used visual aids, clear language, and follow-up discussions to ensure the patient's understanding of their treatment plan."
+      },
+      "question28": {
+        "id": "medical_question28",
+        "questionText": "How do you approach medical chart review and utilize data to improve patient care outcomes?",
+        "answerText": "I regularly review patient charts, analyze data trends, and identify opportunities for improved patient care and outcomes."
+      },
+      "question29": {
+        "id": "medical_question29",
+        "questionText": "Describe a project where you successfully managed infection outbreaks and implemented control measures.",
+        "answerText": "During a hospital infection outbreak, I collaborated with infection control teams, enforced isolation protocols, and implemented enhanced hygiene practices."
+      },
+      "question30": {
+        "id": "medical_question30",
+        "questionText": "How do you prioritize patient care tasks during a busy shift and ensure all patients receive timely and quality care?",
+        "answerText": "I use a systematic approach, prioritize urgent tasks, and delegate non-critical tasks to other healthcare professionals to manage patient care effectively."
+      }
+    }
+  },
+  "robotics": {
+    "name": "Robotics",
+    "questions": {
+      "question1": {
+        "id": "robotics_question1",
+        "questionText": "Why did you choose a career in robotics?",
+        "answerText": "I have always been fascinated by the intersection of engineering and technology. Robotics allows me to explore cutting-edge advancements and apply them to real-world applications."
+      },
+      "question2": {
+        "id": "robotics_question2",
+        "questionText": "How do you approach the design and development of robotic systems?",
+        "answerText": "I start by identifying the specific tasks the robot needs to perform, then select appropriate sensors and actuators, and finally design the control algorithms for smooth operation."
+      },
+      "question3": {
+        "id": "robotics_question3",
+        "questionText": "Describe a robotics project where you successfully integrated AI and machine learning to enhance the robot's capabilities.",
+        "answerText": "In a project, I used machine learning algorithms to enable the robot to adapt and learn from its environment, improving its decision-making abilities."
+      },
+      "question4": {
+        "id": "robotics_question4",
+        "questionText": "How do you handle challenges such as sensor noise and environmental uncertainties in robot localization and mapping?",
+        "answerText": "I employ techniques like Kalman filters or SLAM (Simultaneous Localization and Mapping) to minimize sensor noise and account for uncertainties."
+      },
+      "question5": {
+        "id": "robotics_question5",
+        "questionText": "Describe a time when you effectively used robotics in an industrial automation project to increase productivity.",
+        "answerText": "In a manufacturing process, I implemented robotic automation to streamline repetitive tasks, leading to increased production output and reduced costs."
+      },
+      "question6": {
+        "id": "robotics_question6",
+        "questionText": "How do you approach robotic motion planning to ensure efficient and collision-free paths?",
+        "answerText": "I use algorithms like A* or RRT (Rapidly-exploring Random Trees) to plan robot motions, considering constraints and obstacles."
+      },
+      "question7": {
+        "id": "robotics_question7",
+        "questionText": "Describe a robotics project where you integrated computer vision to enable object recognition and manipulation.",
+        "answerText": "In a robotic pick-and-place system, I used computer vision algorithms to identify objects and accurately manipulate them."
+      },
+      "question8": {
+        "id": "robotics_question8",
+        "questionText": "How do you ensure robot safety in human-robot collaborative environments?",
+        "answerText": "I implement safety protocols like force/torque sensing, collision detection, and emergency stop mechanisms to ensure safe interactions with humans."
+      },
+      "question9": {
+        "id": "robotics_question9",
+        "questionText": "Describe a time when you effectively used ROS (Robot Operating System) to develop a complex robotic system.",
+        "answerText": "In a research project, I utilized ROS to integrate various hardware components and control algorithms seamlessly."
+      },
+      "question10": {
+        "id": "robotics_question10",
+        "questionText": "How do you approach robotic control system design to achieve precise and stable movements?",
+        "answerText": "I use control theory principles to design PID controllers or implement feedback control loops for accurate robot control."
+      },
+      "question11": {
+        "id": "robotics_question11",
+        "questionText": "Describe a robotics project where you successfully applied robotics in the field of healthcare or assistive technology.",
+        "answerText": "In a healthcare setting, I developed a robotic exoskeleton to assist patients with mobility impairments, promoting their rehabilitation."
+      },
+      "question12": {
+        "id": "robotics_question12",
+        "questionText": "How do you handle power and energy management in autonomous robotic systems?",
+        "answerText": "I optimize the robot's power consumption by using energy-efficient components and developing power-saving algorithms."
+      },
+      "question13": {
+        "id": "robotics_question13",
+        "questionText": "Describe a time when you effectively used robotics for environmental monitoring or exploration.",
+        "answerText": "In a research project, I deployed autonomous underwater robots to monitor marine ecosystems and collect environmental data."
+      },
+      "question14": {
+        "id": "robotics_question14",
+        "questionText": "How do you approach robotic sensor selection to ensure accurate perception of the robot's environment?",
+        "answerText": "I assess the requirements of the task and select sensors such as cameras, LIDAR, or ultrasonic sensors based on the environment's characteristics."
+      },
+      "question15": {
+        "id": "robotics_question15",
+        "questionText": "Describe a robotics project where you used ROS to create a multi-robot system for collaborative tasks.",
+        "answerText": "In a swarm robotics project, I used ROS to coordinate multiple robots to perform tasks collectively, such as exploration or object transport."
+      },
+      "question16": {
+        "id": "robotics_question16",
+        "questionText": "How do you handle robot calibration and calibration errors to ensure accurate robot behavior?",
+        "answerText": "I perform calibration using calibration patterns and mathematical models to minimize errors and improve robot accuracy."
+      },
+      "question17": {
+        "id": "robotics_question17",
+        "questionText": "Describe a time when you effectively used robotics for disaster response or search and rescue operations.",
+        "answerText": "In a simulated disaster scenario, I deployed autonomous drones to search for survivors and assess the disaster area for safety hazards."
+      },
+      "question18": {
+        "id": "robotics_question18",
+        "questionText": "How do you approach robot learning and adaptation to enable robots to operate in dynamic environments?",
+        "answerText": "I use techniques like reinforcement learning or evolutionary algorithms to allow robots to learn and adapt to changing conditions."
+      },
+      "question19": {
+        "id": "robotics_question19",
+        "questionText": "Describe a robotics project where you effectively used haptic feedback to enhance the robot's interaction with its environment.",
+        "answerText": "In a teleoperated robot project, I incorporated haptic feedback to provide the operator with a sense of touch and enhance robot manipulation."
+      },
+      "question20": {
+        "id": "robotics_question20",
+        "questionText": "How do you ensure robot reliability and robustness in long-term deployments?",
+        "answerText": "I conduct rigorous testing and simulate various scenarios to validate robot performance and address potential issues before deployment."
+      },
+      "question21": {
+        "id": "robotics_question21",
+        "questionText": "Describe a time when you effectively used robotics in the field of agriculture or precision farming.",
+        "answerText": "In an agricultural automation project, I designed autonomous drones for crop monitoring and precise pesticide application."
+      },
+      "question22": {
+        "id": "robotics_question22",
+        "questionText": "How do you approach collaborative robot programming to enable intuitive human-robot interaction?",
+        "answerText": "I use programming frameworks like MoveIt or Choregraphe to create user-friendly interfaces for robot programming and control."
+      },
+      "question23": {
+        "id": "robotics_question23",
+        "questionText": "Describe a robotics project where you effectively used swarm robotics for coordinated tasks.",
+        "answerText": "In a swarm robotics project, I programmed a group of drones to work together for area coverage and monitoring tasks."
+      },
+      "question24": {
+        "id": "robotics_question24",
+        "questionText": "How do you handle communication and networking in distributed robotic systems?",
+        "answerText": "I use communication protocols like MQTT or ROS topics to enable seamless data exchange between robots in the network."
+      },
+      "question25": {
+        "id": "robotics_question25",
+        "questionText": "Describe a time when you effectively used robotics for educational purposes to engage students in STEM learning.",
+        "answerText": "In an educational robotics program, I designed interactive robot kits and lesson plans to introduce students to robotics and coding."
+      },
+      "question26": {
+        "id": "robotics_question26",
+        "questionText": "How do you approach robot grasping and manipulation to handle diverse objects and materials?",
+        "answerText": "I use machine learning approaches like Deep Reinforcement Learning or computer vision to teach robots adaptive grasping techniques."
+      },
+      "question27": {
+        "id": "robotics_question27",
+        "questionText": "Describe a robotics project where you used AI-driven planning algorithms for task scheduling and optimization.",
+        "answerText": "In a warehouse automation project, I employed AI-based algorithms to optimize robot routes and minimize picking times."
+      },
+      "question28": {
+        "id": "robotics_question28",
+        "questionText": "How do you ensure the security and privacy of data in cloud-based robotic systems?",
+        "answerText": "I use encryption and authentication measures to protect data transmission and storage in cloud-based robotic applications."
+      },
+      "question29": {
+        "id": "robotics_question29",
+        "questionText": "Describe a time when you effectively used robotics for environmental monitoring or precision agriculture.",
+        "answerText": "In an agricultural robotics project, I developed autonomous robots equipped with sensors to monitor soil conditions and optimize irrigation."
+      },
+      "question30": {
+        "id": "robotics_question30",
+        "questionText": "How do you approach robotic swarm behavior modeling to enable collective decision-making?",
+        "answerText": "I use bio-inspired algorithms like ant colony optimization or particle swarm optimization to model swarm behaviors for collective decision-making."
+      }
+    }
+  },
+  "hotel_management": {
+    "name": "Hotel Management",
+    "questions": {
+      "question1": {
+        "id": "hotel_management_question1",
+        "questionText": "Why did you choose a career in Hotel Management?",
+        "answerText": "I have always been passionate about the hospitality industry and enjoy providing excellent customer service. Hotel management allows me to combine my skills in management and guest relations."
+      },
+      "question2": {
+        "id": "hotel_management_question2",
+        "questionText": "How do you handle guest complaints and ensure customer satisfaction?",
+        "answerText": "I actively listen to the guest's concerns, empathize with their situation, and take immediate steps to resolve the issue to ensure their satisfaction."
+      },
+      "question3": {
+        "id": "hotel_management_question3",
+        "questionText": "Describe a situation where you successfully handled a difficult guest and turned their experience around.",
+        "answerText": "In a previous role, I encountered an upset guest who had a negative experience. I personally apologized, offered complimentary services, and ensured their stay was enjoyable from then on."
+      },
+      "question4": {
+        "id": "hotel_management_question4",
+        "questionText": "How do you manage and coordinate hotel staff to ensure smooth operations?",
+        "answerText": "I prioritize clear communication, delegate tasks based on staff strengths, and conduct regular meetings to address any challenges and provide feedback."
+      },
+      "question5": {
+        "id": "hotel_management_question5",
+        "questionText": "Describe a time when you effectively managed hotel resources to optimize revenue and profitability.",
+        "answerText": "In a low occupancy period, I implemented revenue management strategies such as dynamic pricing and promotions to increase bookings and revenue."
+      },
+      "question6": {
+        "id": "hotel_management_question6",
+        "questionText": "How do you handle emergency situations and ensure the safety of hotel guests and staff?",
+        "answerText": "I ensure staff is well-trained in emergency protocols, conduct regular drills, and maintain effective communication during emergencies."
+      },
+      "question7": {
+        "id": "hotel_management_question7",
+        "questionText": "Describe a project where you successfully implemented sustainable practices in hotel operations.",
+        "answerText": "In a sustainability initiative, I introduced energy-saving measures, waste reduction strategies, and collaborated with local suppliers to source eco-friendly products."
+      },
+      "question8": {
+        "id": "hotel_management_question8",
+        "questionText": "How do you maintain high cleanliness and hygiene standards in the hotel?",
+        "answerText": "I enforce rigorous cleaning protocols, conduct regular inspections, and ensure staff compliance with hygiene standards."
+      },
+      "question9": {
+        "id": "hotel_management_question9",
+        "questionText": "Describe a time when you effectively managed inventory and supplies to prevent shortages and wastage.",
+        "answerText": "In a previous role, I implemented an inventory management system that reduced wastage and ensured timely replenishment of supplies."
+      },
+      "question10": {
+        "id": "hotel_management_question10",
+        "questionText": "How do you handle staffing challenges and ensure a motivated and efficient team?",
+        "answerText": "I believe in recognizing and rewarding hard work, providing training and development opportunities, and maintaining an open-door policy for feedback and support."
+      },
+      "question11": {
+        "id": "hotel_management_question11",
+        "questionText": "Describe a project where you successfully managed a hotel renovation or refurbishment.",
+        "answerText": "In a renovation project, I coordinated with contractors, ensured minimal guest disruption, and successfully refreshed the hotel's appearance and amenities."
+      },
+      "question12": {
+        "id": "hotel_management_question12",
+        "questionText": "How do you approach budgeting and financial planning for hotel operations?",
+        "answerText": "I analyze historical data, forecast future revenues and expenses, and set realistic budgets to ensure financial stability."
+      },
+      "question13": {
+        "id": "hotel_management_question13",
+        "questionText": "Describe a time when you effectively used social media and online marketing to promote the hotel.",
+        "answerText": "In a marketing campaign, I utilized social media platforms and online advertising to target specific demographics and increase hotel bookings."
+      },
+      "question14": {
+        "id": "hotel_management_question14",
+        "questionText": "How do you ensure compliance with health and safety regulations in the hotel?",
+        "answerText": "I regularly review and update safety protocols, conduct staff training, and collaborate with local authorities to ensure compliance."
+      },
+      "question15": {
+        "id": "hotel_management_question15",
+        "questionText": "Describe a project where you effectively managed a large event or conference at the hotel.",
+        "answerText": "In an event management project, I coordinated with event organizers, caterers, and staff to ensure a seamless experience for attendees."
+      },
+      "question16": {
+        "id": "hotel_management_question16",
+        "questionText": "How do you handle the recruitment and training of new hotel staff?",
+        "answerText": "I conduct interviews, assess candidates for relevant skills and cultural fit, and provide comprehensive onboarding and training programs."
+      },
+      "question17": {
+        "id": "hotel_management_question17",
+        "questionText": "Describe a time when you effectively used upselling techniques to increase revenue per guest.",
+        "answerText": "In a front desk role, I suggested room upgrades and additional services to guests, resulting in increased revenue for the hotel."
+      },
+      "question18": {
+        "id": "hotel_management_question18",
+        "questionText": "How do you manage hotel occupancy rates to maximize revenue during peak and off-peak periods?",
+        "answerText": "I use demand forecasting and revenue management strategies to adjust pricing and promotions based on occupancy trends."
+      },
+      "question19": {
+        "id": "hotel_management_question19",
+        "questionText": "Describe a project where you successfully implemented contactless check-in and digital guest services.",
+        "answerText": "In a technology implementation project, I introduced mobile check-in and in-room services to enhance guest convenience and safety."
+      },
+      "question20": {
+        "id": "hotel_management_question20",
+        "questionText": "How do you handle cultural differences and language barriers when dealing with international guests?",
+        "answerText": "I ensure staff undergo cultural sensitivity training and provide multilingual services to cater to diverse guest needs."
+      },
+      "question21": {
+        "id": "hotel_management_question21",
+        "questionText": "Describe a time when you effectively managed hotel room reservations to accommodate last-minute changes and cancellations.",
+        "answerText": "In a high-demand period, I used room inventory optimization techniques to manage bookings and minimize revenue loss due to cancellations."
+      },
+      "question22": {
+        "id": "hotel_management_question22",
+        "questionText": "How do you ensure the smooth functioning of hotel departments like front desk, housekeeping, and food services?",
+        "answerText": "I foster open communication between departments, conduct regular cross-training, and hold departmental meetings to address any issues."
+      },
+      "question23": {
+        "id": "hotel_management_question23",
+        "questionText": "Describe a time when you effectively used guest feedback to implement improvements in hotel services.",
+        "answerText": "In a guest feedback survey, I identified areas for improvement and implemented staff training programs to address specific concerns."
+      },
+      "question24": {
+        "id": "hotel_management_question24",
+        "questionText": "How do you approach performance evaluations and provide constructive feedback to hotel staff?",
+        "answerText": "I conduct regular performance reviews, set clear goals, and provide feedback that focuses on strengths and areas for development."
+      },
+      "question25": {
+        "id": "hotel_management_question25",
+        "questionText": "Describe a project where you successfully handled a large group booking or event logistics.",
+        "answerText": "In a group booking project, I coordinated room allocations, meal arrangements, and event logistics to ensure a seamless experience for the entire group."
+      },
+      "question26": {
+        "id": "hotel_management_question26",
+        "questionText": "How do you handle guest loyalty programs and ensure repeat business for the hotel?",
+        "answerText": "I implement guest loyalty programs, offer personalized incentives, and maintain a CRM system to engage with loyal guests and encourage return visits."
+      },
+      "question27": {
+        "id": "hotel_management_question27",
+        "questionText": "Describe a time when you effectively managed hotel revenue during a period of low demand or economic downturn.",
+        "answerText": "In a challenging economic environment, I implemented cost-saving measures and created attractive packages to attract more guests."
+      },
+      "question28": {
+        "id": "hotel_management_question28",
+        "questionText": "How do you handle inventory control and rotation for perishable items like food and beverages in the hotel?",
+        "answerText": "I use the First-In-First-Out (FIFO) method to manage inventory and minimize waste for perishable items."
+      },
+      "question29": {
+        "id": "hotel_management_question29",
+        "questionText": "Describe a project where you successfully managed a hotel's online reputation and guest reviews.",
+        "answerText": "In an online reputation management project, I responded to guest reviews promptly, addressed concerns, and promoted positive feedback."
+      },
+      "question30": {
+        "id": "hotel_management_question30",
+        "questionText": "How do you approach customer relationship management to build long-lasting relationships with guests?",
+        "answerText": "I believe in building genuine connections with guests, remembering their preferences, and following up with personalized offers or invitations for their next stay."
       }
     }
   }

@@ -86,7 +86,7 @@ public class LettersList extends AppCompatActivity {
     }
 
     // Method to retrieve cover letter data
-    private ArrayList<ExpandableItem> getCoverletters() {
+    public ArrayList<ExpandableItem> getCoverletters() {
         ArrayList<ExpandableItem> coverLetterList = new ArrayList<>();
 
         // Add sample cover letter data
@@ -126,7 +126,7 @@ public class LettersList extends AppCompatActivity {
     }
 
     // Method to retrieve reference letter data
-    private ArrayList<ExpandableItem> getReferenceLetters() {
+    public ArrayList<ExpandableItem> getReferenceLetters() {
         ArrayList<ExpandableItem> referenceLetterList = new ArrayList<>();
 
 

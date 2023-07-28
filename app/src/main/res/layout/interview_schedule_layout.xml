@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="780dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/etInterviewScheduleJobPosition"
         app:layout_constraintTop_toBottomOf="@+id/etInterviewScheduleJobPosition">
 
@@ -15,9 +15,17 @@
             android:id="@+id/etInterviewScheduleFullName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+
             android:layout_marginTop="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_for_edittext"
             android:hint="Full Name"
-            android:minHeight="48dp"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,9 +34,17 @@
             android:id="@+id/etInterviewScheduleContactDetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+
+
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_for_edittext"
             android:hint="Contact Details (Email/Phone)"
-            android:minHeight="48dp"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etInterviewScheduleFullName" />
@@ -37,38 +53,65 @@
             android:id="@+id/etInterviewScheduleJobPosition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+
+
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_for_edittext"
             android:hint="Job Position"
-            android:minHeight="48dp"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@+id/etInterviewScheduleContactDetails"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etInterviewScheduleContactDetails" />
 
         <EditText
             android:id="@+id/etInterviewScheduleAvailability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_for_edittext"
             android:hint="Availability"
-            android:minHeight="48dp"
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@+id/etInterviewScheduleJobPosition"
+            app:layout_constraintStart_toStartOf="@+id/etInterviewScheduleJobPosition"
             app:layout_constraintTop_toBottomOf="@id/etInterviewScheduleJobPosition" />
 
         <EditText
             android:id="@+id/etInterviewScheduleAdditionalNotes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/background_for_edittext"
             android:hint="Additional Notes or Requirements"
-            android:minHeight="48dp"
+
+
+            android:minHeight="50dp"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etInterviewScheduleAvailability" />
 
         <Button
             android:id="@+id/btnscheduleInterview"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="94dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             android:text="Schedule Interview"
             app:layout_constraintBottom_toBottomOf="parent"

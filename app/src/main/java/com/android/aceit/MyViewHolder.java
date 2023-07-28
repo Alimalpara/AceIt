@@ -45,11 +45,11 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
         toggleForexpandandCollapseImage = itemView.findViewById(R.id.ivExapndandCollapse);
 
-        // Enable marquee effect for the TextView
+       /* // Enable marquee effect for the TextView
         if (maintv != null) {
             //marquee testing
             maintv.setSelected(true);
-            maintv.requestFocus();        }
+            maintv.requestFocus();        }*/
 
 
     }
