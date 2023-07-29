@@ -8,23 +8,27 @@
 
     <TextView
         android:id="@+id/tvViewQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="128dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvViewAnswer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvViewQuestion" />
 </androidx.constraintlayout.widget.ConstraintLayout>
