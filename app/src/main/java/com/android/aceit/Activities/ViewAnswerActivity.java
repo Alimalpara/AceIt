@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.android.aceit.DatabaseHelper;
 import com.android.aceit.Models.QuestionModel;
 import com.android.aceit.R;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ViewAnswerActivity extends AppCompatActivity {
     TextView questiontv, answertv;
@@ -138,10 +139,14 @@ public class ViewAnswerActivity extends AppCompatActivity {
           result =  databaseHelper.removeFavoriteQuestion(qid);
           if(result){
              // AddtoFavouritebtn.setText("Add to Favorites");
+              Snackbar.make(ViewAnswerActivity.this.findViewById(android.R.id.content),
+                      "Removed from Favourites", Snackbar.LENGTH_SHORT).show();
               updatebutton.setVisibility(View.GONE);
           }
           else{
-              Toast.makeText(ViewAnswerActivity.this, " Error deleting", Toast.LENGTH_SHORT).show();
+              Snackbar.make(ViewAnswerActivity.this.findViewById(android.R.id.content),
+                      "Error Deleting", Snackbar.LENGTH_SHORT).show();
+              return;
 
           }
 
@@ -152,9 +157,16 @@ public class ViewAnswerActivity extends AppCompatActivity {
           result = databaseHelper.addFavoriteQuestion(qid,question,answer);
 
 
-          if(!result){
+          if(result){
               //AddtoFavouritebtn.setText("Remove from Favorites");
-              Toast.makeText(ViewAnswerActivity.this, " Error Adding", Toast.LENGTH_SHORT).show();
+
+              Snackbar.make(ViewAnswerActivity.this.findViewById(android.R.id.content),
+                      "Added to Favourites", Snackbar.LENGTH_SHORT).show();
+          }else{
+              Snackbar.make(ViewAnswerActivity.this.findViewById(android.R.id.content),
+                      "Error Adding", Snackbar.LENGTH_SHORT).show();
+
+              return;
           }
 
 
@@ -184,8 +196,8 @@ public class ViewAnswerActivity extends AppCompatActivity {
                            if(isupdated){
                                updatebutton.setVisibility(View.GONE);
                            }else{
-                               Toast.makeText(ViewAnswerActivity.this, "Error while updating", Toast.LENGTH_SHORT).show();
-                           }
+                               Snackbar.make(ViewAnswerActivity.this.findViewById(android.R.id.content),
+                                       "Error While Updating", Snackbar.LENGTH_SHORT).show();                           }
                         }
                     });
                 }
@@ -242,12 +254,12 @@ public class ViewAnswerActivity extends AppCompatActivity {
         if (itemId == R.id.action_share) {
             // Handle the share action (e.g., open a share dialog)
             shareContent(question,answer);
-            Toast.makeText(this, "share clicked", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "share clicked", Toast.LENGTH_SHORT).show();
             return true;
         } else if (itemId == R.id.action_favorite) {
             // Handle the favorite action (e.g., add/remove from favorites)
             addToFavouriteMethod();
-            Toast.makeText(this, "Favourite clicked", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Favourite clicked", Toast.LENGTH_SHORT).show();
 
             return true;
         }
