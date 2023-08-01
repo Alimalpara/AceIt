@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.aceit.Models.QuestionModel;
 import com.android.aceit.R;
+
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class Quiz extends AppCompatActivity {
 
     TextView timer, question;
     private CountDownTimer countDownTimer;
-    private long timeLeftInMillis = 5000;
+    private long timeLeftInMillis = 0000;
     private int currentQuestionIndex = 0;
     private ArrayList<QuestionModel> questionList;
     private boolean quizCompleted = false;
@@ -39,7 +41,7 @@ public class Quiz extends AppCompatActivity {
     private TextToSpeech textToSpeech;
     private boolean isSpeaking = false;
     Handler handler ;
-    private long initialTimeInMillis = 5000;
+    private long timeForTheQuestion = 10000;
     int type ;// Initial time for each question
 
     //mainlayouts
@@ -55,6 +57,9 @@ public class Quiz extends AppCompatActivity {
 
     TextView practiceSetQuestion;
     ActionBar actionBar;
+
+    //bg image for quiz
+    ImageView bgQuiz;
 
 
     @Override
@@ -88,7 +93,7 @@ public class Quiz extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startTimerQuiz(3);
+                        startTimerQuiz(1);
                     }
                 }, 3000);
 
@@ -105,6 +110,8 @@ public class Quiz extends AppCompatActivity {
                     init_pracice_quiz_layout.setVisibility(View.GONE);
                     practice_quiz_layout_main.setVisibility(View.VISIBLE);
                     practicePreviousQuestion.setVisibility(View.INVISIBLE);
+                    //to set initial question
+                    setQuestionToTextView(false);
                    /* practiceSetQuestion.setText("shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n" +
                             "shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n" +
                             "shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n" +
@@ -122,6 +129,7 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
+        //next utton for xhanging question
         practiceNextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,10 +142,11 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
+        //precvious button for previous questions
         practicePreviousQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Quiz.this, "clicked", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Quiz.this, "clicked", Toast.LENGTH_SHORT).show();
                 // Check if there are previous questions
                 if (currentQuestionIndex > 0) {
                     currentQuestionIndex--; // Decrement the index to move to the previous question
@@ -152,14 +161,15 @@ public class Quiz extends AppCompatActivity {
     //type of quiz main logic
     public void typeofQuiz(int type){
         if(type==1){
-            Toast.makeText(this, "Live mode", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Live mode", Toast.LENGTH_SHORT).show();
             mainIncludeLive.setVisibility(View.VISIBLE);
             init_live_quiz_layout.setVisibility(View.VISIBLE);
             live_quiz_layout_main.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.GONE);
+            bgQuiz.setVisibility(View.GONE);
             actionBar.setTitle("Live Mode");
         }else if(type==2){
-            Toast.makeText(this, "Practice mode", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Practice mode", Toast.LENGTH_SHORT).show();
             mainIncludeLive.setVisibility(View.GONE);
             mainIncludePractice.setVisibility(View.VISIBLE);
             init_pracice_quiz_layout.setVisibility(View.VISIBLE);
@@ -196,6 +206,9 @@ public class Quiz extends AppCompatActivity {
         //practice buttons
         practiceNextQuestion = (Button) findViewById(R.id.btnPracticeNextQuestion);
         practicePreviousQuestion = (Button) findViewById(R.id.btnPracticePreviousQuestion);
+
+        // quiz image view
+        bgQuiz = (ImageView) findViewById(R.id.ivLiveModeQuizBg);
 
     }
 
@@ -248,7 +261,7 @@ public class Quiz extends AppCompatActivity {
                     questionList.subList(numQuestions, questionList.size()).clear();
                     startQuiz();
                 }else{
-                    Toast.makeText(this, "Questions are mire than arrray", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Questions are more than arrray", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -263,6 +276,7 @@ public class Quiz extends AppCompatActivity {
 
             if(currentQuestionIndex==0){
                 QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
+                bgQuiz.setVisibility(View.VISIBLE);
 
                 //to seet animatipon
                 // Apply fade-in animation to the question view
@@ -275,17 +289,25 @@ public class Quiz extends AppCompatActivity {
                 currentQuestionIndex++;
 
             }else{
-                Toast.makeText(this, "Setting a new question", Toast.LENGTH_SHORT).show();
+                ///this is when the new question i s coming up
+
+                //Toast.makeText(this, "Get ready for next question", Toast.LENGTH_SHORT).show();
+                question.setText("Get ready for next question");
+                bgQuiz.setVisibility(View.GONE);
+                timer.setVisibility(View.GONE);
                 // Pause for 2 seconds before setting the next question
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        timer.setVisibility(View.VISIBLE);
                         QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
                         questionAnimation();
                         question.setText(currentQuestion.getQuestion());
                         currentQuestionIndex++;
                         startCountdown();
+
+                        bgQuiz.setVisibility(View.VISIBLE);
 
                     }
                 }, 2000); // Adjust the pause duration as needed (e.g., 2000 milliseconds = 2 seconds)
@@ -294,12 +316,13 @@ public class Quiz extends AppCompatActivity {
 
         } else {
             // No more questions to display, handle the logic here
-            Toast.makeText(this, "No more questions to display", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "No more questions to display", Toast.LENGTH_SHORT).show();
             quizCompleted = true;
             countDownTimer.cancel();
             timeLeftInMillis = 0; // Reset the timer duration
             updateTimerText(); // Update the timer text one last time
             endQuiz(); // Call the method to handle quiz completion
+
         }
     }
 
@@ -308,7 +331,12 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void startCountdown() {
-        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+       /* here two varaible are used first is timeForTheQuestion
+        the second is timeLeftInMillis.
+        so when thwe quiz is launched the timeforthequestoin is used to set the timer of every question
+                and the timeLeftInMillis is used to reset the timer and update the timer text by
+                decreasing each second and also is used to reset the final timer value after the quiz is over.*/
+        countDownTimer = new CountDownTimer(timeForTheQuestion, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
@@ -319,7 +347,7 @@ public class Quiz extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                timeLeftInMillis = 5000;
+                timeLeftInMillis = timeForTheQuestion;
                 displayQuestion(); // Set the next question
             }
         };
@@ -334,7 +362,11 @@ public class Quiz extends AppCompatActivity {
     private void endQuiz() {
 
         Snackbar.make(question, "Quiz is over", Snackbar.LENGTH_LONG).show();
-        Toast.makeText(this, "TImer stioooed", Toast.LENGTH_SHORT).show();
+        bgQuiz.setImageResource(R.drawable.quizcompleted);
+        //bgQuiz.setVisibility(View.GONE);
+    timer.setVisibility(View.GONE);
+    question.setText("Quiz Completed");
+        //Toast.makeText(this, "TImer stioooed", Toast.LENGTH_SHORT).show();
         // Quiz ended, handle the logic here
         if (countDownTimer != null) {
             countDownTimer.cancel();
