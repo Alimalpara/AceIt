@@ -90,14 +90,12 @@
             android:layout_marginTop="16dp"
 
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="160dp"
             android:background="@drawable/background_for_edittext"
             android:hint="Enter your experience"
             android:minHeight="50dp"
             android:paddingStart="8dp"
             android:textColor="@color/white"
             android:textColorHint="@android:color/darker_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etCreateCoverLetterSkills" />
@@ -106,9 +104,7 @@
             android:id="@+id/etCreateCoverLetterHiringManagerName"
             android:layout_width="347dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="42dp"
             android:background="@drawable/background_for_edittext"
             android:hint="Enter Hiring Manager Name"
@@ -119,21 +115,21 @@
             android:textColorHint="@android:color/darker_gray"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/btnCreateCOverLetterMain"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/etCreateCoverLetterExperience"
+            app:layout_constraintStart_toStartOf="@+id/etCreateCoverLetterExperience"
             app:layout_constraintTop_toBottomOf="@+id/etCreateCoverLetterExperience" />
 
         <Button
             android:id="@+id/btnCreateCOverLetterMain"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="86dp"
+            android:layout_marginTop="41dp"
             android:layout_marginBottom="26dp"
             android:text="Create Cover Letter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/etCreateCoverLetterExperience"
             app:layout_constraintStart_toStartOf="@+id/etCreateCoverLetterExperience"
-            app:layout_constraintTop_toBottomOf="@+id/etCreateCoverLetterExperience" />
+            app:layout_constraintTop_toBottomOf="@+id/etCreateCoverLetterHiringManagerName" />
 
         <!-- Add more EditText fields for other variables as needed -->
 
