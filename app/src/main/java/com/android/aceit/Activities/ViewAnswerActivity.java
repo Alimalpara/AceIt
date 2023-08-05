@@ -209,7 +209,8 @@ public class ViewAnswerActivity extends AppCompatActivity {
     }
 
     private void shareContent(String question, String answer) {
-        String shareText = "Question: " + question + "\nAnswer: " + answer;
+        String shareText = "Question: \n " + question + "\nAnswer: \n" + answer +
+                "\n\nShared via *ACE IT*\nComing Soon on Play store";
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");

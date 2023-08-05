@@ -21,7 +21,7 @@
             android:background="@drawable/background_for_edittext"
 
 
-            android:hint="Enter your text"
+            android:hint="Enter your personal template"
             android:inputType="textMultiLine"
 
             android:minHeight="50dp"

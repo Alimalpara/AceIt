@@ -61,7 +61,7 @@ public class LettersAdapter extends RecyclerView.Adapter<MyViewHolder> {
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Toast.makeText(context, "clickd", Toast.LENGTH_SHORT).show();
+              // Toast.makeText(context, "clickd", Toast.LENGTH_SHORT).show();
 
                toggleExpansion(holder.expandcontentcardview,holder.expand_button,holder.toggleForexpandandCollapseImage,finalpos);
            }

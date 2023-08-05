@@ -1,6 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#58616F" /> <!-- Lighter Shade - Adjust the color as needed -->
+    <stroke
+        android:width="2dp"
+        android:color="#531249" />
+    <gradient
+        android:startColor="#10131C"
+        android:endColor="#501C3E"
+    android:angle="45"/>
     <corners android:radius="4dp" /> <!-- Optional: Set corner radius as per your preference -->
-
 </shape>

@@ -75,6 +75,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
+import java.util.Objects;
 
 public class SplashScreen extends AppCompatActivity {
     private DatabaseReference databaseReference;
@@ -84,6 +85,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         splash = findViewById(R.id.btnsplash);
 

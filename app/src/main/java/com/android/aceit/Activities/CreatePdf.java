@@ -12,6 +12,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.android.aceit.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -225,11 +226,13 @@ public class CreatePdf extends AppCompatActivity {
             document.close();
 
             // Show a success message to the user
-            Toast.makeText(CreatePdf.this, "Letter saved as PDF successfully", Toast.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content), "Letter saved as PDF successfully", Snackbar.LENGTH_SHORT).show();
+
         } catch (IOException e) {
             e.printStackTrace();
             // Show an error message to the user if the file could not be saved
-            Toast.makeText(CreatePdf.this, "Failed to save letter as PDF", Toast.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content), "Failed to save letter as PDF", Snackbar.LENGTH_SHORT).show();
+
         }
     }
 
@@ -303,9 +306,9 @@ public class CreatePdf extends AppCompatActivity {
             svCreateReferenceletter.setVisibility(View.GONE);
 
 
-            Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
         }else{
-            Toast.makeText(this, "No", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "No", Toast.LENGTH_SHORT).show();
         }
     }
 

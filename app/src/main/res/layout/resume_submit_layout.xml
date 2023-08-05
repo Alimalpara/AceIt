@@ -35,7 +35,7 @@
             android:id="@+id/etResumeSpecificGoals"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
 
             android:background="@drawable/background_for_edittext"
             android:ems="10"
@@ -55,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/background_for_edittext"
             android:ems="10"
             android:hint="Targeted Industry"
@@ -73,7 +73,7 @@
             android:id="@+id/etResumeAdditionlContext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
 
             android:background="@drawable/background_for_edittext"
             android:ems="10"
@@ -92,7 +92,7 @@
             android:id="@+id/etResumeJobDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
 
             android:background="@drawable/background_for_edittext"
             android:ems="10"
@@ -112,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="87dp"
-            android:text="Submit"
+            android:text="Request Resume Check"
             app:layout_constraintEnd_toEndOf="@+id/etResumeAdditionlContext"
             app:layout_constraintStart_toStartOf="@+id/etResumeAdditionlContext"
             app:layout_constraintTop_toBottomOf="@+id/etResumeAdditionlContext" />

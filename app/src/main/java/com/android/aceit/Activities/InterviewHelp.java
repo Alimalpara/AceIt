@@ -60,7 +60,7 @@ public class InterviewHelp extends AppCompatActivity {
                 String template = " Name: %s\n" +
                         "Targeted Industry: %s\n" +
                         "Specific Goals: %s\n" +
-                        "Job Description: %s" +
+                        "Job Description: %s\n" +
                         "Additional Context: %s\n" +
                         "\n\nPlease attach your resume in .pdf or .doc file";
 
