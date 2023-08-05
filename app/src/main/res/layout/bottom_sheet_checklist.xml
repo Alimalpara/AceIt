@@ -14,17 +14,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
 
-        android:ems="10"
-        android:hint="Add item"
-
-        android:inputType="textNoSuggestions|textImeMultiLine"
-        android:minHeight="50dp"
-
         android:background="@drawable/background_for_edittext"
+        android:ems="10"
+
+        android:hint="Add item"
+        android:inputType="textNoSuggestions|textImeMultiLine"
+
+        android:minHeight="50dp"
         android:paddingStart="8dp"
         android:textColor="@color/white"
         android:textColorHint="@android:color/darker_gray"

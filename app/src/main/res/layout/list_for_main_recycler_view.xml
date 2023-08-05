@@ -35,16 +35,15 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="25dp"
+                android:layout_width="wrap_content"
                 android:layout_height="25dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/tvforrvMain"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="@+id/tvforrvMain"
                 app:layout_constraintStart_toStartOf="@+id/tvforrvMain"
                 app:layout_constraintTop_toTopOf="parent"

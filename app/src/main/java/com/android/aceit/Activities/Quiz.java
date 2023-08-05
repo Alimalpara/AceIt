@@ -2,6 +2,7 @@ package com.android.aceit.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
@@ -24,9 +25,10 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Locale;
-
-
+import java.util.Random;
+import java.util.Set;
 
 
 public class Quiz extends AppCompatActivity {
@@ -41,7 +43,7 @@ public class Quiz extends AppCompatActivity {
     private TextToSpeech textToSpeech;
     private boolean isSpeaking = false;
     Handler handler ;
-    private long timeForTheQuestion = 10000;
+    private long timeForTheQuestion = 150000;
     int type ;// Initial time for each question
 
     //mainlayouts
@@ -60,6 +62,12 @@ public class Quiz extends AppCompatActivity {
 
     //bg image for quiz
     ImageView bgQuiz;
+
+    //for hint
+    CardView cvHintMainPracticeMode,cvHintExpandPracticeMode;
+    TextView tvPracticeHintExapand;
+    ImageView expandIv;
+
 
 
     @Override
@@ -93,7 +101,7 @@ public class Quiz extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startTimerQuiz(1);
+                        startTimerQuiz(5);
                     }
                 }, 3000);
 
@@ -123,7 +131,9 @@ public class Quiz extends AppCompatActivity {
                             "" +
                             "shofgoshgsohgsjfghjsdfhgbkdjfg dhgodhgd\noshosofhosifhosdbvodbodbodhb\nosijhgsofhjgosdgdsfogdojgodsjg\nsjgosgojsfgjsdfgosdjgdsjgdsfjgi\nsojhgosfgodjfog\n");*/
                 }else{
-                    Toast.makeText(Quiz.this, "No Questions to display", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(Quiz.this.findViewById(android.R.id.content),
+                            "No Questions to display", Snackbar.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -156,6 +166,14 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
+        //hint click event
+// Set click listener for the main hint CardView
+        cvHintMainPracticeMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleHintVisibility();
+            }
+        });
 
     }
     //type of quiz main logic
@@ -210,6 +228,13 @@ public class Quiz extends AppCompatActivity {
         // quiz image view
         bgQuiz = (ImageView) findViewById(R.id.ivLiveModeQuizBg);
 
+        //for hint
+        cvHintMainPracticeMode = findViewById(R.id.cvHintMainPracticeMode);
+        cvHintExpandPracticeMode = findViewById(R.id.cvHintExpandPracticeMode);
+        tvPracticeHintExapand = findViewById(R.id.tvPracticeHintExapand);
+        expandIv = (ImageView) findViewById(R.id.ivExapndandCollapsePracticeMode);
+        cvHintMainPracticeMode.setVisibility(View.VISIBLE);
+
     }
 
     //following methods for practice mode
@@ -218,10 +243,69 @@ public class Quiz extends AppCompatActivity {
         if (currentQuestionIndex >= 0 && currentQuestionIndex < questionList.size()) {
             QuestionModel currentQuestion = questionList.get(currentQuestionIndex);
             practiceSetQuestion.setText(currentQuestion.getQuestion());
+
+            //to set hint
+            // Extract a hint from the answer and set it as a hint for the TextView
+            String answer = currentQuestion.getAnswer();
+            String hint = extractWordsAsHint(answer); // You can reuse the extractFirstFewWords method from the previous response
+            tvPracticeHintExapand.setText(hint);
             Animation slideAnimation = AnimationUtils.loadAnimation(this, slideToLeft ? R.anim.slide_in_left_quiz: R.anim.slide_in_right_quiz);
             practiceSetQuestion.startAnimation(slideAnimation);
+            cvHintExpandPracticeMode.setVisibility(View.GONE);
+            expandIv.setRotation(0);
 
         }
+    }
+
+    //to toggle the views for hint
+    private void toggleHintVisibility() {
+        int newVisibility;
+        if (cvHintExpandPracticeMode.getVisibility() == View.VISIBLE) {
+            newVisibility = View.GONE;
+            expandIv.setRotation(0);
+        } else {
+            newVisibility = View.VISIBLE;
+            expandIv.setRotation(180);
+        }
+        cvHintExpandPracticeMode.setVisibility(newVisibility);
+
+    }
+
+
+    //to extract few words
+    // Method to extract the first few words from a string
+   /* private String extractFirstFewWords(String text) {
+        int wordsToExtract = 10; // Change this as needed
+        String[] words = text.split(" ");
+        StringBuilder hint = new StringBuilder();
+
+        for (int i = 0; i < wordsToExtract && i < words.length; i++) {
+            hint.append(words[i]).append(" ");
+        }
+
+        return hint.toString().trim();
+    }
+*/
+    private String extractWordsAsHint(String text) {
+        String[] words = text.split(" ");
+        StringBuilder hint = new StringBuilder();
+
+        for (String word : words) {
+            // Remove punctuation and trim the word
+            String cleanWord = word.replaceAll("[^a-zA-Z]", "").trim();
+
+            // Check if the cleaned word has a length greater than 4 characters
+            if (cleanWord.length() > 4) {
+                hint.append(cleanWord).append(", ");
+            }
+        }
+
+        if (hint.length() > 0) {
+            // Remove the trailing comma and space
+            hint.delete(hint.length() - 2, hint.length());
+        }
+
+        return hint.toString();
     }
 
 
@@ -261,7 +345,9 @@ public class Quiz extends AppCompatActivity {
                     questionList.subList(numQuestions, questionList.size()).clear();
                     startQuiz();
                 }else{
-                    Toast.makeText(this, "Questions are more than arrray", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(findViewById(android.R.id.content),
+                            "Questions are more than array", Snackbar.LENGTH_SHORT).show();
+
 
                 }
             }
@@ -361,11 +447,11 @@ public class Quiz extends AppCompatActivity {
 
     private void endQuiz() {
 
-        Snackbar.make(question, "Quiz is over", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(question, "Session is over", Snackbar.LENGTH_LONG).show();
         bgQuiz.setImageResource(R.drawable.quizcompleted);
         //bgQuiz.setVisibility(View.GONE);
     timer.setVisibility(View.GONE);
-    question.setText("Quiz Completed");
+    question.setText("Live mode Completed");
         //Toast.makeText(this, "TImer stioooed", Toast.LENGTH_SHORT).show();
         // Quiz ended, handle the logic here
         if (countDownTimer != null) {

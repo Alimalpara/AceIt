@@ -171,6 +171,7 @@ DatabaseHelper databaseHelper;
         editText.setText(itemText);
 
         Button button = bottomSheetView.findViewById(R.id.btnBottomSheet);
+        button.setText("Save Changes");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

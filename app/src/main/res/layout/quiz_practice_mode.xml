@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="136dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:maxHeight="300dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -46,12 +47,128 @@
                         android:id="@+id/tvPracticeModeQuestion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:minHeight="50dp"
                         android:padding="8dp"
-                        android:text="QUestion" />
+                        android:text="Question"
+                        android:textAlignment="center"
+                        android:textSize="20sp" />
                 </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvHintMainPracticeMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/background_for_q_f_c_card"
+                android:clickable="true"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/cvHintExpandPracticeMode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_color_forlist_q_f_C">
+
+                    <TextView
+                        android:id="@+id/tvexpandLetterTitile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Click to view Hint "
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <ImageView
+                        android:id="@+id/ivExapndandCollapsePracticeMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvexpandLetterTitile"
+                        app:layout_constraintStart_toEndOf="@+id/tvexpandLetterTitile"
+                        app:layout_constraintTop_toTopOf="@+id/tvexpandLetterTitile"
+                        app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvHintExpandPracticeMode"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/background_for_q_f_c_card"
+                android:visibility="gone"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnexpandLetter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvHintMainPracticeMode">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_color_forlist_q_f_C">
+
+                    <TextView
+                        android:id="@+id/tvPracticeHintExapand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="HInt for the answer"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnexpandLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Use this template"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/cvHintExpandPracticeMode"
+                app:layout_constraintStart_toStartOf="@+id/cvHintExpandPracticeMode"
+                app:layout_constraintTop_toBottomOf="@+id/cvHintExpandPracticeMode" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <Button
@@ -118,7 +235,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="16dp"
-                    android:text="This is practice mode\n where you will get all the question and you can click on next or previous botton to navigate throug question"
+                    android:text="@string/practice_mode_intro"
+                    android:textAlignment="textStart"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

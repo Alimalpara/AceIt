@@ -50,6 +50,7 @@
         <item name="android:textColor">@color/custom_button_text_color</item>
         <item name="strokeColor">@color/stroke_color_for_button</item>
         <item name="strokeWidth">1dp</item>
+
         <!-- Other custom attributes for the button style -->
     </style>
 <!--    For text view-->

@@ -16,6 +16,7 @@ import com.android.aceit.Adapters.QuestionsAdapter;
 import com.android.aceit.DatabaseHelper;
 import com.android.aceit.Models.QuestionModel;
 import com.android.aceit.R;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -46,7 +47,7 @@ public class Favourites extends AppCompatActivity {
         favouritesArrraylist = new ArrayList<>();
 
 
-        Toast.makeText(this, "on create", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "on create", Toast.LENGTH_SHORT).show();
 
        //setrup rv
         setupRecyclerView();
@@ -118,7 +119,9 @@ public class Favourites extends AppCompatActivity {
             //atle etla mate notify kem k last element b remove thy jay to aa execute thahe ne atle add krvu pde
             //to set data to emtpy if everything is removed
             favouriteAdapter.notifyDataSetChanged();
-            Toast.makeText(this, "Please add favorites to access them here ", Toast.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content),
+                    "Please add favorites to access them here", Snackbar.LENGTH_SHORT).show();
+
         }
 
 
@@ -131,7 +134,7 @@ public class Favourites extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        Toast.makeText(this, "on resume", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "on resume", Toast.LENGTH_SHORT).show();
 
         // Clear the ArrayList before repopulating
         favouritesArrraylist.clear();

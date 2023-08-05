@@ -127,7 +127,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
         //this one works
-        Toast.makeText(this, "Questions ", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Questions ", Toast.LENGTH_SHORT).show();
 
 
 

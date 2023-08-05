@@ -115,9 +115,12 @@ public class Checklist extends AppCompatActivity {
         View bottomSheetView = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_checklist, null);
         bottomSheetDialog.setContentView(bottomSheetView);
 
+
         //click event on
         EditText etBottomsheet = bottomSheetView.findViewById(R.id.etBottomsheet);
         Button btnBottomSheet = bottomSheetView.findViewById(R.id.btnBottomSheet);
+        btnBottomSheet.setText("Add item");
+        etBottomsheet.setHint("Add a new item");
 
         btnBottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override

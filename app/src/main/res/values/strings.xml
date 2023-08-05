@@ -2,4 +2,40 @@
     <string name="app_name">Ace It</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="practice_mode_intro">
+    <b>Welcome to Practice Mode!</b>\n\n
+    In this mode, you have the freedom to navigate through the questions at your own pace.
+    Use the <b>Next</b> and <b>Previous</b> buttons to move seamlessly between questions.\n\n
+    Feeling stuck? No worries! If you encounter a challenging question, simply tap on the <b>Hint</b> button.
+    A helpful hint awaits to jog your memory and guide you towards the right answer.\n\n
+    Remember, mastery comes with practice. Take your time, enjoy the learning process, and empower yourself
+    for interview success. Happy practicing!
+</string>
+<string name="livemode">
+    <b>Welcome to Live Mode!</b>\n\n
+    Step into the spotlight and embrace the excitement of real-time challenges.
+    In this mode, you\'ll experience the intensity of a timed interview simulation.\n\n
+    A question will appear, and the countdown timer will begin. You must think quickly and provide
+    your answer before time runs out. The clock is ticking, and your skills are on display.\n\n
+    With every second that passes, you\'ll gain a taste of the time pressure that comes with interviews.
+    Adapt, stay focused, and respond confidently. This dynamic practice is designed to enhance your
+    problem-solving abilities and boost your confidence.\n\n
+    Are you ready to take on the challenge? Let the countdown begin!
+    Step into the spotlight and embrace the excitement of real-time challenges.
+    In this mode, you\'ll experience the intensity of a timed interview simulation.\n\n
+    A question will appear, and the countdown timer will begin. You must think quickly and provide
+    your answer before time runs out. The clock is ticking, and your skills are on display.\n\n
+    With every second that passes, you\'ll gain a taste of the time pressure that comes with interviews.
+    Adapt, stay focused, and respond confidently. This dynamic practice is designed to enhance your
+    problem-solving abilities and boost your confidence.\n\n
+    Are you ready to take on the challenge? Let the countdown begin!
+
+
+
+
+
+
+</string>
+
 </resources>
