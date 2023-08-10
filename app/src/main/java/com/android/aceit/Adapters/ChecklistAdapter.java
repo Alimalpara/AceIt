@@ -19,7 +19,9 @@ import com.android.aceit.DatabaseHelper;
 import com.android.aceit.Models.ChecklistItem;
 import com.android.aceit.MyViewHolder;
 import com.android.aceit.R;
+import com.android.aceit.SnackbarUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -175,7 +177,13 @@ DatabaseHelper databaseHelper;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String editedText = editText.getText().toString();
+                String editedText = editText.getText().toString().trim();
+
+                if(editedText.isEmpty()){
+                    SnackbarUtils.showCustomErrorSnackbarForChecklist(bottomSheetView.getRootView(), "Input field cannot be empty");
+
+                }else {
+
 
                 // Check if the edited text is different from the current text
                 if (!editedText.equals(checklistItems.get(holder.getAdapterPosition()).getText())) {
@@ -190,10 +198,15 @@ DatabaseHelper databaseHelper;
                         notifyItemChanged(holder.getAdapterPosition());
                     }
                 } else {
-                    Toast.makeText(context, "Text unchanged", Toast.LENGTH_SHORT).show();
+                    /*View parentView = LayoutInflater.from(context).inflate(R.layout.checklistrvrow, null);
+                    Snackbar.make(parentView, "Letter saved as PDF successfully", Snackbar.LENGTH_SHORT).show();*/
+                    Toast.makeText(context, "Unchanged", Toast.LENGTH_SHORT).show();
+
                 }
 
                 bottomSheetDialog.dismiss();
+
+                }
             }
         });
 

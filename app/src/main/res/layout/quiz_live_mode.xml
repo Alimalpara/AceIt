@@ -9,7 +9,7 @@
         android:id="@+id/cvLiveModeQuiz"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,12 +80,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cvLiveModeStart"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
         android:background="@color/primary_color"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/background_for_q_f_c_card"
             app:cardCornerRadius="8dp"
@@ -112,7 +110,7 @@
                 android:background="@color/background_color_forlist_q_f_C">
 
                 <ScrollView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

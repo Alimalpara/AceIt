@@ -23,6 +23,7 @@ import com.android.aceit.Adapters.ChecklistAdapter;
 import com.android.aceit.DatabaseHelper;
 import com.android.aceit.Models.ChecklistItem;
 import com.android.aceit.R;
+import com.android.aceit.SnackbarUtils;
 import com.android.aceit.SwipeToDeleteCallback;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -119,32 +120,39 @@ public class Checklist extends AppCompatActivity {
         //click event on
         EditText etBottomsheet = bottomSheetView.findViewById(R.id.etBottomsheet);
         Button btnBottomSheet = bottomSheetView.findViewById(R.id.btnBottomSheet);
-        btnBottomSheet.setText("Add item");
+
         etBottomsheet.setHint("Add a new item");
 
         btnBottomSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String value = etBottomsheet.getText().toString();
-                // Generate a unique ID using timestamp and date
-                Long itemId = generateUniqueItemId();
-                ChecklistItem checklistItem= new ChecklistItem(itemId,value,false);
-                boolean isInserted = dbHelper.addChecklistItem(itemId, value, false); // Assuming isChecked is initially set to false
+                String value = etBottomsheet.getText().toString().trim();
 
-                if (isInserted) {
-                    // Item inserted successfully, update the RecyclerView
+                if(!value.isEmpty()){
+                    // Generate a unique ID using timestamp and date
+                    Long itemId = generateUniqueItemId();
+                    ChecklistItem checklistItem= new ChecklistItem(itemId,value,false);
+                    boolean isInserted = dbHelper.addChecklistItem(itemId, value, false); // Assuming isChecked is initially set to false
 
-                   checklistItems.add(checklistItem);
-                   checklistAdapter.notifyItemInserted(checklistItems.size()-1);
+                    if (isInserted) {
+                        // Item inserted successfully, update the RecyclerView
 
-                } else {
-                    // Failed to insert the item
-                    Toast.makeText(Checklist.this, "Failed to add item to database", Toast.LENGTH_SHORT).show();
+                        checklistItems.add(checklistItem);
+                        checklistAdapter.notifyItemInserted(checklistItems.size()-1);
+
+                    } else {
+                        // Failed to insert the item
+                        Toast.makeText(Checklist.this, "Failed to add item to database", Toast.LENGTH_SHORT).show();
+                    }
+
+
+
+                    bottomSheetDialog.dismiss();
+                }else{
+                    SnackbarUtils.showCustomErrorSnackbarForChecklist(bottomSheetView.getRootView(), "Input field cannot be empty");
+
                 }
 
-
-
-                bottomSheetDialog.dismiss();
             }
         });
         bottomSheetDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);

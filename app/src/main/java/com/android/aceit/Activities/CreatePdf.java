@@ -2,6 +2,7 @@ package com.android.aceit.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -9,9 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.aceit.R;
+import com.android.aceit.SnackbarUtils;
 import com.google.android.material.snackbar.Snackbar;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
@@ -95,13 +98,18 @@ public class CreatePdf extends AppCompatActivity {
         btnGenerateCoverLetter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveAsPDF(type_of_letter,getUIInputForCoverLetterandReturnString());
+                if (validateInputsForCoverLetter()) {
+                    saveAsPDF(type_of_letter, getUIInputForCoverLetterandReturnString());
+                }
             }
         });
         btnGenerateReferenceLetter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveAsPDF(type_of_letter,getUIInputForReferenceLetterandReturnString());
+                if(validateReferenceLetterInputs()){
+                    saveAsPDF(type_of_letter,getUIInputForReferenceLetterandReturnString());
+
+                }
             }
         });
 
@@ -110,7 +118,12 @@ public class CreatePdf extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String personal = etCreatePersonalLetter.getText().toString();
-                saveAsPDF(typeFromMain,personal);
+                if (!personal.isEmpty()) {
+                    saveAsPDF(typeFromMain, personal);
+                } else {
+                   // Snackbar.make(findViewById(android.R.id.content), "", Snackbar.LENGTH_SHORT).show();
+                    SnackbarUtils.showCustomErrorSnackbar(CreatePdf.this   , "Personal letter cannot be empty");
+                }
 
             }
         });
@@ -269,6 +282,31 @@ public class CreatePdf extends AppCompatActivity {
         return content;
     }
 
+    ///validations for cpver letter
+    private boolean validateInputsForCoverLetter() {
+        String fullName = etCreateCoverLetterName.getText().toString().trim();
+        String position = etCreateCoverLetterPosition.getText().toString().trim();
+        String company = etCreateCoverLetterCompany.getText().toString().trim();
+        String skills = etCreateCoverLetterSkills.getText().toString().trim();
+        String experience = etCreateCoverLetterExperience.getText().toString().trim();
+        String hiringManagerName = etCreateCoverLetterHiringManagerName.getText().toString().trim();
+
+        if (content.contains("{NAME}") && hiringManagerName.isEmpty()) {
+           //
+            SnackbarUtils.showCustomErrorSnackbar(CreatePdf.this, "Hiring Manager Name cannot be empty");
+            return false;
+        }
+
+        if (fullName.isEmpty() || position.isEmpty() || company.isEmpty() || skills.isEmpty() || experience.isEmpty()) {
+
+            SnackbarUtils.showCustomErrorSnackbar(CreatePdf.this, "All fields must be filled");
+            return false;
+        }
+
+        return true;
+    }
+
+
     //Method for Reference letter to get ui input and setting it to save as pdf
     private String getUIInputForReferenceLetterandReturnString() {
         String referenceName = etCreateReferenceLetterReferenceName.getText().toString().trim();
@@ -287,6 +325,22 @@ public class CreatePdf extends AppCompatActivity {
                 .replace("[Your Name]", yourName);
 
         return referenceLetterContent;
+    }
+
+    //validations for reference letter inputsw
+    private boolean validateReferenceLetterInputs() {
+        String referenceName = etCreateReferenceLetterReferenceName.getText().toString().trim();
+        String companyName = etCreateReferenceLetterCompanyName.getText().toString().trim();
+        String skillsExperience = etCreateReferenceLetterSkillsExperience.getText().toString().trim();
+        String yourName = etCreateReferenceLetterYourName.getText().toString().trim();
+
+        if (referenceName.isEmpty() || companyName.isEmpty() || skillsExperience.isEmpty() || yourName.isEmpty()) {
+            SnackbarUtils.showCustomErrorSnackbar(CreatePdf.this, "All fields must be filled");
+
+            return false;
+        }
+
+        return true;
     }
 
     //to check if personal and set accordingly
