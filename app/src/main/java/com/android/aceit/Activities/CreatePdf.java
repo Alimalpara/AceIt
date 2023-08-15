@@ -239,7 +239,13 @@ public class CreatePdf extends AppCompatActivity {
             document.close();
 
             // Show a success message to the user
-            Snackbar.make(findViewById(android.R.id.content), "Letter saved as PDF successfully", Snackbar.LENGTH_SHORT).show();
+            // Display a message to the user
+            String savedPdfDirectory = file.getParent(); // Get the parent directory of the saved PDF
+
+            String message = "PDF saved at: " + savedPdfDirectory + ". Use a file explorer app to navigate to this directory.";
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            finish();
+
 
         } catch (IOException e) {
             e.printStackTrace();
