@@ -34,4 +34,7 @@ To get started with Ace It App, follow these steps:
    git clone https://github.com/YourGitHubUsername/AceItApp.git
 2. Open the Android Studio project.
 3. Build and run the app on your Android device or emulator.
+
+   [Download Latest Release](https://github.com/Alimalpara/AceIt/releases/tag/v1.0)
+
    
